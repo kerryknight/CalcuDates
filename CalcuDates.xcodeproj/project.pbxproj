@@ -23,6 +23,15 @@
 		C7DB1DA218218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
 		C7DB1DAA18218C6D009A2DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */; };
 		C7DB1DAC18218C6D009A2DCC /* CalcuDatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */; };
+		C7DB1DBC18218F25009A2DCC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB518218F25009A2DCC /* AdSupport.framework */; };
+		C7DB1DBD18218F25009A2DCC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB618218F25009A2DCC /* CFNetwork.framework */; };
+		C7DB1DBE18218F25009A2DCC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB718218F25009A2DCC /* EventKit.framework */; };
+		C7DB1DBF18218F25009A2DCC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB818218F25009A2DCC /* EventKitUI.framework */; };
+		C7DB1DC018218F25009A2DCC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB918218F25009A2DCC /* QuartzCore.framework */; };
+		C7DB1DC118218F25009A2DCC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DBA18218F25009A2DCC /* StoreKit.framework */; };
+		C7DB1DC218218F25009A2DCC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */; };
+		C7DB1DC518218F56009A2DCC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC318218F56009A2DCC /* Crashlytics.framework */; };
+		C7DB1DC618218F56009A2DCC /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC418218F56009A2DCC /* RevMobAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +67,15 @@
 		C7DB1DA718218C6D009A2DCC /* CalcuDatesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalcuDatesTests-Info.plist"; sourceTree = "<group>"; };
 		C7DB1DA918218C6D009A2DCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcuDatesTests.m; sourceTree = "<group>"; };
+		C7DB1DB518218F25009A2DCC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		C7DB1DB618218F25009A2DCC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C7DB1DB718218F25009A2DCC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		C7DB1DB818218F25009A2DCC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		C7DB1DB918218F25009A2DCC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C7DB1DBA18218F25009A2DCC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C7DB1DC318218F56009A2DCC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C7DB1DC418218F56009A2DCC /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +83,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DB1DC518218F56009A2DCC /* Crashlytics.framework in Frameworks */,
+				C7DB1DC618218F56009A2DCC /* RevMobAds.framework in Frameworks */,
+				C7DB1DC018218F25009A2DCC /* QuartzCore.framework in Frameworks */,
+				C7DB1DBC18218F25009A2DCC /* AdSupport.framework in Frameworks */,
+				C7DB1DBD18218F25009A2DCC /* CFNetwork.framework in Frameworks */,
+				C7DB1DBE18218F25009A2DCC /* EventKit.framework in Frameworks */,
+				C7DB1DBF18218F25009A2DCC /* EventKitUI.framework in Frameworks */,
+				C7DB1DC118218F25009A2DCC /* StoreKit.framework in Frameworks */,
+				C7DB1DC218218F25009A2DCC /* SystemConfiguration.framework in Frameworks */,
 				C7DB1D7D18218C6C009A2DCC /* CoreGraphics.framework in Frameworks */,
 				C7DB1D7F18218C6C009A2DCC /* UIKit.framework in Frameworks */,
 				C7DB1D7B18218C6C009A2DCC /* Foundation.framework in Frameworks */,
@@ -106,6 +133,15 @@
 		C7DB1D7918218C6C009A2DCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7DB1DC318218F56009A2DCC /* Crashlytics.framework */,
+				C7DB1DC418218F56009A2DCC /* RevMobAds.framework */,
+				C7DB1DB518218F25009A2DCC /* AdSupport.framework */,
+				C7DB1DB618218F25009A2DCC /* CFNetwork.framework */,
+				C7DB1DB718218F25009A2DCC /* EventKit.framework */,
+				C7DB1DB818218F25009A2DCC /* EventKitUI.framework */,
+				C7DB1DB918218F25009A2DCC /* QuartzCore.framework */,
+				C7DB1DBA18218F25009A2DCC /* StoreKit.framework */,
+				C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */,
 				C7DB1D7A18218C6C009A2DCC /* Foundation.framework */,
 				C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */,
 				C7DB1D7E18218C6C009A2DCC /* UIKit.framework */,
@@ -208,6 +244,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Kerry Knight";
 				TargetAttributes = {
+					C7DB1D7618218C6C009A2DCC = {
+						DevelopmentTeam = 2FXS3J8N9C;
+					};
 					C7DB1D9D18218C6C009A2DCC = {
 						TestTargetID = C7DB1D7618218C6C009A2DCC;
 					};
@@ -337,8 +376,9 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -354,7 +394,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,9 +418,10 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -388,6 +430,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -399,6 +444,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
@@ -412,6 +462,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
@@ -481,6 +536,7 @@
 				C7DB1DB118218C6D009A2DCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7DB1DB218218C6D009A2DCC /* Build configuration list for PBXNativeTarget "CalcuDatesTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +545,7 @@
 				C7DB1DB418218C6D009A2DCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
