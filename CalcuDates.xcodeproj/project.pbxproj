@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7DB1D7B18218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
+		C7DB1D7D18218C6C009A2DCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */; };
+		C7DB1D7F18218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
+		C7DB1D8518218C6C009A2DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8318218C6C009A2DCC /* InfoPlist.strings */; };
+		C7DB1D8718218C6C009A2DCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D8618218C6C009A2DCC /* main.m */; };
+		C7DB1D8B18218C6C009A2DCC /* KKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D8A18218C6C009A2DCC /* KKAppDelegate.m */; };
+		C7DB1D8E18218C6C009A2DCC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */; };
+		C7DB1D9118218C6C009A2DCC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8F18218C6C009A2DCC /* Main_iPad.storyboard */; };
+		C7DB1D9418218C6C009A2DCC /* KKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D9318218C6C009A2DCC /* KKFirstViewController.m */; };
+		C7DB1D9718218C6C009A2DCC /* KKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D9618218C6C009A2DCC /* KKSecondViewController.m */; };
+		C7DB1D9918218C6C009A2DCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D9818218C6C009A2DCC /* Images.xcassets */; };
+		C7DB1DA018218C6C009A2DCC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D9F18218C6C009A2DCC /* XCTest.framework */; };
+		C7DB1DA118218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
+		C7DB1DA218218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
+		C7DB1DAA18218C6D009A2DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */; };
+		C7DB1DAC18218C6D009A2DCC /* CalcuDatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7DB1DA318218C6C009A2DCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7DB1D6F18218C6C009A2DCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7DB1D7618218C6C009A2DCC;
+			remoteInfo = CalcuDates;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C7DB1D7718218C6C009A2DCC /* CalcuDates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcuDates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7DB1D7A18218C6C009A2DCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C7DB1D7E18218C6C009A2DCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C7DB1D8218218C6C009A2DCC /* CalcuDates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalcuDates-Info.plist"; sourceTree = "<group>"; };
+		C7DB1D8418218C6C009A2DCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7DB1D8618218C6C009A2DCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7DB1D8818218C6C009A2DCC /* CalcuDates-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CalcuDates-Prefix.pch"; sourceTree = "<group>"; };
+		C7DB1D8918218C6C009A2DCC /* KKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAppDelegate.h; sourceTree = "<group>"; };
+		C7DB1D8A18218C6C009A2DCC /* KKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKAppDelegate.m; sourceTree = "<group>"; };
+		C7DB1D8D18218C6C009A2DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		C7DB1D9018218C6C009A2DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		C7DB1D9218218C6C009A2DCC /* KKFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKFirstViewController.h; sourceTree = "<group>"; };
+		C7DB1D9318218C6C009A2DCC /* KKFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKFirstViewController.m; sourceTree = "<group>"; };
+		C7DB1D9518218C6C009A2DCC /* KKSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSecondViewController.h; sourceTree = "<group>"; };
+		C7DB1D9618218C6C009A2DCC /* KKSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSecondViewController.m; sourceTree = "<group>"; };
+		C7DB1D9818218C6C009A2DCC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C7DB1D9E18218C6C009A2DCC /* CalcuDatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcuDatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7DB1D9F18218C6C009A2DCC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C7DB1DA718218C6D009A2DCC /* CalcuDatesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalcuDatesTests-Info.plist"; sourceTree = "<group>"; };
+		C7DB1DA918218C6D009A2DCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcuDatesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7DB1D7418218C6C009A2DCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DB1D7D18218C6C009A2DCC /* CoreGraphics.framework in Frameworks */,
+				C7DB1D7F18218C6C009A2DCC /* UIKit.framework in Frameworks */,
+				C7DB1D7B18218C6C009A2DCC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7DB1D9B18218C6C009A2DCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DB1DA018218C6C009A2DCC /* XCTest.framework in Frameworks */,
+				C7DB1DA218218C6C009A2DCC /* UIKit.framework in Frameworks */,
+				C7DB1DA118218C6C009A2DCC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7DB1D6E18218C6C009A2DCC = {
+			isa = PBXGroup;
+			children = (
+				C7DB1D8018218C6C009A2DCC /* CalcuDates */,
+				C7DB1DA518218C6C009A2DCC /* CalcuDatesTests */,
+				C7DB1D7918218C6C009A2DCC /* Frameworks */,
+				C7DB1D7818218C6C009A2DCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7DB1D7818218C6C009A2DCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7DB1D7718218C6C009A2DCC /* CalcuDates.app */,
+				C7DB1D9E18218C6C009A2DCC /* CalcuDatesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7DB1D7918218C6C009A2DCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7DB1D7A18218C6C009A2DCC /* Foundation.framework */,
+				C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */,
+				C7DB1D7E18218C6C009A2DCC /* UIKit.framework */,
+				C7DB1D9F18218C6C009A2DCC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7DB1D8018218C6C009A2DCC /* CalcuDates */ = {
+			isa = PBXGroup;
+			children = (
+				C7DB1D8918218C6C009A2DCC /* KKAppDelegate.h */,
+				C7DB1D8A18218C6C009A2DCC /* KKAppDelegate.m */,
+				C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */,
+				C7DB1D8F18218C6C009A2DCC /* Main_iPad.storyboard */,
+				C7DB1D9218218C6C009A2DCC /* KKFirstViewController.h */,
+				C7DB1D9318218C6C009A2DCC /* KKFirstViewController.m */,
+				C7DB1D9518218C6C009A2DCC /* KKSecondViewController.h */,
+				C7DB1D9618218C6C009A2DCC /* KKSecondViewController.m */,
+				C7DB1D9818218C6C009A2DCC /* Images.xcassets */,
+				C7DB1D8118218C6C009A2DCC /* Supporting Files */,
+			);
+			path = CalcuDates;
+			sourceTree = "<group>";
+		};
+		C7DB1D8118218C6C009A2DCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7DB1D8218218C6C009A2DCC /* CalcuDates-Info.plist */,
+				C7DB1D8318218C6C009A2DCC /* InfoPlist.strings */,
+				C7DB1D8618218C6C009A2DCC /* main.m */,
+				C7DB1D8818218C6C009A2DCC /* CalcuDates-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7DB1DA518218C6C009A2DCC /* CalcuDatesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */,
+				C7DB1DA618218C6D009A2DCC /* Supporting Files */,
+			);
+			path = CalcuDatesTests;
+			sourceTree = "<group>";
+		};
+		C7DB1DA618218C6D009A2DCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7DB1DA718218C6D009A2DCC /* CalcuDatesTests-Info.plist */,
+				C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7DB1D7618218C6C009A2DCC /* CalcuDates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7DB1DAF18218C6D009A2DCC /* Build configuration list for PBXNativeTarget "CalcuDates" */;
+			buildPhases = (
+				C7DB1D7318218C6C009A2DCC /* Sources */,
+				C7DB1D7418218C6C009A2DCC /* Frameworks */,
+				C7DB1D7518218C6C009A2DCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalcuDates;
+			productName = CalcuDates;
+			productReference = C7DB1D7718218C6C009A2DCC /* CalcuDates.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7DB1D9D18218C6C009A2DCC /* CalcuDatesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7DB1DB218218C6D009A2DCC /* Build configuration list for PBXNativeTarget "CalcuDatesTests" */;
+			buildPhases = (
+				C7DB1D9A18218C6C009A2DCC /* Sources */,
+				C7DB1D9B18218C6C009A2DCC /* Frameworks */,
+				C7DB1D9C18218C6C009A2DCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7DB1DA418218C6C009A2DCC /* PBXTargetDependency */,
+			);
+			name = CalcuDatesTests;
+			productName = CalcuDatesTests;
+			productReference = C7DB1D9E18218C6C009A2DCC /* CalcuDatesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7DB1D6F18218C6C009A2DCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KK;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Kerry Knight";
+				TargetAttributes = {
+					C7DB1D9D18218C6C009A2DCC = {
+						TestTargetID = C7DB1D7618218C6C009A2DCC;
+					};
+				};
+			};
+			buildConfigurationList = C7DB1D7218218C6C009A2DCC /* Build configuration list for PBXProject "CalcuDates" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7DB1D6E18218C6C009A2DCC;
+			productRefGroup = C7DB1D7818218C6C009A2DCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7DB1D7618218C6C009A2DCC /* CalcuDates */,
+				C7DB1D9D18218C6C009A2DCC /* CalcuDatesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7DB1D7518218C6C009A2DCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DB1D9118218C6C009A2DCC /* Main_iPad.storyboard in Resources */,
+				C7DB1D9918218C6C009A2DCC /* Images.xcassets in Resources */,
+				C7DB1D8E18218C6C009A2DCC /* Main_iPhone.storyboard in Resources */,
+				C7DB1D8518218C6C009A2DCC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7DB1D9C18218C6C009A2DCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DB1DAA18218C6D009A2DCC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7DB1D7318218C6C009A2DCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DB1D9718218C6C009A2DCC /* KKSecondViewController.m in Sources */,
+				C7DB1D9418218C6C009A2DCC /* KKFirstViewController.m in Sources */,
+				C7DB1D8B18218C6C009A2DCC /* KKAppDelegate.m in Sources */,
+				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7DB1D9A18218C6C009A2DCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DB1DAC18218C6D009A2DCC /* CalcuDatesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C7DB1DA418218C6C009A2DCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7DB1D7618218C6C009A2DCC /* CalcuDates */;
+			targetProxy = C7DB1DA318218C6C009A2DCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C7DB1D8318218C6C009A2DCC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7DB1D8418218C6C009A2DCC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7DB1D8D18218C6C009A2DCC /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C7DB1D8F18218C6C009A2DCC /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7DB1D9018218C6C009A2DCC /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7DB1DA918218C6D009A2DCC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7DB1DAD18218C6D009A2DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7DB1DAE18218C6D009A2DCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7DB1DB018218C6D009A2DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
+				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C7DB1DB118218C6D009A2DCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
+				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C7DB1DB318218C6D009A2DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C7DB1DB418218C6D009A2DCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
+				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7DB1D7218218C6C009A2DCC /* Build configuration list for PBXProject "CalcuDates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7DB1DAD18218C6D009A2DCC /* Debug */,
+				C7DB1DAE18218C6D009A2DCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7DB1DAF18218C6D009A2DCC /* Build configuration list for PBXNativeTarget "CalcuDates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7DB1DB018218C6D009A2DCC /* Debug */,
+				C7DB1DB118218C6D009A2DCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C7DB1DB218218C6D009A2DCC /* Build configuration list for PBXNativeTarget "CalcuDatesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7DB1DB318218C6D009A2DCC /* Debug */,
+				C7DB1DB418218C6D009A2DCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7DB1D6F18218C6C009A2DCC /* Project object */;
+}
