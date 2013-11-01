@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C74ED59C182361B7003D137C /* KKTimePeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59B182361B7003D137C /* KKTimePeriodViewController.m */; };
+		C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59E182361F2003D137C /* KKMainViewController.m */; };
+		C74ED5A21823621A003D137C /* KKNewDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED5A11823621A003D137C /* KKNewDateViewController.m */; };
 		C7DB1D7B18218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
 		C7DB1D7D18218C6C009A2DCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */; };
 		C7DB1D7F18218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
@@ -14,9 +17,6 @@
 		C7DB1D8718218C6C009A2DCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D8618218C6C009A2DCC /* main.m */; };
 		C7DB1D8B18218C6C009A2DCC /* KKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D8A18218C6C009A2DCC /* KKAppDelegate.m */; };
 		C7DB1D8E18218C6C009A2DCC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */; };
-		C7DB1D9118218C6C009A2DCC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8F18218C6C009A2DCC /* Main_iPad.storyboard */; };
-		C7DB1D9418218C6C009A2DCC /* KKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D9318218C6C009A2DCC /* KKFirstViewController.m */; };
-		C7DB1D9718218C6C009A2DCC /* KKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1D9618218C6C009A2DCC /* KKSecondViewController.m */; };
 		C7DB1D9918218C6C009A2DCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D9818218C6C009A2DCC /* Images.xcassets */; };
 		C7DB1DA018218C6C009A2DCC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D9F18218C6C009A2DCC /* XCTest.framework */; };
 		C7DB1DA118218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
@@ -28,7 +28,6 @@
 		C7DB1DBE18218F25009A2DCC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB718218F25009A2DCC /* EventKit.framework */; };
 		C7DB1DBF18218F25009A2DCC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB818218F25009A2DCC /* EventKitUI.framework */; };
 		C7DB1DC018218F25009A2DCC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB918218F25009A2DCC /* QuartzCore.framework */; };
-		C7DB1DC118218F25009A2DCC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DBA18218F25009A2DCC /* StoreKit.framework */; };
 		C7DB1DC218218F25009A2DCC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */; };
 		C7DB1DC518218F56009A2DCC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC318218F56009A2DCC /* Crashlytics.framework */; };
 		C7DB1DC618218F56009A2DCC /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC418218F56009A2DCC /* RevMobAds.framework */; };
@@ -45,6 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C74ED59718234E0C003D137C /* KKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKConstants.h; path = Classes/KKConstants.h; sourceTree = "<group>"; };
+		C74ED59A182361B7003D137C /* KKTimePeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKTimePeriodViewController.h; path = "View Controllers/KKTimePeriodViewController.h"; sourceTree = "<group>"; };
+		C74ED59B182361B7003D137C /* KKTimePeriodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKTimePeriodViewController.m; path = "View Controllers/KKTimePeriodViewController.m"; sourceTree = "<group>"; };
+		C74ED59D182361F2003D137C /* KKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMainViewController.h; path = "View Controllers/KKMainViewController.h"; sourceTree = "<group>"; };
+		C74ED59E182361F2003D137C /* KKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKMainViewController.m; path = "View Controllers/KKMainViewController.m"; sourceTree = "<group>"; };
+		C74ED5A01823621A003D137C /* KKNewDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKNewDateViewController.h; path = "View Controllers/KKNewDateViewController.h"; sourceTree = "<group>"; };
+		C74ED5A11823621A003D137C /* KKNewDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKNewDateViewController.m; path = "View Controllers/KKNewDateViewController.m"; sourceTree = "<group>"; };
 		C7DB1D7718218C6C009A2DCC /* CalcuDates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcuDates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DB1D7A18218C6C009A2DCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,11 +62,6 @@
 		C7DB1D8918218C6C009A2DCC /* KKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAppDelegate.h; sourceTree = "<group>"; };
 		C7DB1D8A18218C6C009A2DCC /* KKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKAppDelegate.m; sourceTree = "<group>"; };
 		C7DB1D8D18218C6C009A2DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		C7DB1D9018218C6C009A2DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		C7DB1D9218218C6C009A2DCC /* KKFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKFirstViewController.h; sourceTree = "<group>"; };
-		C7DB1D9318218C6C009A2DCC /* KKFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKFirstViewController.m; sourceTree = "<group>"; };
-		C7DB1D9518218C6C009A2DCC /* KKSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSecondViewController.h; sourceTree = "<group>"; };
-		C7DB1D9618218C6C009A2DCC /* KKSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSecondViewController.m; sourceTree = "<group>"; };
 		C7DB1D9818218C6C009A2DCC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C7DB1D9E18218C6C009A2DCC /* CalcuDatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcuDatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DB1D9F18218C6C009A2DCC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -72,10 +73,10 @@
 		C7DB1DB718218F25009A2DCC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		C7DB1DB818218F25009A2DCC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		C7DB1DB918218F25009A2DCC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C7DB1DBA18218F25009A2DCC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C7DB1DC318218F56009A2DCC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C7DB1DC418218F56009A2DCC /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
+		C7DB1DC718219390009A2DCC /* DevNotes.devnotes */ = {isa = PBXFileReference; lastKnownFileType = text; path = DevNotes.devnotes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +91,6 @@
 				C7DB1DBD18218F25009A2DCC /* CFNetwork.framework in Frameworks */,
 				C7DB1DBE18218F25009A2DCC /* EventKit.framework in Frameworks */,
 				C7DB1DBF18218F25009A2DCC /* EventKitUI.framework in Frameworks */,
-				C7DB1DC118218F25009A2DCC /* StoreKit.framework in Frameworks */,
 				C7DB1DC218218F25009A2DCC /* SystemConfiguration.framework in Frameworks */,
 				C7DB1D7D18218C6C009A2DCC /* CoreGraphics.framework in Frameworks */,
 				C7DB1D7F18218C6C009A2DCC /* UIKit.framework in Frameworks */,
@@ -140,7 +140,6 @@
 				C7DB1DB718218F25009A2DCC /* EventKit.framework */,
 				C7DB1DB818218F25009A2DCC /* EventKitUI.framework */,
 				C7DB1DB918218F25009A2DCC /* QuartzCore.framework */,
-				C7DB1DBA18218F25009A2DCC /* StoreKit.framework */,
 				C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */,
 				C7DB1D7A18218C6C009A2DCC /* Foundation.framework */,
 				C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */,
@@ -153,15 +152,12 @@
 		C7DB1D8018218C6C009A2DCC /* CalcuDates */ = {
 			isa = PBXGroup;
 			children = (
+				C7DB1DC718219390009A2DCC /* DevNotes.devnotes */,
 				C7DB1D8918218C6C009A2DCC /* KKAppDelegate.h */,
 				C7DB1D8A18218C6C009A2DCC /* KKAppDelegate.m */,
-				C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */,
-				C7DB1D8F18218C6C009A2DCC /* Main_iPad.storyboard */,
-				C7DB1D9218218C6C009A2DCC /* KKFirstViewController.h */,
-				C7DB1D9318218C6C009A2DCC /* KKFirstViewController.m */,
-				C7DB1D9518218C6C009A2DCC /* KKSecondViewController.h */,
-				C7DB1D9618218C6C009A2DCC /* KKSecondViewController.m */,
-				C7DB1D9818218C6C009A2DCC /* Images.xcassets */,
+				C7DB1DC918219636009A2DCC /* Classes */,
+				C7DB1DC81821961E009A2DCC /* View Controllers */,
+				C7DB1DCA18219643009A2DCC /* UI Resources */,
 				C7DB1D8118218C6C009A2DCC /* Supporting Files */,
 			);
 			path = CalcuDates;
@@ -194,6 +190,36 @@
 				C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7DB1DC81821961E009A2DCC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C74ED59D182361F2003D137C /* KKMainViewController.h */,
+				C74ED59E182361F2003D137C /* KKMainViewController.m */,
+				C74ED59A182361B7003D137C /* KKTimePeriodViewController.h */,
+				C74ED59B182361B7003D137C /* KKTimePeriodViewController.m */,
+				C74ED5A01823621A003D137C /* KKNewDateViewController.h */,
+				C74ED5A11823621A003D137C /* KKNewDateViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C7DB1DC918219636009A2DCC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C74ED59718234E0C003D137C /* KKConstants.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		C7DB1DCA18219643009A2DCC /* UI Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */,
+				C7DB1D9818218C6C009A2DCC /* Images.xcassets */,
+			);
+			name = "UI Resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +272,11 @@
 				TargetAttributes = {
 					C7DB1D7618218C6C009A2DCC = {
 						DevelopmentTeam = 2FXS3J8N9C;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					C7DB1D9D18218C6C009A2DCC = {
 						TestTargetID = C7DB1D7618218C6C009A2DCC;
@@ -276,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DB1D9118218C6C009A2DCC /* Main_iPad.storyboard in Resources */,
 				C7DB1D9918218C6C009A2DCC /* Images.xcassets in Resources */,
 				C7DB1D8E18218C6C009A2DCC /* Main_iPhone.storyboard in Resources */,
 				C7DB1D8518218C6C009A2DCC /* InfoPlist.strings in Resources */,
@@ -298,10 +328,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DB1D9718218C6C009A2DCC /* KKSecondViewController.m in Sources */,
-				C7DB1D9418218C6C009A2DCC /* KKFirstViewController.m in Sources */,
 				C7DB1D8B18218C6C009A2DCC /* KKAppDelegate.m in Sources */,
+				C74ED59C182361B7003D137C /* KKTimePeriodViewController.m in Sources */,
+				C74ED5A21823621A003D137C /* KKNewDateViewController.m in Sources */,
 				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
+				C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,14 +369,6 @@
 				C7DB1D8D18218C6C009A2DCC /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		C7DB1D8F18218C6C009A2DCC /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C7DB1D9018218C6C009A2DCC /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */ = {
@@ -397,7 +420,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -434,7 +457,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -453,6 +476,8 @@
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -471,6 +496,8 @@
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
