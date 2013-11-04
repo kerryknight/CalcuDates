@@ -7,6 +7,7 @@
 //
 
 #import "KKMainViewController.h"
+#import "KKTabBarController.h"
 #import "KKTimePeriodViewController.h"
 #import "KKNewDateViewController.h"
 
@@ -18,18 +19,23 @@
 - (NSString *) _autolayoutTrace;
 @end
 
+#define kTIME_PERIOD_VIEW_INDEX 0
+#define kNEW_DATE_VIEW_INDEX 1
+
 #pragma mark -
 #pragma mark @interface
 
-@interface KKMainViewController ()
-
-//instance vars
-@property (nonatomic, assign) BOOL timePeriodSelected;
-@property (nonatomic, assign) BOOL gnuDateSelected;
+@interface KKMainViewController () <UIViewControllerTransitioningDelegate, UITabBarControllerDelegate> {
+    //instance vars
+    BOOL timePeriodSelected;
+    BOOL gnuDateSelected;
+    KKTabBarController *tabBarVC;
+}
 
 //IBOutlets
 @property (weak, nonatomic) IBOutlet UIButton *timePeriodButton;
 @property (weak, nonatomic) IBOutlet UIButton *gnuDateButton; //"gnu" to not conflict with reserved cocoa naming conventions
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 //IBActions
 - (IBAction)timePeriodButtonClickHander:(id)sender;
@@ -41,10 +47,15 @@
 #pragma mark @implementation
 @implementation KKMainViewController
 
-- (void)viewDidLoad
-{
+#pragma mark -
+#pragma mark Life Cycle
+
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //hide out tab bar view as we only want the tab bar controller's container functionality but not its buttons
+    [[self.view viewWithTag:999] setHidden:TRUE];
     
     //setup and initialize our buttons
     [self initializeButtons];
@@ -54,10 +65,24 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"interactiveSwipeTransitionDidComplete" object:nil];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -
+#pragma mark Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    NSLog(@"%s", __FUNCTION__);
+//    NSLog(@"seque: %@", segue.identifier);
+    
+    if ([segue.identifier isEqualToString:@"ShowTabBarController"]) {
+        tabBarVC = segue.destinationViewController;
+    }
 }
 
 #pragma mark -
@@ -72,35 +97,41 @@
     [self.gnuDateButton setBackgroundImage:[UIImage imageNamed:@"btn_newDateSelected"] forState:UIControlStateSelected | UIControlStateHighlighted]; //disables highlight if selected
     
     //on load, set our time period button active
-    _timePeriodSelected = TRUE;
-    _gnuDateSelected = FALSE;
+    timePeriodSelected = TRUE;
+    gnuDateSelected = FALSE;
     [self toggleButtonSelections];
+    
+    //listen for change events broadcast by swipe interactions so we can correctly toggle to other selected button
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleButtonSelections) name:@"interactiveSwipeTransitionDidComplete" object:nil];
 }
 
 - (IBAction) timePeriodButtonClickHander:(id)sender {
-//    NSLog(@"%s", __FUNCTION__);
     //return if already selected
     if (self.timePeriodButton.isSelected == TRUE) return;
     
     [self toggleButtonSelections];
+    
+    //select the time period view controller/tab
+    if (tabBarVC) [tabBarVC setSelectedIndex:kTIME_PERIOD_VIEW_INDEX];
 }
 
 - (IBAction) gnuDateButtonClickHandler:(id)sender {
-//    NSLog(@"%s", __FUNCTION__);
     //return if already selected
     if (self.gnuDateButton.isSelected == TRUE) return;
     
     [self toggleButtonSelections];
+    
+    //select the new date view controller/tab
+    if (tabBarVC) [tabBarVC setSelectedIndex:kNEW_DATE_VIEW_INDEX];
 }
 
 - (void) toggleButtonSelections {
-    
-    [self.timePeriodButton setSelected:_timePeriodSelected];
-    [self.gnuDateButton setSelected:_gnuDateSelected];
+    [self.timePeriodButton setSelected:timePeriodSelected];
+    [self.gnuDateButton setSelected:gnuDateSelected];
     
     //toggle our selected values
-    _timePeriodSelected = !_timePeriodSelected;
-    _gnuDateSelected = !_gnuDateSelected;
+    timePeriodSelected = !timePeriodSelected;
+    gnuDateSelected = !gnuDateSelected;
 }
 
 #pragma mark -
@@ -109,8 +140,6 @@
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", [[UIWindow keyWindow] _autolayoutTrace]);
 }
-
-
 
 @end
 
