@@ -14,5 +14,11 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
+    //knightka files
     #import "KKConstants.h"
+    #import "KKMacros.h"
+
+    //universal constants
+    #define kCONTAINER_VIEW_TAG 100
+
 #endif

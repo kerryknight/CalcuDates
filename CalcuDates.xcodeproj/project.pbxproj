@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59E182361F2003D137C /* KKMainViewController.m */; };
 		C74ED5A21823621A003D137C /* KKNewDateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */; };
+		C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */; };
+		C76ECE0F1829A386005E5591 /* KKDatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76ECE0D1829A386005E5591 /* KKDatePickerCell.xib */; };
+		C76ECE121829BBF4005E5591 /* KKVerticalCellSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76ECE111829BBF4005E5591 /* KKVerticalCellSwipeInteractionController.m */; };
 		C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C3C1828080C0012E021 /* KKTabBarController.m */; };
 		C7935C5818281C150012E021 /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C4018281C150012E021 /* CECardsAnimationController.m */; };
 		C7935C5918281C150012E021 /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C4218281C150012E021 /* CECrossfadeAnimationController.m */; };
@@ -74,6 +77,12 @@
 		C74ED59E182361F2003D137C /* KKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKMainViewController.m; path = "View Controllers/KKMainViewController.m"; sourceTree = "<group>"; };
 		C74ED5A01823621A003D137C /* KKNewDateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKNewDateTableViewController.h; path = "View Controllers/KKNewDateTableViewController.h"; sourceTree = "<group>"; };
 		C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKNewDateTableViewController.m; path = "View Controllers/KKNewDateTableViewController.m"; sourceTree = "<group>"; };
+		C76ECE0618293CF7005E5591 /* KKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMacros.h; path = Classes/KKMacros.h; sourceTree = "<group>"; };
+		C76ECE0B1829A386005E5591 /* KKDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKDatePickerCell.h; path = "Custom Table Cells/KKDatePickerCell.h"; sourceTree = "<group>"; };
+		C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKDatePickerCell.m; path = "Custom Table Cells/KKDatePickerCell.m"; sourceTree = "<group>"; };
+		C76ECE0D1829A386005E5591 /* KKDatePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKDatePickerCell.xib; path = "Custom Table Cells/KKDatePickerCell.xib"; sourceTree = "<group>"; };
+		C76ECE101829BBF4005E5591 /* KKVerticalCellSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKVerticalCellSwipeInteractionController.h; sourceTree = "<group>"; };
+		C76ECE111829BBF4005E5591 /* KKVerticalCellSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKVerticalCellSwipeInteractionController.m; sourceTree = "<group>"; };
 		C7935C3B1828080C0012E021 /* KKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKTabBarController.h; path = "View Controllers/KKTabBarController.h"; sourceTree = "<group>"; };
 		C7935C3C1828080C0012E021 /* KKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKTabBarController.m; path = "View Controllers/KKTabBarController.m"; sourceTree = "<group>"; };
 		C7935C3F18281C150012E021 /* CECardsAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECardsAnimationController.h; sourceTree = "<group>"; };
@@ -218,6 +227,8 @@
 		C7935C4F18281C150012E021 /* InteractionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C76ECE101829BBF4005E5591 /* KKVerticalCellSwipeInteractionController.h */,
+				C76ECE111829BBF4005E5591 /* KKVerticalCellSwipeInteractionController.m */,
 				C7935C5018281C150012E021 /* CEBaseInteractionController.h */,
 				C7935C5118281C150012E021 /* CEBaseInteractionController.m */,
 				C7935C5218281C150012E021 /* CEHorizontalSwipeInteractionController.h */,
@@ -272,11 +283,12 @@
 		C7DB1D8018218C6C009A2DCC /* CalcuDates */ = {
 			isa = PBXGroup;
 			children = (
-				C7F0FBEC182844B000CEA23A /* Custom Table Cells */,
 				C7DB1DC718219390009A2DCC /* DevNotes.devnotes */,
 				C7DB1D8918218C6C009A2DCC /* KKAppDelegate.h */,
 				C7DB1D8A18218C6C009A2DCC /* KKAppDelegate.m */,
 				C7DB1DC918219636009A2DCC /* Classes */,
+				C7935C3318240BFA0012E021 /* Animations */,
+				C7F0FBEC182844B000CEA23A /* Custom Table Cells */,
 				C7DB1DC81821961E009A2DCC /* View Controllers */,
 				C7DB1DCA18219643009A2DCC /* UI Resources */,
 				C7DB1D8118218C6C009A2DCC /* Supporting Files */,
@@ -340,7 +352,7 @@
 				C7F0FBD91828296200CEA23A /* MyManager.h */,
 				C7F0FBDA1828296200CEA23A /* MyManager.m */,
 				C74ED59718234E0C003D137C /* KKConstants.h */,
-				C7935C3318240BFA0012E021 /* Animations */,
+				C76ECE0618293CF7005E5591 /* KKMacros.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -357,6 +369,9 @@
 		C7F0FBEC182844B000CEA23A /* Custom Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C76ECE0B1829A386005E5591 /* KKDatePickerCell.h */,
+				C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */,
+				C76ECE0D1829A386005E5591 /* KKDatePickerCell.xib */,
 				C7F0FBF718286F5E00CEA23A /* KKButtonBarCell.h */,
 				C7F0FBF818286F5E00CEA23A /* KKButtonBarCell.m */,
 				C7F0FBF918286F5E00CEA23A /* KKButtonBarCell.xib */,
@@ -465,6 +480,7 @@
 				C7DB1D8518218C6C009A2DCC /* InfoPlist.strings in Resources */,
 				C7F0FC0418286F5E00CEA23A /* KKButtonBarCell.xib in Resources */,
 				C7F0FC0618286F5E00CEA23A /* KKDateCell.xib in Resources */,
+				C76ECE0F1829A386005E5591 /* KKDatePickerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +508,8 @@
 				C7935C5C18281C150012E021 /* CEFoldAnimationController.m in Sources */,
 				C7935C5918281C150012E021 /* CECrossfadeAnimationController.m in Sources */,
 				C7935C5818281C150012E021 /* CECardsAnimationController.m in Sources */,
+				C76ECE121829BBF4005E5591 /* KKVerticalCellSwipeInteractionController.m in Sources */,
+				C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */,
 				C7935C5F18281C150012E021 /* CETurnAnimationController.m in Sources */,
 				C74ED5A21823621A003D137C /* KKNewDateTableViewController.m in Sources */,
 				C7935C6018281C150012E021 /* CEBaseInteractionController.m in Sources */,

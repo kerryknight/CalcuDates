@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "calendarAdd.png"
+      "filename" : "btn_calculateHighlighted.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "calendarAdd@2x.png"
+      "filename" : "btn_calculateHighlighted@2x.png"
     }
   ],
   "info" : {

@@ -23,7 +23,7 @@
     if (self) {
         // Initialization code
         
-        //update the look of the date field label
+        //get our custom cell's nib file from app bundle
         
     }
     return self;

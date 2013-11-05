@@ -10,9 +10,6 @@
 
 @interface KKButtonBarCell (){}
 
-@property (weak, nonatomic) IBOutlet UIButton *calculateButton;
-@property (weak, nonatomic) IBOutlet UIButton *clearButton;
-
 @end
 
 @implementation KKButtonBarCell
@@ -23,8 +20,11 @@
     if (self) {
         // Initialization code
         
-        //update the look of the date field label
-        
+        //get our custom cell's nib file from app bundle
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KKButtonBarCell" owner:self options:nil];
+        for (id oneObject in nib)
+            if ([oneObject isKindOfClass:[KKButtonBarCell class]])
+                self = (KKButtonBarCell *)oneObject;
     }
     return self;
 }

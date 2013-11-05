@@ -10,31 +10,25 @@
 
 @interface KKDateDifferencesCell (){}
 
-@property (weak, nonatomic) IBOutlet UITextField *daysDifferenceField;
-@property (weak, nonatomic) IBOutlet UITextField *weeksDifferenceField;
-@property (weak, nonatomic) IBOutlet UITextField *monthsDifferenceField;
-@property (weak, nonatomic) IBOutlet UITextField *yearsDifferenceField;
-@property (weak, nonatomic) IBOutlet UIButton *addEventButton;
-
-
 @end
 
 @implementation KKDateDifferencesCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
         
-        //update the look of the date field label
-        
+        //get our custom cell's nib file from app bundle
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KKDateDifferencesCell" owner:self options:nil];
+        for (id oneObject in nib)
+            if ([oneObject isKindOfClass:[KKDateDifferencesCell class]])
+                self = (KKDateDifferencesCell *)oneObject;
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state

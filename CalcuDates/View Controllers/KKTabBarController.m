@@ -23,10 +23,7 @@
 #pragma mark Life Cycle
 
 - (void)viewDidLoad {
-//    NSLog(@"%s", __FUNCTION__);
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
     //set our UITabBarControllerDelegate
     self.delegate = self;
     
@@ -72,8 +69,6 @@
 
 - (id <UIViewControllerInteractiveTransitioning>)tabBarController:(UITabBarController *)tabBarController
                       interactionControllerForAnimationController: (id <UIViewControllerAnimatedTransitioning>)animationController {
-    
-//    NSLog(@"%s", __FUNCTION__);
     return _interactionController.interactionInProgress ? _interactionController : nil;
 }
 

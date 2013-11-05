@@ -16,8 +16,11 @@
     if (self) {
         // Initialization code
         
-        //update the look of the date field label
-        
+        //get our custom cell's nib file from app bundle
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KKDateCell" owner:self options:nil];
+        for (id oneObject in nib)
+            if ([oneObject isKindOfClass:[KKDateCell class]])
+                self = (KKDateCell *)oneObject;
     }
     return self;
 }
