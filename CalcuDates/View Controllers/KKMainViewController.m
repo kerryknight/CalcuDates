@@ -8,8 +8,8 @@
 
 #import "KKMainViewController.h"
 #import "KKTabBarController.h"
-#import "KKTimePeriodViewController.h"
-#import "KKNewDateViewController.h"
+#import "KKTimePeriodTableViewController.h"
+#import "KKNewDateTableViewController.h"
 
 #pragma mark -
 #pragma mark @categories

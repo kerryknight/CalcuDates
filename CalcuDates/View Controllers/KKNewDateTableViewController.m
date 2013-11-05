@@ -1,18 +1,21 @@
 //
-//  KKNewDateViewController.m
+//  KKNewDateTableViewController.m
 //  CalcuDates
 //
 //  Created by Kerry Knight on 11/1/13.
 //  Copyright (c) 2013 Kerry Knight. All rights reserved.
 //
 
-#import "KKNewDateViewController.h"
+#import "KKNewDateTableViewController.h"
+#import <EventKitUI/EventKitUI.h>
+#import "EventKitController.h"
+#import "KKDateCell.h"
 
-@interface KKNewDateViewController ()
+@interface KKNewDateTableViewController ()
 
 @end
 
-@implementation KKNewDateViewController
+@implementation KKNewDateTableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

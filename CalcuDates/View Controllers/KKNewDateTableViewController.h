@@ -1,5 +1,5 @@
 //
-//  KKTimePeriodViewController.h
+//  KKNewDateTableViewController.h
 //  CalcuDates
 //
 //  Created by Kerry Knight on 11/1/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KKTimePeriodViewController : UIViewController
+@interface KKNewDateTableViewController : UITableViewController
 
 @end
