@@ -49,13 +49,13 @@
     
     //bottom gradient
     UIView *bottomGradientView = [[UIView alloc] initWithFrame:CGRectMake(self.contentView.frame.origin.x,
-                                                                       self.contentView.frame.origin.y + self.contentView.frame.size.height - 3,
+                                                                       self.contentView.frame.origin.y + self.contentView.frame.size.height - 5,
                                                                        self.contentView.frame.size.width,
                                                                        5)];
     CAGradientLayer *bottomGradient = [CAGradientLayer layer];
     bottomGradient.frame = bottomGradientView.bounds;
     bottomGradient.colors = @[(id)[[UIColor clearColor] CGColor],
-                              (id)[[UIColor colorWithRed:63.0f/255.0f green:63.0f/255.0f blue:64.0f/255.0f alpha:0.5f] CGColor]]; //clear and gray
+                              (id)[[UIColor colorWithRed:63.0f/255.0f green:63.0f/255.0f blue:64.0f/255.0f alpha:0.55f] CGColor]]; //clear and gray
     [bottomGradientView.layer insertSublayer:bottomGradient atIndex:0];
     [self.contentView addSubview:bottomGradientView];
 }

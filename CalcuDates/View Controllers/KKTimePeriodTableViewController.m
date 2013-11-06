@@ -24,7 +24,7 @@
 #define kButtonRow       2
 #define kDateDifferencesRow 3
 
-#define kDATE_PICKER_CELL_HEIGHT 208.0f
+#define kDATE_PICKER_CELL_HEIGHT 162.0f
 #define kHEADER_INSTRUCTION_WHITE_LABEL_HEIGHT 43.0f
 #define kCALCULATE_BUTTONS_ROW_HEIGHT 55.0f
 #define kDATE_DIFFERENCES_ROW_HEIGHT 165.0f
@@ -96,7 +96,6 @@ static NSString *kDateDifferencesCellID = @"differencesCell"; // the cell contai
                                                     name:NSCurrentLocaleDidChangeNotification
                                                   object:nil];
 }
-
 
 #pragma mark - Locale
 /*! Responds to region format or locale changes.
@@ -311,10 +310,11 @@ NSUInteger DeviceSystemMajorVersion() {
         // we decide here that any cell in the table not a date cell is not selectable (it's just an indicator)
         customCell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-//        UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(displayInlineDatePickerForRowAtIndexPath:)];
-//        [swipeUpGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionDown];
-//        [swipeUpGestureRecognizer setNumberOfTouchesRequired:1];
-//        [customCell addGestureRecognizer:swipeUpGestureRecognizer];
+        //if it's the end date row, add ability to swipe down to reveal start date row's date picker and swipe up to hide it
+        if ((indexPath.row == kDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kDateEndRow + 1)))) {
+            [customCell addGestureRecognizer:[self addSwipeDownGestureForContext:self]];
+            [customCell addGestureRecognizer:[self addSwipeUpGestureForContext:self]];
+        }
         
         return customCell;
     } else if ([cellID isEqualToString:kButtonCellID]) {
@@ -334,12 +334,8 @@ NSUInteger DeviceSystemMajorVersion() {
         // we decide here that any cell in the table not a date cell is not selectable (it's just an indicator)
         customCell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        //add swipe up gesture to row to close any date picker that might be showing
-        UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideAnyInlineDatePicker)];
-        [swipeUpGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
-        [swipeUpGestureRecognizer setNumberOfTouchesRequired:1];
-        swipeUpGestureRecognizer.delegate = self;
-        [customCell addGestureRecognizer:swipeUpGestureRecognizer];
+        [customCell addGestureRecognizer:[self addSwipeDownGestureForContext:self]];
+        [customCell addGestureRecognizer:[self addSwipeUpGestureForContext:self]];
         
         return customCell;
     } else if ([cellID isEqualToString:kDateDifferencesCellID]) {
@@ -360,12 +356,9 @@ NSUInteger DeviceSystemMajorVersion() {
                                       customCell.frame.size.width,
                                       [self determineDateDifferencesRowHeightForTableView:tableView forIndexPath:indexPath]);
         
-        //add swipe up gesture to row to close any date picker that might be showing
-        UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideAnyInlineDatePicker)];
-        [swipeUpGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
-        [swipeUpGestureRecognizer setNumberOfTouchesRequired:1];
-        swipeUpGestureRecognizer.delegate = self;
-        [customCell addGestureRecognizer:swipeUpGestureRecognizer];
+        //add swipe up/down gesture to row to close/open the end date date picker row
+        [customCell addGestureRecognizer:[self addSwipeDownGestureForContext:self]];
+        [customCell addGestureRecognizer:[self addSwipeUpGestureForContext:self]];
         
         return customCell;
     } else {
@@ -446,7 +439,77 @@ NSUInteger DeviceSystemMajorVersion() {
     [self updateDatePicker];
 }
 
-- (void) hideAnyInlineDatePicker {
+/*! Reveals the date picker inline for the given indexPath, called by "didSelectRowAtIndexPath".
+ @param gesture The swipe gesture performed on cell it's attached to
+ */
+- (void)displayInlineDatePickerForRowWithSwipeGesture:(UISwipeGestureRecognizer *)gesture {
+    NSIndexPath *idx = nil;
+    NSIndexPath *idxToDisplay = nil;
+    NSInteger rowsToRemove = 0;
+    
+    // get affected cell
+    UITableViewCell *cell = (UITableViewCell *)[gesture view];
+    // get indexPath of cell
+    idx = [self.tableView indexPathForCell:cell];
+    NSInteger newRow = idx.row;
+    
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        //verify if we swiped the last row or not
+        BOOL isCalculationsRow = [self isCalculationsRow:[gesture view]];
+        
+        //if we swiped our last (the date differences/calculations row) row, we need to jump back up 2 rows instead of the usual 1
+        rowsToRemove = isCalculationsRow ? 2 : 1;
+        newRow = idx.row - rowsToRemove;
+    }
+    
+    //check if we swiped up on a row; this should only ever kick in if we swiped up on the end date row while the start date row's date picker is showing
+    //if so, we'll reset the newRow back to what it was and proceed so we can add the date picker for the end date row
+    if (gesture.direction == UISwipeGestureRecognizerDirectionUp && [self isEndDateRow:[gesture view]]) {
+        newRow = idx.row;
+    }
+    
+    //since we want to display the date picker row above our swiped down row, create a new indexpath
+    //and use the row above
+    idxToDisplay = [NSIndexPath indexPathForRow:newRow inSection:0];
+    //now that we have the indexpath the swipe was performed on, proceed with display of date picker
+    [self displayInlineDatePickerForRowAtIndexPath:idxToDisplay];
+}
+
+/*! Checks to see if the row we swiped on is the date differences row, the last row in our table view
+    If it is, we need to jump back 2 rows instead of one as we don't want to show a date picker for our button row above it
+ @param gesture The swipe gesture performed on cell it's attached to
+ */
+- (BOOL)isCalculationsRow:(UIView *)viewForRow {
+    BOOL isCalculationsRow = FALSE;
+    
+    if ([viewForRow isKindOfClass:[KKDateDifferencesCell class]]) {
+        isCalculationsRow = TRUE;
+    }
+    
+    return isCalculationsRow;
+}
+
+/*! Checks to see if the row we swiped on is the end date row
+ @param gesture The swipe gesture performed on cell it's attached to
+ */
+- (BOOL)isEndDateRow:(UIView *)viewForRow {
+    BOOL isEndDateRow = FALSE;
+    
+    // get views cell
+    UITableViewCell *cell = (UITableViewCell *)viewForRow;
+    // get indexPath of cell
+    NSIndexPath *idx = [self.tableView indexPathForCell:cell];
+    
+    if ([viewForRow isKindOfClass:[KKDateCell class]]) {
+        if ((idx.row == kDateEndRow || ([self hasInlineDatePicker] && (idx.row == kDateEndRow + 1)))) {
+            isEndDateRow = TRUE;
+        }
+    }
+    
+    return isEndDateRow;
+}
+
+- (void)hideAnyInlineDatePicker {
     // remove any date picker cell if it exists
     if ([self hasInlineDatePicker]) {
         [self.tableView beginUpdates];
@@ -456,6 +519,18 @@ NSUInteger DeviceSystemMajorVersion() {
         self.datePickerIndexPath = nil;
         
         [self.tableView endUpdates];
+    }
+}
+
+//this will hide any date picker first, then checks to see we're swiping the end date row up to reveal its date picker
+- (void)hideAnyInlineDatePickerForRowWithSwipeGesture:(UISwipeGestureRecognizer *)gesture {
+    
+    //check if it's the end date row we swiped up on; if so, we should display the end date row's date picker
+    if ([self isEndDateRow:[gesture view]] && [self hasInlineDatePicker]) {
+        [self hideAnyInlineDatePicker];
+        [self displayInlineDatePickerForRowWithSwipeGesture:gesture];
+    } else {
+        [self hideAnyInlineDatePicker];
     }
 }
 
@@ -499,10 +574,26 @@ NSUInteger DeviceSystemMajorVersion() {
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
 }
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     return YES;
 }
 
+- (UISwipeGestureRecognizer *)addSwipeDownGestureForContext:(id)context {
+    UISwipeGestureRecognizer *swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:context action:@selector(displayInlineDatePickerForRowWithSwipeGesture:)];
+    [swipeDownGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionDown];
+    [swipeDownGestureRecognizer setNumberOfTouchesRequired:1];
+    swipeDownGestureRecognizer.delegate = self;
+    return swipeDownGestureRecognizer;
+}
+
+- (UISwipeGestureRecognizer *)addSwipeUpGestureForContext:(id)context {
+    UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:context action:@selector(hideAnyInlineDatePickerForRowWithSwipeGesture:)];
+    [swipeUpGestureRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
+    [swipeUpGestureRecognizer setNumberOfTouchesRequired:1];
+    swipeUpGestureRecognizer.delegate = self;
+    return swipeUpGestureRecognizer;
+}
 
 #pragma mark - Actions
 
