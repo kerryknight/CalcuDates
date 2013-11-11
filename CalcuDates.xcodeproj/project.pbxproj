@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */; };
+		C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */; };
+		C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385F18316A6800AD9887 /* KKSettingsViewController.m */; };
 		C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59E182361F2003D137C /* KKMainViewController.m */; };
 		C74ED5A21823621A003D137C /* KKNewDateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */; };
 		C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */; };
@@ -24,6 +27,14 @@
 		C7935C6118281C150012E021 /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5318281C150012E021 /* CEHorizontalSwipeInteractionController.m */; };
 		C7935C6218281C150012E021 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5518281C150012E021 /* CEPinchInteractionController.m */; };
 		C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */; };
+		C7939AED18315F2300BA49B9 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C7939ADE18315F2300BA49B9 /* DDAbstractDatabaseLogger.m */; };
+		C7939AEE18315F2300BA49B9 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C7939AE018315F2300BA49B9 /* DDASLLogger.m */; };
+		C7939AEF18315F2300BA49B9 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C7939AE218315F2300BA49B9 /* DDFileLogger.m */; };
+		C7939AF018315F2300BA49B9 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7939AE418315F2300BA49B9 /* DDLog.m */; };
+		C7939AF118315F2300BA49B9 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C7939AE618315F2300BA49B9 /* DDTTYLogger.m */; };
+		C7939AF218315F2300BA49B9 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C7939AE918315F2300BA49B9 /* ContextFilterLogFormatter.m */; };
+		C7939AF318315F2300BA49B9 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C7939AEB18315F2300BA49B9 /* DispatchQueueLogFormatter.m */; };
+		C7939AF418315F2300BA49B9 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7939AEC18315F2300BA49B9 /* README.txt */; };
 		C7DB1D7B18218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
 		C7DB1D7D18218C6C009A2DCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */; };
 		C7DB1D7F18218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
@@ -71,6 +82,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		C73D385A183169AC00AD9887 /* UINavigationController+MHDismissModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MHDismissModalView.h"; sourceTree = "<group>"; };
+		C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MHDismissModalView.m"; sourceTree = "<group>"; };
+		C73D385E18316A6800AD9887 /* KKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKSettingsViewController.h; path = "View Controllers/KKSettingsViewController.h"; sourceTree = "<group>"; };
+		C73D385F18316A6800AD9887 /* KKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKSettingsViewController.m; path = "View Controllers/KKSettingsViewController.m"; sourceTree = "<group>"; };
 		C74ED59718234E0C003D137C /* KKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKConstants.h; path = Classes/KKConstants.h; sourceTree = "<group>"; };
 		C74ED59D182361F2003D137C /* KKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMainViewController.h; path = "View Controllers/KKMainViewController.h"; sourceTree = "<group>"; };
 		C74ED59E182361F2003D137C /* KKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKMainViewController.m; path = "View Controllers/KKMainViewController.m"; sourceTree = "<group>"; };
@@ -106,6 +123,21 @@
 		C7935C5518281C150012E021 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
 		C7935C5618281C150012E021 /* CEVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
 		C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
+		C7939ADD18315F2300BA49B9 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		C7939ADE18315F2300BA49B9 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		C7939ADF18315F2300BA49B9 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		C7939AE018315F2300BA49B9 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		C7939AE118315F2300BA49B9 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		C7939AE218315F2300BA49B9 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		C7939AE318315F2300BA49B9 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		C7939AE418315F2300BA49B9 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		C7939AE518315F2300BA49B9 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		C7939AE618315F2300BA49B9 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		C7939AE818315F2300BA49B9 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		C7939AE918315F2300BA49B9 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		C7939AEA18315F2300BA49B9 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		C7939AEB18315F2300BA49B9 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		C7939AEC18315F2300BA49B9 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		C7DB1D7718218C6C009A2DCC /* CalcuDates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcuDates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DB1D7A18218C6C009A2DCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,6 +220,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C73D3857183169AC00AD9887 /* MHDismissModalView */ = {
+			isa = PBXGroup;
+			children = (
+				C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */,
+				C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */,
+				C73D385A183169AC00AD9887 /* UINavigationController+MHDismissModalView.h */,
+				C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */,
+			);
+			path = MHDismissModalView;
+			sourceTree = "<group>";
+		};
 		C7935C3318240BFA0012E021 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +278,45 @@
 			);
 			name = InteractionControllers;
 			path = Classes/InteractionControllers;
+			sourceTree = "<group>";
+		};
+		C7939ADB18315F2300BA49B9 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				C73D3857183169AC00AD9887 /* MHDismissModalView */,
+				C7939ADC18315F2300BA49B9 /* Lumberjack */,
+			);
+			path = "3rd Party";
+			sourceTree = "<group>";
+		};
+		C7939ADC18315F2300BA49B9 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				C7939ADD18315F2300BA49B9 /* DDAbstractDatabaseLogger.h */,
+				C7939ADE18315F2300BA49B9 /* DDAbstractDatabaseLogger.m */,
+				C7939ADF18315F2300BA49B9 /* DDASLLogger.h */,
+				C7939AE018315F2300BA49B9 /* DDASLLogger.m */,
+				C7939AE118315F2300BA49B9 /* DDFileLogger.h */,
+				C7939AE218315F2300BA49B9 /* DDFileLogger.m */,
+				C7939AE318315F2300BA49B9 /* DDLog.h */,
+				C7939AE418315F2300BA49B9 /* DDLog.m */,
+				C7939AE518315F2300BA49B9 /* DDTTYLogger.h */,
+				C7939AE618315F2300BA49B9 /* DDTTYLogger.m */,
+				C7939AE718315F2300BA49B9 /* Extensions */,
+			);
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
+		C7939AE718315F2300BA49B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C7939AE818315F2300BA49B9 /* ContextFilterLogFormatter.h */,
+				C7939AE918315F2300BA49B9 /* ContextFilterLogFormatter.m */,
+				C7939AEA18315F2300BA49B9 /* DispatchQueueLogFormatter.h */,
+				C7939AEB18315F2300BA49B9 /* DispatchQueueLogFormatter.m */,
+				C7939AEC18315F2300BA49B9 /* README.txt */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C7DB1D6E18218C6C009A2DCC = {
@@ -294,6 +376,7 @@
 		C7DB1D8118218C6C009A2DCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7939ADB18315F2300BA49B9 /* 3rd Party */,
 				C7DB1D8218218C6C009A2DCC /* CalcuDates-Info.plist */,
 				C7DB1D8318218C6C009A2DCC /* InfoPlist.strings */,
 				C7DB1D8618218C6C009A2DCC /* main.m */,
@@ -331,6 +414,8 @@
 				C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */,
 				C7F0FBE618283FF400CEA23A /* KKTimePeriodTableViewController.h */,
 				C7F0FBE718283FF400CEA23A /* KKTimePeriodTableViewController.m */,
+				C73D385E18316A6800AD9887 /* KKSettingsViewController.h */,
+				C73D385F18316A6800AD9887 /* KKSettingsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -469,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DB1D9918218C6C009A2DCC /* Images.xcassets in Resources */,
+				C7939AF418315F2300BA49B9 /* README.txt in Resources */,
 				C7DB1D8E18218C6C009A2DCC /* Main_iPhone.storyboard in Resources */,
 				C7F0FC0818286F5E00CEA23A /* KKDateDifferencesCell.xib in Resources */,
 				C7F0FC0A18286F5E00CEA23A /* KKEndDateCell.xib in Resources */,
@@ -498,7 +584,9 @@
 				C7935C6218281C150012E021 /* CEPinchInteractionController.m in Sources */,
 				C7DB1D8B18218C6C009A2DCC /* KKAppDelegate.m in Sources */,
 				C7935C6118281C150012E021 /* CEHorizontalSwipeInteractionController.m in Sources */,
+				C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */,
 				C7F0FC0918286F5E00CEA23A /* KKEndDateCell.m in Sources */,
+				C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */,
 				C7F0FBE818283FF400CEA23A /* KKTimePeriodTableViewController.m in Sources */,
 				C7935C5C18281C150012E021 /* CEFoldAnimationController.m in Sources */,
 				C7935C5918281C150012E021 /* CECrossfadeAnimationController.m in Sources */,
@@ -509,13 +597,21 @@
 				C7935C6018281C150012E021 /* CEBaseInteractionController.m in Sources */,
 				C7935C5E18281C150012E021 /* CEReversibleAnimationController.m in Sources */,
 				C7F0FBDF1828296200CEA23A /* AppCalendar.m in Sources */,
+				C7939AF318315F2300BA49B9 /* DispatchQueueLogFormatter.m in Sources */,
+				C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */,
 				C7F0FC0518286F5E00CEA23A /* KKDateCell.m in Sources */,
 				C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */,
+				C7939AF218315F2300BA49B9 /* ContextFilterLogFormatter.m in Sources */,
+				C7939AF118315F2300BA49B9 /* DDTTYLogger.m in Sources */,
 				C7935C5D18281C150012E021 /* CENatGeoAnimationController.m in Sources */,
+				C7939AF018315F2300BA49B9 /* DDLog.m in Sources */,
+				C7939AED18315F2300BA49B9 /* DDAbstractDatabaseLogger.m in Sources */,
+				C7939AEF18315F2300BA49B9 /* DDFileLogger.m in Sources */,
 				C7F0FBE31828296200CEA23A /* MyManager.m in Sources */,
 				C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */,
 				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
 				C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */,
+				C7939AEE18315F2300BA49B9 /* DDASLLogger.m in Sources */,
 				C7F0FC0718286F5E00CEA23A /* KKDateDifferencesCell.m in Sources */,
 				C7F0FBF418286B0200CEA23A /* KKSlightIndentTextField.m in Sources */,
 				C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */,

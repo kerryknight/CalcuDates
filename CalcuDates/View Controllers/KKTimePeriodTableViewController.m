@@ -383,6 +383,39 @@ NSUInteger DeviceSystemMajorVersion() {
 }
 
 #pragma mark - Table UI Show/Hide
+/*! Checks to see if the row we swiped on is the date differences row, the last row in our table view
+ If it is, we need to jump back 2 rows instead of one as we don't want to show a date picker for our button row above it
+ @param gesture The swipe gesture performed on cell it's attached to
+ */
+- (BOOL)isCalculationsRow:(UIView *)viewForRow {
+    BOOL isCalculationsRow = FALSE;
+    
+    if ([viewForRow isKindOfClass:[KKDateDifferencesCell class]]) {
+        isCalculationsRow = TRUE;
+    }
+    
+    return isCalculationsRow;
+}
+
+/*! Checks to see if the row we swiped on is the end date row
+ @param gesture The swipe gesture performed on cell it's attached to
+ */
+- (BOOL)isEndDateRow:(UIView *)viewForRow {
+    BOOL isEndDateRow = FALSE;
+    
+    // get views cell
+    UITableViewCell *cell = (UITableViewCell *)viewForRow;
+    // get indexPath of cell
+    NSIndexPath *idx = [self.tableView indexPathForCell:cell];
+    
+    if ([viewForRow isKindOfClass:[KKDateCell class]]) {
+        if ((idx.row == kDateEndRow || ([self hasInlineDatePicker] && (idx.row == kDateEndRow + 1)))) {
+            isEndDateRow = TRUE;
+        }
+    }
+    
+    return isEndDateRow;
+}
 
 /*! Adds or removes a UIDatePicker cell below the given indexPath.
  @param indexPath The indexPath to reveal the UIDatePicker.
@@ -475,40 +508,6 @@ NSUInteger DeviceSystemMajorVersion() {
     [self displayInlineDatePickerForRowAtIndexPath:idxToDisplay];
 }
 
-/*! Checks to see if the row we swiped on is the date differences row, the last row in our table view
-    If it is, we need to jump back 2 rows instead of one as we don't want to show a date picker for our button row above it
- @param gesture The swipe gesture performed on cell it's attached to
- */
-- (BOOL)isCalculationsRow:(UIView *)viewForRow {
-    BOOL isCalculationsRow = FALSE;
-    
-    if ([viewForRow isKindOfClass:[KKDateDifferencesCell class]]) {
-        isCalculationsRow = TRUE;
-    }
-    
-    return isCalculationsRow;
-}
-
-/*! Checks to see if the row we swiped on is the end date row
- @param gesture The swipe gesture performed on cell it's attached to
- */
-- (BOOL)isEndDateRow:(UIView *)viewForRow {
-    BOOL isEndDateRow = FALSE;
-    
-    // get views cell
-    UITableViewCell *cell = (UITableViewCell *)viewForRow;
-    // get indexPath of cell
-    NSIndexPath *idx = [self.tableView indexPathForCell:cell];
-    
-    if ([viewForRow isKindOfClass:[KKDateCell class]]) {
-        if ((idx.row == kDateEndRow || ([self hasInlineDatePicker] && (idx.row == kDateEndRow + 1)))) {
-            isEndDateRow = TRUE;
-        }
-    }
-    
-    return isEndDateRow;
-}
-
 - (void)hideAnyInlineDatePicker {
     // remove any date picker cell if it exists
     if ([self hasInlineDatePicker]) {
@@ -532,6 +531,10 @@ NSUInteger DeviceSystemMajorVersion() {
     } else {
         [self hideAnyInlineDatePicker];
     }
+}
+
+- (void) hideCalculationsRow {
+    DLog(@"2");
 }
 
 /*! Reveals the UIDatePicker as an external slide-in view, iOS 6.1.x and earlier, called by "didSelectRowAtIndexPath".

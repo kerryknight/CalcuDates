@@ -21,15 +21,29 @@
         for (id oneObject in nib)
             if ([oneObject isKindOfClass:[KKDateCell class]])
                 self = (KKDateCell *)oneObject;
+        
+        
+        [self.date addObserver:self forKeyPath:@"value" options:0 context:nil];
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)dealloc {
+    [self.date removeObserver:self forKeyPath:@"value"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    DLog(@"3");
+    if ([keyPath isEqualToString:@"value"]) {
+        DLog(@"4");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"KKDateFieldChanged" object:self];
+    }
 }
 
 @end

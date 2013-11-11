@@ -1,18 +1,20 @@
 //
-//  KKAboutThisAppViewController.m
+//  KKSettingsViewController.m
 //  CalcuDates
 //
 //  Created by Kerry Knight on 11/11/13.
 //  Copyright (c) 2013 Kerry Knight. All rights reserved.
 //
 
-#import "KKAboutThisAppViewController.h"
+#import "KKSettingsViewController.h"
+#import "UINavigationController+MHDismissModalView.h"
 
-@interface KKAboutThisAppViewController ()
+@interface KKSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
-@implementation KKAboutThisAppViewController
+@implementation KKSettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +29,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+//    self.title = @"Settings, etc.";
+    self.title = @"Acknowledgements";
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+//    [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"version_preference"];
+    
+    self.versionLabel.text = [NSString stringWithFormat:@"Version: %@", version];
 }
 
 - (void)didReceiveMemoryWarning

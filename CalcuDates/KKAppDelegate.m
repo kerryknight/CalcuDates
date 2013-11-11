@@ -7,12 +7,77 @@
 //
 
 #import "KKAppDelegate.h"
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+#import "DDFileLogger.h"
+#import "UINavigationController+MHDismissModalView.h"
 
 @implementation KKAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+static const int ddLogLevel = LOG_LEVEL_DEBUG;
+
+//If you set the log level to LOG_LEVEL_ERROR, then you will only see DDLogError statements.
+//If you set the log level to LOG_LEVEL_WARN, then you will only see DDLogError and DDLogWarn statements.
+//If you set the log level to LOG_LEVEL_INFO, you'll see Error, Warn and Info statements.
+//If you set the log level to LOG_LEVEL_DEBUG, you'll see Error, Warn, Info and Debug statements.
+//If you set the log level to LOG_LEVEL_VERBOSE, you'll see all DDLog statements.
+//If you set the log level to LOG_LEVEL_OFF, you won't see any DDLog statements.
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //************************ COCOA LUMBERJACK ***********************************************************//
+    //configure Cocoa LumberJack logging platform
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    // And we also enable colors
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    
+    //update our error color to be a deeper red instead of default orangey-red
+    UIColor *deepRed = [UIColor colorWithRed:(156/255.0) green:(11/255.0) blue:(18/255.0) alpha:1.0];
+    [[DDTTYLogger sharedInstance] setForegroundColor:deepRed backgroundColor:nil forFlag:LOG_LEVEL_ERROR];
+    
+//    DDLogError
+//    DDLogWarn
+//    DDLogInfo
+//    DDLogDebug
+//    DDLogVerbose
+    
+    //example:  If you also wanted your log statements to be written to a file, then you could add and configure a file logger
+    //code tells the application to keep a week's worth of log files on the system.
+//    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+//    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+//    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+//    
+//    [DDLog addLogger:fileLogger];
+    DDLogInfo(@"Info: Cocoa Lumberjack added to app delegate file!");
+    DDLogError(@"Error: Cocoa Lumberjack added to app delegate file!");
+    DDLogWarn(@"Warn: Cocoa Lumberjack added to app delegate file!");
+    
+    //************************ /COCOA LUMBERJACK **********************************************************//
+    
+    
+    //************************ MHDismiss Frosted Modal View ***********************************************************//
+    //Global Call to install MHDismiss
+    MHDismissIgnore *withoutScroll = [[MHDismissIgnore alloc] initWithViewControllerName:@"KKSettingsViewController"
+                                                                        ignoreBlurEffect:NO
+                                                                           ignoreGesture:NO];
+    
+    [[MHDismissSharedManager sharedDismissManager] installWithTheme:MHModalThemeWhite
+                                                  withIgnoreObjects:@[withoutScroll]];
+    //************************ /MHDismiss Frosted Modal View **********************************************************//
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        DDLogInfo(@"Load resources for iOS 6.1 or earlier");
+    } else {
+        DDLogInfo(@"Load resources for iOS 7 or later");
+        UIColor *drkBlue = DRK_BLUE;
+        [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:drkBlue, NSForegroundColorAttributeName, [UIFont fontWithName:@"Helvetica-Light" size:20], NSFontAttributeName, nil]];
+        
+        [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    }
+    
     return YES;
 }
 							

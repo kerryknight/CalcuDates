@@ -37,8 +37,13 @@ To Do:
 9. Hook methods up to parts
 10. Hook rev mob ads back up to UI
 11. Turn crash reporting back on
+12. Submit app through AppLauch? Top is $199?  https://applaunch.us/how-app-launch-works
 
 
+3rd Party Code Used:
+--------------------------
+- CocoaLumberjack: https://github.com/robbiehanson/CocoaLumberjack
+- MHDismissModalView: https://github.com/mariohahn/MHDismissModalView
 
 
 Snippets:

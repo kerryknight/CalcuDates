@@ -1,5 +1,5 @@
 //
-//  KKAboutThisAppViewController.h
+//  KKSettingsViewController.h
 //  CalcuDates
 //
 //  Created by Kerry Knight on 11/11/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KKAboutThisAppViewController : UIViewController
+@interface KKSettingsViewController : UIViewController
 
 @end

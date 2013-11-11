@@ -10,6 +10,9 @@
 #import "KKTabBarController.h"
 #import "KKTimePeriodTableViewController.h"
 #import "KKNewDateTableViewController.h"
+#import "UIImage+ImageEffects.h"
+#import "UINavigationController+MHDismissModalView.h"
+#import "KKSettingsViewController.h"
 
 #pragma mark -
 #pragma mark @categories
@@ -36,10 +39,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *timePeriodButton;
 @property (weak, nonatomic) IBOutlet UIButton *gnuDateButton; //"gnu" to not conflict with reserved cocoa naming conventions
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 //IBActions
 - (IBAction)timePeriodButtonClickHander:(id)sender;
 - (IBAction)gnuDateButtonClickHandler:(id)sender;
+- (IBAction)settingsButtonClickHandler:(id)sender;
 
 @end
 
@@ -123,6 +128,13 @@
     
     //select the new date view controller/tab
     if (tabBarVC) [tabBarVC setSelectedIndex:kNEW_DATE_VIEW_INDEX];
+}
+
+- (IBAction)settingsButtonClickHandler:(id)sender {
+    DLog(@"1");
+    KKSettingsViewController *modal = [self.storyboard instantiateViewControllerWithIdentifier:@"KKSettingsViewController"];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:modal];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void) toggleButtonSelections {

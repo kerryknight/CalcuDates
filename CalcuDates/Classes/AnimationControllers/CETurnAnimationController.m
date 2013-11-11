@@ -38,7 +38,7 @@
     float factor = self.reverse ? 1.0 : -1.0;
     
     // flip the to VC halfway round - hiding it
-    toView.layer.transform = [self rotate:factor * -M_PI_2];
+    toView.layer.transform = [self rotate:factor * M_PI_2];
     
     // animate
     NSTimeInterval duration = [self transitionDuration:transitionContext];
@@ -50,7 +50,7 @@
                                                           relativeDuration:0.5
                                                                 animations:^{
                                                                     // rotate the from view
-                                                                    fromView.layer.transform = [self rotate:factor * M_PI_2];
+                                                                    fromView.layer.transform = [self rotate:factor * -M_PI_2];
                                                                 }];
                                   [UIView addKeyframeWithRelativeStartTime:0.5
                                                           relativeDuration:0.5
