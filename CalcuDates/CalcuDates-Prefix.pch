@@ -18,6 +18,9 @@
     #import "KKConstants.h"
     #import "KKMacros.h"
 
+    //RAC
+    #import "ReactiveCocoa.h"
+
     //universal constants
     #define kCONTAINER_VIEW_TAG 100
 
