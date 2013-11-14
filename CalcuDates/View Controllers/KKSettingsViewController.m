@@ -34,8 +34,6 @@
     self.title = @"Acknowledgements";
     
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-//    [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"version_preference"];
-    
     self.versionLabel.text = [NSString stringWithFormat:@"Version: %@", version];
 }
 

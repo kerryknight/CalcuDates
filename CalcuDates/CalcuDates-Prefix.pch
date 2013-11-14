@@ -18,6 +18,12 @@
     #import "KKConstants.h"
     #import "KKMacros.h"
 
+    //Logging with CocoaLumberjac
+    #import "DDLog.h"
+    #import "DDASLLogger.h"
+    #import "DDTTYLogger.h"
+    #import "DDFileLogger.h"
+
     //RAC
     #import "ReactiveCocoa.h"
 
@@ -25,3 +31,5 @@
     #define kCONTAINER_VIEW_TAG 100
 
 #endif
+
+static const int ddLogLevel = LOG_LEVEL_DEBUG;

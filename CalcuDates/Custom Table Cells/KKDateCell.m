@@ -23,8 +23,15 @@
                 self = (KKDateCell *)oneObject;
         
         
-        [self.date addObserver:self forKeyPath:@"value" options:0 context:nil];
+//        [self.date addObserver:self forKeyPath:@"value" options:0 context:nil];
+//        
+//        [RACObserve(self.date, text) subscribeNext:^(NSString *text) {
+//            DLog(@"date cell field value changed");
+//        }];
     }
+    
+    self.date.text = @"";
+    
     return self;
 }
 
@@ -34,16 +41,16 @@
     // Configure the view for the selected state
 }
 
-- (void)dealloc {
-    [self.date removeObserver:self forKeyPath:@"value"];
-}
+//- (void)dealloc {
+//    [self.date removeObserver:self forKeyPath:@"value"];
+//}
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    DLog(@"3");
-    if ([keyPath isEqualToString:@"value"]) {
-        DLog(@"4");
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"KKDateFieldChanged" object:self];
-    }
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+//    DLog(@"3");
+//    if ([keyPath isEqualToString:@"value"]) {
+//        DLog(@"4");
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"KKDateFieldChanged" object:self];
+//    }
+//}
 
 @end

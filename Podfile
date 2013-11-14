@@ -4,3 +4,4 @@ pod 'ReactiveCocoa', '~> 2.1.7'
 pod 'CocoaLumberjack', '~> 1.6.3'
 pod 'RevMob', '~> 7.4.0'
 pod 'MBProgressHUD', '~> 0.8'
+pod "NSMoment", "~> 0.1.0"

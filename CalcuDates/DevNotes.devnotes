@@ -2,6 +2,8 @@ CalcuDates Notes
 
 Developer Notes:
 -----------------------
+* ensure Build Active Architecture flag for both main project and Pods project match
+
 old dark blue color: R:13 G:93 B:187
 new dark blue color: R:7 G:50 B:100   #073264
 light blue color: R:172 G:210 B:252
@@ -44,10 +46,20 @@ To Do:
 --------------------------
 - CocoaLumberjack: https://github.com/robbiehanson/CocoaLumberjack
 - MHDismissModalView: https://github.com/mariohahn/MHDismissModalView
+- ReactiveCocoa: https://github.com/ReactiveCocoa/ReactiveCocoa
+
 
 
 Snippets:
 --------------------------------------------------------------------------
 - to log ambiguous layout issue, hit Pause in debugger and then type:
 po [[UIWindow keyWindow] _autolayoutTrace]
+
+- use RAC for validations:
+NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@" "];
+RACSignal *nameFieldValid = [RACSignal combineLatest:@[ self.usernameField.rac_textSignal, self.passwordField.rac_textSignal ]
+ reduce:^(NSString *username, NSString *password) {
+    return @((username.length > 0) && (password.length > 0) &&
+            ([username rangeOfCharacterFromSet:charSet].location == NSNotFound));
+ }];
 

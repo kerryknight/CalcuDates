@@ -7,15 +7,9 @@
 //
 
 #import "KKAppDelegate.h"
-#import "DDLog.h"
-#import "DDASLLogger.h"
-#import "DDTTYLogger.h"
-#import "DDFileLogger.h"
 #import "UINavigationController+MHDismissModalView.h"
 
 @implementation KKAppDelegate
-
-static const int ddLogLevel = LOG_LEVEL_DEBUG;
 
 //If you set the log level to LOG_LEVEL_ERROR, then you will only see DDLogError statements.
 //If you set the log level to LOG_LEVEL_WARN, then you will only see DDLogError and DDLogWarn statements.

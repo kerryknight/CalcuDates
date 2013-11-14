@@ -42,7 +42,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 //IBActions
-- (IBAction)timePeriodButtonClickHander:(id)sender;
+- (IBAction)timePeriodButtonClickHandler:(id)sender;
 - (IBAction)gnuDateButtonClickHandler:(id)sender;
 - (IBAction)settingsButtonClickHandler:(id)sender;
 
@@ -110,7 +110,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleButtonSelections) name:@"interactiveSwipeTransitionDidComplete" object:nil];
 }
 
-- (IBAction) timePeriodButtonClickHander:(id)sender {
+- (IBAction) timePeriodButtonClickHandler:(id)sender {
     //return if already selected
     if (self.timePeriodButton.isSelected == TRUE) return;
     
