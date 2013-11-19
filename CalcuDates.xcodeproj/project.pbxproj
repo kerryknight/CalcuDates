@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15CF9F9EB7E345DEB53B1D0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A21E9239314E86AEB33567 /* libPods.a */; };
+		C72002E2183ACF1200B39261 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */; };
 		C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */; };
 		C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */; };
 		C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385F18316A6800AD9887 /* KKSettingsViewController.m */; };
@@ -40,7 +41,7 @@
 		C7DB1DA118218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
 		C7DB1DA218218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
 		C7DB1DAA18218C6D009A2DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */; };
-		C7DB1DAC18218C6D009A2DCC /* CalcuDatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */; };
+		C7DB1DAC18218C6D009A2DCC /* MainViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1DAB18218C6D009A2DCC /* MainViewControllerTests.m */; };
 		C7DB1DBC18218F25009A2DCC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB518218F25009A2DCC /* AdSupport.framework */; };
 		C7DB1DBD18218F25009A2DCC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB618218F25009A2DCC /* CFNetwork.framework */; };
 		C7DB1DBE18218F25009A2DCC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB718218F25009A2DCC /* EventKit.framework */; };
@@ -134,7 +135,7 @@
 		C7DB1D9F18218C6C009A2DCC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C7DB1DA718218C6D009A2DCC /* CalcuDatesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalcuDatesTests-Info.plist"; sourceTree = "<group>"; };
 		C7DB1DA918218C6D009A2DCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcuDatesTests.m; sourceTree = "<group>"; };
+		C7DB1DAB18218C6D009A2DCC /* MainViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewControllerTests.m; sourceTree = "<group>"; };
 		C7DB1DB518218F25009A2DCC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C7DB1DB618218F25009A2DCC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C7DB1DB718218F25009A2DCC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -340,7 +341,7 @@
 		C7DB1DA518218C6C009A2DCC /* CalcuDatesTests */ = {
 			isa = PBXGroup;
 			children = (
-				C7DB1DAB18218C6D009A2DCC /* CalcuDatesTests.m */,
+				C7DB1DAB18218C6D009A2DCC /* MainViewControllerTests.m */,
 				C7DB1DA618218C6D009A2DCC /* Supporting Files */,
 			);
 			path = CalcuDatesTests;
@@ -522,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C72002E2183ACF1200B39261 /* Main_iPhone.storyboard in Resources */,
 				C7DB1DAA18218C6D009A2DCC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DB1DAC18218C6D009A2DCC /* CalcuDatesTests.m in Sources */,
+				C7DB1DAC18218C6D009A2DCC /* MainViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +651,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -690,6 +692,7 @@
 				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -697,7 +700,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -734,6 +737,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -744,6 +748,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -768,6 +773,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -788,7 +794,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 610CF16D12BF4A8EB588F390 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -804,6 +810,7 @@
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -812,7 +819,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 610CF16D12BF4A8EB588F390 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -824,6 +831,7 @@
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

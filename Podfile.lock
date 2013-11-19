@@ -1,15 +1,8 @@
 PODS:
   - BlocksKit (1.8.3):
     - libffi
-  - CocoaLumberjack (1.6.3):
-    - CocoaLumberjack/Core
-    - CocoaLumberjack/Extensions
-  - CocoaLumberjack/Core (1.6.3)
-  - CocoaLumberjack/Extensions (1.6.3):
-    - CocoaLumberjack/Core
   - libffi (3.0.13)
   - MBProgressHUD (0.8)
-  - NSMoment (0.1.0)
   - ReactiveCocoa (2.1.7):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
@@ -17,22 +10,21 @@ PODS:
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.7)
   - RevMob (7.4.0)
+  - YLMoment (0.2.0)
 
 DEPENDENCIES:
   - BlocksKit (~> 1.8.3)
-  - CocoaLumberjack (~> 1.6.3)
   - MBProgressHUD (~> 0.8)
-  - NSMoment (~> 0.1.0)
-  - ReactiveCocoa (~> 2.1.7)
+  - ReactiveCocoa
   - RevMob (~> 7.4.0)
+  - YLMoment (~> 0.2.0)
 
 SPEC CHECKSUMS:
   BlocksKit: 27257f9cbbec0ea98c80ba83cc2ea7111ae62eb2
-  CocoaLumberjack: 0af89e0de15835a499fcc6ee5e0b6d396bc95976
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  NSMoment: d3e07c637ecd4bf8c0311e8f3e5f654d3b6f76fc
   ReactiveCocoa: 1117f7968c8667d2ca00b5aa47156fabcb56af75
   RevMob: 6d9d70a365f57e335d48d492e0c31b3d98e6bf03
+  YLMoment: 609cf751d07305c6e807dc2c161a4b30987467fd
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.28.0

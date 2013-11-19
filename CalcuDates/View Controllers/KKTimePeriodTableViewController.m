@@ -12,7 +12,7 @@
 #import "KKDateDifferencesCell.h"
 #import "KKDatePickerCell.h"
 #import "KKSlightIndentTextField.h"
-#import "NSMoment.h"
+#import "YLMoment.h"
 
 #define kPickerAnimationDuration    0.25   // duration for the animation to slide the date picker into view
 #define kDatePickerTag              99     // view tag identifiying the date picker view
@@ -423,14 +423,8 @@ NSUInteger DeviceSystemMajorVersion() {
     [cell.calculateButton setBackgroundImage:[UIImage imageNamed:@"btn_calculateHighlighted"] forState:UIControlStateHighlighted];
     [cell.clearButton setBackgroundImage:[UIImage imageNamed:@"btn_clearAllHighlighted"] forState:UIControlStateHighlighted];
     
-    //use RAC to add button actions
-    [[cell.calculateButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *sender) {
-        [self calculateAction:nil];
-    }];
-    
-    [[cell.clearButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *sender) {
-        [self clearAllAction:nil];
-    }];
+    [cell.calculateButton addTarget:self action:@selector(calculateAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.clearButton addTarget:self action:@selector(clearAllAction:) forControlEvents:UIControlEventTouchUpInside];
     
     // we decide here that any cell in the table not a date cell is not selectable (it's just an indicator)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -453,14 +447,8 @@ NSUInteger DeviceSystemMajorVersion() {
 
 #pragma mark Table Date Picker Cell Methods
 - (void)configureDatePickerCell:(KKDatePickerCell*)cell {
-    //use RAC to add button and date picker actions; be sure to only add to our cell once so we don't add to reused cells
-    [[cell.datePicker rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(UIDatePicker *sender) {
-        [self dateAction:cell.datePicker];
-    }];
-    
-    [[cell.doneButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *sender) {
-        [self hideAnyInlineDatePicker];
-    }];
+    [cell.datePicker addTarget:self action:@selector(dateAction:) forControlEvents:UIControlEventValueChanged];
+    [cell.doneButton addTarget:self action:@selector(hideAnyInlineDatePicker) forControlEvents:UIControlEventTouchUpInside];
     
     // we decide here that any cell in the table not a date cell is not selectable (it's just an indicator)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

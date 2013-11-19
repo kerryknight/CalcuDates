@@ -7,7 +7,7 @@
         <!--Main View Controller - Main-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
-                <viewController title="Main" modalTransitionStyle="flipHorizontal" id="CZ4-MO-1fc" customClass="KKMainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KKMainViewController" title="Main" modalTransitionStyle="flipHorizontal" id="CZ4-MO-1fc" customClass="KKMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qtH-nq-Vfi"/>
                         <viewControllerLayoutGuide type="bottom" id="IDa-mC-X8W"/>
@@ -38,7 +38,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="timePeriodButtonClickHandler:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="XLF-3H-1Gt"/>
+                                                    <action selector="timePeriodButtonClickHandler:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="QWJ-Qm-Jov"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAr-yB-yYe">

@@ -35,17 +35,6 @@
     KKTabBarController *tabBarVC;
 }
 
-//IBOutlets
-@property (weak, nonatomic) IBOutlet UIButton *timePeriodButton;
-@property (weak, nonatomic) IBOutlet UIButton *gnuDateButton; //"gnu" to not conflict with reserved cocoa naming conventions
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
-
-//IBActions
-- (IBAction)timePeriodButtonClickHandler:(id)sender;
-- (IBAction)gnuDateButtonClickHandler:(id)sender;
-- (IBAction)settingsButtonClickHandler:(id)sender;
-
 @end
 
 #pragma mark -
