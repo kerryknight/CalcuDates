@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface KKSettingsViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @end

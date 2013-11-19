@@ -29,6 +29,8 @@
 		C7935C6118281C150012E021 /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5318281C150012E021 /* CEHorizontalSwipeInteractionController.m */; };
 		C7935C6218281C150012E021 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5518281C150012E021 /* CEPinchInteractionController.m */; };
 		C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */; };
+		C7C94B41183C16A500C626D9 /* KKTabBarControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */; };
+		C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */; };
 		C7DB1D7B18218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
 		C7DB1D7D18218C6C009A2DCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */; };
 		C7DB1D7F18218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
@@ -41,7 +43,7 @@
 		C7DB1DA118218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
 		C7DB1DA218218C6C009A2DCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7E18218C6C009A2DCC /* UIKit.framework */; };
 		C7DB1DAA18218C6D009A2DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1DA818218C6D009A2DCC /* InfoPlist.strings */; };
-		C7DB1DAC18218C6D009A2DCC /* MainViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1DAB18218C6D009A2DCC /* MainViewControllerTests.m */; };
+		C7DB1DAC18218C6D009A2DCC /* KKMainViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB1DAB18218C6D009A2DCC /* KKMainViewControllerTests.m */; };
 		C7DB1DBC18218F25009A2DCC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB518218F25009A2DCC /* AdSupport.framework */; };
 		C7DB1DBD18218F25009A2DCC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB618218F25009A2DCC /* CFNetwork.framework */; };
 		C7DB1DBE18218F25009A2DCC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB718218F25009A2DCC /* EventKit.framework */; };
@@ -119,6 +121,8 @@
 		C7935C5518281C150012E021 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
 		C7935C5618281C150012E021 /* CEVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
 		C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
+		C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTabBarControllerTests.m; sourceTree = "<group>"; };
+		C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKSettingsViewControllerTests.m; path = CalcuDatesTests/KKSettingsViewControllerTests.m; sourceTree = SOURCE_ROOT; };
 		C7DB1D7718218C6C009A2DCC /* CalcuDates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcuDates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DB1D7A18218C6C009A2DCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C7DB1D7C18218C6C009A2DCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,7 +139,7 @@
 		C7DB1D9F18218C6C009A2DCC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C7DB1DA718218C6D009A2DCC /* CalcuDatesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalcuDatesTests-Info.plist"; sourceTree = "<group>"; };
 		C7DB1DA918218C6D009A2DCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C7DB1DAB18218C6D009A2DCC /* MainViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewControllerTests.m; sourceTree = "<group>"; };
+		C7DB1DAB18218C6D009A2DCC /* KKMainViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMainViewControllerTests.m; sourceTree = "<group>"; };
 		C7DB1DB518218F25009A2DCC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C7DB1DB618218F25009A2DCC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C7DB1DB718218F25009A2DCC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -270,6 +274,13 @@
 			path = "3rd Party";
 			sourceTree = "<group>";
 		};
+		C7C94B3C183C0C1E00C626D9 /* Mocks, Fakes and Stubs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Mocks, Fakes and Stubs";
+			sourceTree = "<group>";
+		};
 		C7DB1D6E18218C6C009A2DCC = {
 			isa = PBXGroup;
 			children = (
@@ -341,7 +352,10 @@
 		C7DB1DA518218C6C009A2DCC /* CalcuDatesTests */ = {
 			isa = PBXGroup;
 			children = (
-				C7DB1DAB18218C6D009A2DCC /* MainViewControllerTests.m */,
+				C7C94B3C183C0C1E00C626D9 /* Mocks, Fakes and Stubs */,
+				C7DB1DAB18218C6D009A2DCC /* KKMainViewControllerTests.m */,
+				C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */,
+				C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */,
 				C7DB1DA618218C6D009A2DCC /* Supporting Files */,
 			);
 			path = CalcuDatesTests;
@@ -605,7 +619,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DB1DAC18218C6D009A2DCC /* MainViewControllerTests.m in Sources */,
+				C7DB1DAC18218C6D009A2DCC /* KKMainViewControllerTests.m in Sources */,
+				C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */,
+				C7C94B41183C16A500C626D9 /* KKTabBarControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

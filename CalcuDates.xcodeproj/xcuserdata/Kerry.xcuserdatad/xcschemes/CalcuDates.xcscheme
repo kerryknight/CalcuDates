@@ -37,6 +37,11 @@
                BlueprintName = "CalcuDatesTests"
                ReferencedContainer = "container:CalcuDates.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "KKMainViewControllerTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

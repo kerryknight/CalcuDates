@@ -10,8 +10,6 @@
 #import "UINavigationController+MHDismissModalView.h"
 
 @interface KKSettingsViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
-
 @end
 
 @implementation KKSettingsViewController

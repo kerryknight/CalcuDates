@@ -48,7 +48,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //hide out tab bar view as we only want the tab bar controller's container functionality but not its buttons
+    //hide our tab bar view as we only want the tab bar controller's container functionality but not its buttons
     [[self.view viewWithTag:999] setHidden:TRUE];
     
     //setup and initialize our buttons
@@ -120,7 +120,6 @@
 }
 
 - (IBAction)settingsButtonClickHandler:(id)sender {
-    DLog(@"1");
     KKSettingsViewController *modal = [self.storyboard instantiateViewControllerWithIdentifier:@"KKSettingsViewController"];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:modal];
     [self presentViewController:nav animated:YES completion:nil];
@@ -140,6 +139,16 @@
 - (void) wrapperForLoggingAutoLayoutConstraints {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", [[UIWindow keyWindow] _autolayoutTrace]);
+}
+
+
+#pragma mark - For Unit Testing Only
+- (BOOL)timePeriodButtonSelected {
+    return [self.timePeriodButton isSelected];
+}
+
+- (BOOL)gnuDateButtonSelected {
+    return [self.gnuDateButton isSelected];
 }
 
 @end
