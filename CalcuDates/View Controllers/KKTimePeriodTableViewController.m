@@ -34,30 +34,14 @@
 
 static NSString *kDateCellID = @"KKDateCell";     // the cells with the start or end date
 static NSString *kDatePickerCellID = @"KKDatePickerCell"; // the cell containing the date picker
-static NSString *kButtonCellID = @"buttonCell";     // the cell containing calculate/clear buttons
-static NSString *kDateDifferencesCellID = @"differencesCell"; // the cell containing all the calculations
+static NSString *kButtonCellID = @"KKButtonCell";     // the cell containing calculate/clear buttons
+static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell containing all the calculations
 
 #pragma mark -
 
 @interface KKTimePeriodTableViewController () <UIGestureRecognizerDelegate>{
     CGFloat calculatedDateDifferencesRowHeight;
 }
-
-@property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-
-// keep track which indexPath points to the cell with UIDatePicker
-@property (nonatomic, strong) NSIndexPath *datePickerIndexPath;
-
-@property (assign) NSInteger pickerCellRowHeight;
-@property (nonatomic, weak) NSString *startDateString;
-@property (nonatomic, weak) NSString *endDateString;
-
-@property (nonatomic, weak) IBOutlet UIDatePicker *pickerView;
-
-// this button appears only when the date picker is shown (iOS 6.1.x or earlier)
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
-
 @end
 
 #pragma mark -
@@ -436,6 +420,7 @@ NSUInteger DeviceSystemMajorVersion() {
 - (void)configureDateDifferencesCell:(KKDateDifferencesCell*)cell forTableView:(UITableView* )tableView atIndexPath:(NSIndexPath *)indexPath {
     //format the bottom button
     [cell.addEventButton setBackgroundImage:[UIImage imageNamed:@"btn_addEventHighlighted"] forState:UIControlStateHighlighted];
+    [cell.addEventButton addTarget:self action:@selector(addEventAction:) forControlEvents:UIControlEventTouchUpInside];
     
     cell.frame = CGRectMake(cell.frame.origin.x,
                                   cell.frame.origin.y,
@@ -736,6 +721,13 @@ NSUInteger DeviceSystemMajorVersion() {
  @param sender The sender for this action: The "Clear All" button.
  */
 - (IBAction)clearAllAction:(id)sender {
+    [self hideAnyInlineDatePicker];
+}
+
+/*! User wants to add a calendar event at the End Date value displayed
+ @param sender The sender for this action: The "Add New Event" button.
+ */
+- (IBAction)addEventAction:(id)sender {
     [self hideAnyInlineDatePicker];
 }
 

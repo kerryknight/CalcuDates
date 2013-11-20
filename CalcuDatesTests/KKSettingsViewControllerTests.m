@@ -26,6 +26,7 @@
     self.sut = [storyboard instantiateViewControllerWithIdentifier:@"KKSettingsViewController"];
     [self.sut performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
     [self.sut performSelectorOnMainThread:@selector(viewDidLoad) withObject:nil waitUntilDone:YES];
+    [self.sut performSelectorOnMainThread:@selector(viewDidAppear:) withObject:nil waitUntilDone:YES];
 }
 
 - (void)tearDown
@@ -35,11 +36,11 @@
     self.sut = nil;
 }
 
-- (void)test_settingsViewController_titleIsSetToAcknowledgements {
+- (void)test_titleIsSetToAcknowledgements {
     XCTAssertEqualObjects(self.sut.title, @"Acknowledgements", @"Settings View title should be set to Acknowledgements");
 }
 
-- (void)test_settingsViewController_correctAppVersionIsDisplayed {
+- (void)test_correctAppVersionIsDisplayed {
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     NSString *expectedLabelText = [NSString stringWithFormat:@"Version: %@", version];
     XCTAssertEqualObjects(self.sut.versionLabel.text, expectedLabelText, @"Settings View title should be set to Acknowledgements");

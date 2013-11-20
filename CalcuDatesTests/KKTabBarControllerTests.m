@@ -25,6 +25,7 @@
     self.sut = [storyboard instantiateViewControllerWithIdentifier:@"tabBarVC"];
     [self.sut performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
     [self.sut performSelectorOnMainThread:@selector(viewDidLoad) withObject:nil waitUntilDone:YES];
+    [self.sut performSelectorOnMainThread:@selector(viewDidAppear:) withObject:nil waitUntilDone:YES];
 }
 
 - (void)tearDown
@@ -35,14 +36,12 @@
 }
 
 #pragma mark - Tab Bar Controller
-- (void)test_tabBarController_hasATurnAnimationControllerIVar {
-    DLog(@"Test fails unless I add a DLog call first; not sure why, probably needs additional setup first.");
+- (void)test_hasATurnAnimationControllerIVar {
     Ivar ivar = class_getInstanceVariable([self.sut class], "_flipAnimationController");
     XCTAssertTrue(ivar != NULL, @"Tab bar controller needs a flip animation controller");
 }
 
-- (void)test_tabBarController_hasAHorizontalSwipeInteractionControllerIVar {
-    DLog(@"Test fails unless I add a DLog call first; not sure why, probably needs additional setup first.");
+- (void)test_hasAHorizontalSwipeInteractionControllerIVar {
     Ivar ivar2 = class_getInstanceVariable([self.sut class], "_interactionController");
     XCTAssertTrue(ivar2 != NULL, @"Tab bar controller needs a horizontal swipe interaction controller");
 }
