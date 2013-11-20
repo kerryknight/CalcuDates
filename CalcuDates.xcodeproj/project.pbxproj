@@ -714,6 +714,7 @@
 					"${HEADERS_SEARCH_PATHS}",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				SDKROOT = iphoneos;
@@ -757,6 +758,7 @@
 					"${HEADERS_SEARCH_PATHS}",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
@@ -776,10 +778,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -795,6 +794,7 @@
 					"\"${PODS_ROOT}/Headers/libffi\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -813,10 +813,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -832,6 +829,7 @@
 					"\"${PODS_ROOT}/Headers/libffi\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -873,6 +871,7 @@
 					"\"${PODS_ROOT}/Headers/libffi\"",
 				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";
@@ -909,6 +908,7 @@
 					"\"${PODS_ROOT}/Headers/libffi\"",
 				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";
