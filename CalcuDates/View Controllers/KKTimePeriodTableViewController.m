@@ -333,7 +333,7 @@ NSUInteger DeviceSystemMajorVersion() {
 #pragma mark - Table Cell Helper Methods
 
 - (NSString *) determineCellIdentifierForIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellID = kDateDifferencesCellID;
+    NSString *cellID;
     
     if ([self indexPathHasPicker:indexPath]) {
         // the indexPath is the one containing the inline date picker
