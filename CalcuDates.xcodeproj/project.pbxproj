@@ -52,6 +52,7 @@
 		C7DB1DC218218F25009A2DCC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */; };
 		C7DB1DC518218F56009A2DCC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC318218F56009A2DCC /* Crashlytics.framework */; };
 		C7DB1DC618218F56009A2DCC /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC418218F56009A2DCC /* RevMobAds.framework */; };
+		C7EC6C6F183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */; };
 		C7F0FBDF1828296200CEA23A /* AppCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBD31828296200CEA23A /* AppCalendar.m */; };
 		C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBD81828296200CEA23A /* EventKitController.m */; };
 		C7F0FBE31828296200CEA23A /* MyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBDA1828296200CEA23A /* MyManager.m */; };
@@ -149,6 +150,7 @@
 		C7DB1DC318218F56009A2DCC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C7DB1DC418218F56009A2DCC /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		C7DB1DC718219390009A2DCC /* DevNotes.devnotes */ = {isa = PBXFileReference; lastKnownFileType = text; path = DevNotes.devnotes; sourceTree = "<group>"; };
+		C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTimePeriodTableViewControllerTests.m; sourceTree = "<group>"; };
 		C7F0FBD21828296200CEA23A /* AppCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppCalendar.h; path = Classes/AppCalendar.h; sourceTree = "<group>"; };
 		C7F0FBD31828296200CEA23A /* AppCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppCalendar.m; path = Classes/AppCalendar.m; sourceTree = "<group>"; };
 		C7F0FBD71828296200CEA23A /* EventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventKitController.h; path = Classes/EventKitController.h; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				C7DB1DAB18218C6D009A2DCC /* KKMainViewControllerTests.m */,
 				C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */,
 				C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */,
+				C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */,
 				C7DB1DA618218C6D009A2DCC /* Supporting Files */,
 			);
 			path = CalcuDatesTests;
@@ -622,6 +625,7 @@
 				C7DB1DAC18218C6D009A2DCC /* KKMainViewControllerTests.m in Sources */,
 				C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */,
 				C7C94B41183C16A500C626D9 /* KKTabBarControllerTests.m in Sources */,
+				C7EC6C6F183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
