@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import <objc/runtime.h>
 #import "KKMainViewController.h"
+#import "KKMainViewController+TestingExtensions.h"
 #import "KKTabBarController.h"
 
 @interface KKMainViewControllerTests : XCTestCase {

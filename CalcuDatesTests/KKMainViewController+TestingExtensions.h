@@ -8,6 +8,12 @@
 
 #import "KKMainViewController.h"
 
-@interface KKMainViewController (TestingExtensions)
+@interface KKMainViewController (TestingExtensions) {
+    
+}
+
+//method to permit access in unit testing
+- (BOOL)timePeriodButtonSelected;
+- (BOOL)gnuDateButtonSelected;
 
 @end

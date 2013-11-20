@@ -142,15 +142,6 @@
 }
 
 
-#pragma mark - For Unit Testing Only
-- (BOOL)timePeriodButtonSelected {
-    return [self.timePeriodButton isSelected];
-}
-
-- (BOOL)gnuDateButtonSelected {
-    return [self.gnuDateButton isSelected];
-}
-
 @end
 
 

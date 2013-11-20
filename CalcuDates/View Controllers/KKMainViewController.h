@@ -25,10 +25,6 @@
 - (IBAction)gnuDateButtonClickHandler:(id)sender;
 - (IBAction)settingsButtonClickHandler:(id)sender;
 
-
-//In lieu of creating an inspectable subclass since I couldn't easily figure out how to load that subclass from the storyboard in place of how the storyboard already works, create some accessor methods here simply used for unit testing
 - (void)toggleButtonSelections;
-- (BOOL)timePeriodButtonSelected;
-- (BOOL)gnuDateButtonSelected;
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15CF9F9EB7E345DEB53B1D0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A21E9239314E86AEB33567 /* libPods.a */; };
 		C72002E2183ACF1200B39261 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */; };
+		C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */; };
 		C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */; };
 		C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */; };
 		C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385F18316A6800AD9887 /* KKSettingsViewController.m */; };
@@ -81,6 +82,8 @@
 /* Begin PBXFileReference section */
 		610CF16D12BF4A8EB588F390 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		93A21E9239314E86AEB33567 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C722F505183D470900770D8F /* KKMainViewController+TestingExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKMainViewController+TestingExtensions.h"; sourceTree = "<group>"; };
+		C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KKMainViewController+TestingExtensions.m"; sourceTree = "<group>"; };
 		C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		C73D385A183169AC00AD9887 /* UINavigationController+MHDismissModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MHDismissModalView.h"; sourceTree = "<group>"; };
@@ -208,6 +211,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C722F504183D46C400770D8F /* Testing Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C722F505183D470900770D8F /* KKMainViewController+TestingExtensions.h */,
+				C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */,
+			);
+			name = "Testing Categories";
+			sourceTree = "<group>";
+		};
 		C73D3857183169AC00AD9887 /* MHDismissModalView */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +366,7 @@
 		C7DB1DA518218C6C009A2DCC /* CalcuDatesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C722F504183D46C400770D8F /* Testing Categories */,
 				C7C94B3C183C0C1E00C626D9 /* Mocks, Fakes and Stubs */,
 				C7DB1DAB18218C6D009A2DCC /* KKMainViewControllerTests.m */,
 				C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */,
@@ -624,6 +637,7 @@
 			files = (
 				C7DB1DAC18218C6D009A2DCC /* KKMainViewControllerTests.m in Sources */,
 				C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */,
+				C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */,
 				C7C94B41183C16A500C626D9 /* KKTabBarControllerTests.m in Sources */,
 				C7EC6C6F183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m in Sources */,
 			);
@@ -816,6 +830,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -841,6 +856,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
