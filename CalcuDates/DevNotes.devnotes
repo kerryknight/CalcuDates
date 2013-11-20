@@ -29,13 +29,10 @@ To Do:
 - only show fullscreen ads for iphone 4/4S
 - show both banner and fullscreen ads for iphone 5+
 
-1. Re-read all AutoLayout and Storyboarding stuff for iOS
 2. Read all new design stuff and NSText stuff for iOS 7
 3. Get UI designed for iPhone with asset catalog
 4. Get UI designed for iPad
 5. Hook up UI parts
-7. Add continuous integration to Mac OS X server
-8. Add XCTest unit tests
 9. Hook methods up to parts
 10. Hook rev mob ads back up to UI
 11. Turn crash reporting back on
