@@ -51,8 +51,6 @@
 		C7DB1DBF18218F25009A2DCC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB818218F25009A2DCC /* EventKitUI.framework */; };
 		C7DB1DC018218F25009A2DCC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DB918218F25009A2DCC /* QuartzCore.framework */; };
 		C7DB1DC218218F25009A2DCC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */; };
-		C7DB1DC518218F56009A2DCC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC318218F56009A2DCC /* Crashlytics.framework */; };
-		C7DB1DC618218F56009A2DCC /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DC418218F56009A2DCC /* RevMobAds.framework */; };
 		C7EC6C6F183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */; };
 		C7F0FBDF1828296200CEA23A /* AppCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBD31828296200CEA23A /* AppCalendar.m */; };
 		C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBD81828296200CEA23A /* EventKitController.m */; };
@@ -150,8 +148,6 @@
 		C7DB1DB818218F25009A2DCC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		C7DB1DB918218F25009A2DCC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C7DB1DC318218F56009A2DCC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		C7DB1DC418218F56009A2DCC /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		C7DB1DC718219390009A2DCC /* DevNotes.devnotes */ = {isa = PBXFileReference; lastKnownFileType = text; path = DevNotes.devnotes; sourceTree = "<group>"; };
 		C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTimePeriodTableViewControllerTests.m; sourceTree = "<group>"; };
 		C7F0FBD21828296200CEA23A /* AppCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppCalendar.h; path = Classes/AppCalendar.h; sourceTree = "<group>"; };
@@ -183,8 +179,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DB1DC518218F56009A2DCC /* Crashlytics.framework in Frameworks */,
-				C7DB1DC618218F56009A2DCC /* RevMobAds.framework in Frameworks */,
 				C7DB1DC018218F25009A2DCC /* QuartzCore.framework in Frameworks */,
 				C7DB1DBC18218F25009A2DCC /* AdSupport.framework in Frameworks */,
 				C7DB1DBD18218F25009A2DCC /* CFNetwork.framework in Frameworks */,
@@ -318,8 +312,6 @@
 		C7DB1D7918218C6C009A2DCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C7DB1DC318218F56009A2DCC /* Crashlytics.framework */,
-				C7DB1DC418218F56009A2DCC /* RevMobAds.framework */,
 				C7DB1DB518218F25009A2DCC /* AdSupport.framework */,
 				C7DB1DB618218F25009A2DCC /* CFNetwork.framework */,
 				C7DB1DB718218F25009A2DCC /* EventKit.framework */,
@@ -790,6 +782,18 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRC_ROOT}",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/RevMob\"",
+					"\"${PODS_ROOT}/Headers/YLMoment\"",
+					"\"${PODS_ROOT}/Headers/libffi\"",
+				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -815,6 +819,18 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRC_ROOT}",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/RevMob\"",
+					"\"${PODS_ROOT}/Headers/YLMoment\"",
+					"\"${PODS_ROOT}/Headers/libffi\"",
+				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -842,6 +858,20 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRC_ROOT}",
+					"${HEADERS_SEARCH_PATHS}",
+					"${PODS_ROOT}",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/RevMob\"",
+					"\"${PODS_ROOT}/Headers/YLMoment\"",
+					"\"${PODS_ROOT}/Headers/libffi\"",
+				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -864,6 +894,20 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRC_ROOT}",
+					"${HEADERS_SEARCH_PATHS}",
+					"${PODS_ROOT}",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/RevMob\"",
+					"\"${PODS_ROOT}/Headers/YLMoment\"",
+					"\"${PODS_ROOT}/Headers/libffi\"",
+				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

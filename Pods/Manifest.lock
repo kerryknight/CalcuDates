@@ -9,14 +9,12 @@ PODS:
   - ReactiveCocoa/Core (2.1.7):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.7)
-  - RevMob (7.4.0)
   - YLMoment (0.2.0)
 
 DEPENDENCIES:
   - BlocksKit (~> 1.8.3)
   - MBProgressHUD (~> 0.8)
   - ReactiveCocoa
-  - RevMob (~> 7.4.0)
   - YLMoment (~> 0.2.0)
 
 SPEC CHECKSUMS:
@@ -24,7 +22,6 @@ SPEC CHECKSUMS:
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   ReactiveCocoa: 1117f7968c8667d2ca00b5aa47156fabcb56af75
-  RevMob: 6d9d70a365f57e335d48d492e0c31b3d98e6bf03
   YLMoment: 609cf751d07305c6e807dc2c161a4b30987467fd
 
 COCOAPODS: 0.28.0

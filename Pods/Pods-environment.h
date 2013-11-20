@@ -36,12 +36,6 @@
 #define COCOAPODS_VERSION_MINOR_ReactiveCocoa_no_arc 1
 #define COCOAPODS_VERSION_PATCH_ReactiveCocoa_no_arc 7
 
-// RevMob
-#define COCOAPODS_POD_AVAILABLE_RevMob
-#define COCOAPODS_VERSION_MAJOR_RevMob 7
-#define COCOAPODS_VERSION_MINOR_RevMob 4
-#define COCOAPODS_VERSION_PATCH_RevMob 0
-
 // YLMoment
 #define COCOAPODS_POD_AVAILABLE_YLMoment
 #define COCOAPODS_VERSION_MAJOR_YLMoment 0
