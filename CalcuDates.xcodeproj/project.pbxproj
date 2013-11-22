@@ -69,6 +69,7 @@
 		C7F4A157183ED1E100C23AE3 /* RXPromise.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A153183ED1E100C23AE3 /* RXPromise.mm */; };
 		C7F4A158183ED1E100C23AE3 /* RXPromise+RXExtension.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */; };
 		C7F4A15E183FEAE700C23AE3 /* KKDateDifferencesCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */; };
+		C7F9929A18401DDC0060B266 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9929918401DDC0060B266 /* UICountingLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,8 @@
 		C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "RXPromise+RXExtension.mm"; path = "RXPromise/RXPromise+RXExtension.mm"; sourceTree = "<group>"; };
 		C7F4A15C183FE10100C23AE3 /* RxDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxDLog.h; sourceTree = "<group>"; };
 		C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDateDifferencesCellTests.m; sourceTree = "<group>"; };
+		C7F9929818401DDC0060B266 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICountingLabel.h; path = UICountingLabel/UICountingLabel.h; sourceTree = "<group>"; };
+		C7F9929918401DDC0060B266 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICountingLabel.m; path = UICountingLabel/UICountingLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +295,7 @@
 		C7939ADB18315F2300BA49B9 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				C7F9929718401DAD0060B266 /* UICountingLabel */,
 				C7F4A151183EC3B400C23AE3 /* RXPromise */,
 				C73D3857183169AC00AD9887 /* MHDismissModalView */,
 			);
@@ -482,6 +486,15 @@
 			path = RXPromise/utility;
 			sourceTree = "<group>";
 		};
+		C7F9929718401DAD0060B266 /* UICountingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9929818401DDC0060B266 /* UICountingLabel.h */,
+				C7F9929918401DDC0060B266 /* UICountingLabel.m */,
+			);
+			name = UICountingLabel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -652,6 +665,7 @@
 				C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */,
 				C7935C5D18281C150012E021 /* CENatGeoAnimationController.m in Sources */,
 				C7F0FBE31828296200CEA23A /* MyManager.m in Sources */,
+				C7F9929A18401DDC0060B266 /* UICountingLabel.m in Sources */,
 				C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */,
 				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
 				C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */,
@@ -835,7 +849,6 @@
 					"\"${PODS_ROOT}/Headers/RevMob\"",
 					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
-					"\"${PODS_ROOT}/Headers/UICountingLabel\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
@@ -880,7 +893,6 @@
 					"\"${PODS_ROOT}/Headers/RevMob\"",
 					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
-					"\"${PODS_ROOT}/Headers/UICountingLabel\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
@@ -932,7 +944,6 @@
 					"\"${PODS_ROOT}/Headers/RevMob\"",
 					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
-					"\"${PODS_ROOT}/Headers/UICountingLabel\"",
 				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
@@ -979,7 +990,6 @@
 					"\"${PODS_ROOT}/Headers/RevMob\"",
 					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
-					"\"${PODS_ROOT}/Headers/UICountingLabel\"",
 				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
