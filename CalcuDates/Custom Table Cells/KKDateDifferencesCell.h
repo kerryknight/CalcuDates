@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UICountingLabel.h"
 
-@class UICountingLabel;
 @interface KKDateDifferencesCell : UITableViewCell
 
 

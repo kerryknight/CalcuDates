@@ -7,7 +7,6 @@
 //
 
 #import "KKDateDifferencesCell.h"
-#import "UICountingLabel.h"
 
 @interface KKDateDifferencesCell (){
 }
