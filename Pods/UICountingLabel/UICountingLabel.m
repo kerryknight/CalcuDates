@@ -1,8 +1,5 @@
 #import "UICountingLabel.h"
 
-#if !__has_feature(objc_arc)
-#error UICountingLabel is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
-#endif
 
 #pragma mark - UILabelCounter
 
@@ -88,13 +85,13 @@
 @interface UICountingLabel ()
 
 @property float startingValue;
-@property float destinationValue;
+//@property float destinationValue;
 @property NSTimeInterval progress;
 @property NSTimeInterval lastUpdate;
 @property NSTimeInterval totalTime;
 @property float easingRate;
 
-@property (nonatomic, strong) UILabelCounter* counter;
+@property (nonatomic, retain) UILabelCounter* counter;
 
 @end
 
@@ -137,7 +134,7 @@
     self.counter.rate = 1.0f;
     
     NSTimer* timer = [NSTimer timerWithTimeInterval:(1.0f/30.0f) target:self selector:@selector(updateValue:) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 
 -(void)updateValue:(NSTimer*)timer

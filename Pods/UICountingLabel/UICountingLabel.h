@@ -20,6 +20,9 @@ typedef NSString* (^UICountingLabelFormatBlock)(float value);
 @property (nonatomic, copy) void (^completionBlock)();
 
 
+@property float destinationValue;//knightka 22Nov2013 moved here for unit testing; creating a category wasnt' working easily due to so many class definitions in implementation file
+
+
 -(void)countFrom:(float)startValue to:(float)endValue;
 -(void)countFrom:(float)startValue to:(float)endValue withDuration:(NSTimeInterval)duration;
 

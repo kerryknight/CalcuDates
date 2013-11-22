@@ -13,8 +13,6 @@
 		C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */; };
 		C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */; };
 		C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385F18316A6800AD9887 /* KKSettingsViewController.m */; };
-		C74CEE9818400ED400F5FD55 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C74CEE9718400ED400F5FD55 /* UICountingLabel.m */; };
-		C74CEE9918400F0700F5FD55 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C74CEE9718400ED400F5FD55 /* UICountingLabel.m */; };
 		C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59E182361F2003D137C /* KKMainViewController.m */; };
 		C74ED5A21823621A003D137C /* KKNewDateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */; };
 		C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */; };
@@ -94,8 +92,6 @@
 		C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MHDismissModalView.m"; sourceTree = "<group>"; };
 		C73D385E18316A6800AD9887 /* KKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKSettingsViewController.h; path = "View Controllers/KKSettingsViewController.h"; sourceTree = "<group>"; };
 		C73D385F18316A6800AD9887 /* KKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKSettingsViewController.m; path = "View Controllers/KKSettingsViewController.m"; sourceTree = "<group>"; };
-		C74CEE9618400ED400F5FD55 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
-		C74CEE9718400ED400F5FD55 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		C74ED59718234E0C003D137C /* KKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKConstants.h; path = Classes/KKConstants.h; sourceTree = "<group>"; };
 		C74ED59D182361F2003D137C /* KKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMainViewController.h; path = "View Controllers/KKMainViewController.h"; sourceTree = "<group>"; };
 		C74ED59E182361F2003D137C /* KKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKMainViewController.m; path = "View Controllers/KKMainViewController.m"; sourceTree = "<group>"; };
@@ -244,15 +240,6 @@
 			path = MHDismissModalView;
 			sourceTree = "<group>";
 		};
-		C74CEE9518400ED400F5FD55 /* UICountingLabel */ = {
-			isa = PBXGroup;
-			children = (
-				C74CEE9618400ED400F5FD55 /* UICountingLabel.h */,
-				C74CEE9718400ED400F5FD55 /* UICountingLabel.m */,
-			);
-			path = UICountingLabel;
-			sourceTree = "<group>";
-		};
 		C7935C3318240BFA0012E021 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +292,6 @@
 		C7939ADB18315F2300BA49B9 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
-				C74CEE9518400ED400F5FD55 /* UICountingLabel */,
 				C7F4A151183EC3B400C23AE3 /* RXPromise */,
 				C73D3857183169AC00AD9887 /* MHDismissModalView */,
 			);
@@ -666,7 +652,6 @@
 				C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */,
 				C7935C5D18281C150012E021 /* CENatGeoAnimationController.m in Sources */,
 				C7F0FBE31828296200CEA23A /* MyManager.m in Sources */,
-				C74CEE9818400ED400F5FD55 /* UICountingLabel.m in Sources */,
 				C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */,
 				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
 				C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */,
@@ -684,7 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F4A15E183FEAE700C23AE3 /* KKDateDifferencesCellTests.m in Sources */,
-				C74CEE9918400F0700F5FD55 /* UICountingLabel.m in Sources */,
 				C7DB1DAC18218C6D009A2DCC /* KKMainViewControllerTests.m in Sources */,
 				C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */,
 				C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */,
