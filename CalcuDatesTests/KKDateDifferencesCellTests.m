@@ -32,8 +32,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"calculateDateDifferences" object:nil userInfo:calculations];
 }
 
-- (void)tearDown
-{
+- (void)tearDown {
     // Put teardown code here; it will be run once, after the last test case.
     [super tearDown];
     
