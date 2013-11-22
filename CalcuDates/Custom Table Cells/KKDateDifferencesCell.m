@@ -9,8 +9,6 @@
 #import "KKDateDifferencesCell.h"
 #import "UICountingLabel.h"
 
-typedef void (^KKDateDifferencesCellCompletionBlock)();
-
 @interface KKDateDifferencesCell (){
 }
 @property (nonatomic, assign) BOOL isZeroed;

@@ -755,6 +755,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${PODS_ROOT}",
 					"${HEADERS_SEARCH_PATHS}",
+					"${HEADER_SEARCH_PATHS}",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
@@ -799,6 +800,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${PODS_ROOT}",
 					"${HEADERS_SEARCH_PATHS}",
+					"${HEADER_SEARCH_PATHS}",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
@@ -835,6 +837,7 @@
 					"\"${PODS_ROOT}/Headers/RevMob\"",
 					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
+					"\"${PODS_ROOT}/Headers/UICountingLabel\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
@@ -879,6 +882,7 @@
 					"\"${PODS_ROOT}/Headers/RevMob\"",
 					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
+					"\"${PODS_ROOT}/Headers/UICountingLabel\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
