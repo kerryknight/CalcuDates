@@ -32,4 +32,6 @@
 - (BOOL)indexPathHasDate:(NSIndexPath *)indexPath;
 - (NSString *) determineCellIdentifierForIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (IBAction)dateAction:(id)sender;
+- (BOOL)hasInlineDatePicker;
 @end

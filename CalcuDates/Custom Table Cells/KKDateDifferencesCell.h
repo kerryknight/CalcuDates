@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UICountingLabel.h"
 
 @interface KKDateDifferencesCell : UITableViewCell
 
 
-@property (weak, nonatomic) IBOutlet UITextField *daysDifferenceField;
-@property (weak, nonatomic) IBOutlet UITextField *weeksDifferenceField;
-@property (weak, nonatomic) IBOutlet UITextField *monthsDifferenceField;
-@property (weak, nonatomic) IBOutlet UITextField *yearsDifferenceField;
+@property (weak, nonatomic) IBOutlet UICountingLabel *daysDifferenceField;
+@property (weak, nonatomic) IBOutlet UICountingLabel *weeksDifferenceField;
+@property (weak, nonatomic) IBOutlet UICountingLabel *monthsDifferenceField;
+@property (weak, nonatomic) IBOutlet UICountingLabel *yearsDifferenceField;
 @property (weak, nonatomic) IBOutlet UIButton *addEventButton;
+
+@property (nonatomic, strong) NSDictionary *calculationsDictionary;
+
+- (void)numbersShouldCalculate:(NSNotification*)notification;
 
 @end

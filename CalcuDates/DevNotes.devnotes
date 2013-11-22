@@ -41,9 +41,10 @@ To Do:
 
 3rd Party Code Used:
 --------------------------
-- CocoaLumberjack: https://github.com/robbiehanson/CocoaLumberjack
+//- CocoaLumberjack: https://github.com/robbiehanson/CocoaLumberjack
 - MHDismissModalView: https://github.com/mariohahn/MHDismissModalView
 - ReactiveCocoa: https://github.com/ReactiveCocoa/ReactiveCocoa
+- UICountingLabel: https://github.com/dataxpress/UICountingLabel
 
 
 

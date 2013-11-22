@@ -19,7 +19,11 @@
     #import "KKMacros.h"
 
     //RAC
-    #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import "ReactiveCocoa.h"
+    #import "RACEXTScope.h"
+
+    //RXPromise
+    #import "RXPromise.h"
 
     //universal constants
     #define kCONTAINER_VIEW_TAG 100

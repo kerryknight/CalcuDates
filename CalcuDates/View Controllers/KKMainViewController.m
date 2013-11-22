@@ -13,6 +13,7 @@
 #import "UIImage+ImageEffects.h"
 #import "UINavigationController+MHDismissModalView.h"
 #import "KKSettingsViewController.h"
+#import "RACEXTScope.h"
 
 #pragma mark -
 #pragma mark @categories
@@ -29,12 +30,11 @@
 #pragma mark @interface
 
 @interface KKMainViewController () <UIViewControllerTransitioningDelegate, UITabBarControllerDelegate> {
-    //instance vars
-    BOOL timePeriodSelected;
-    BOOL gnuDateSelected;
     KKTabBarController *tabBarVC;
 }
 
+@property (nonatomic, assign) BOOL timePeriodSelected;
+@property (nonatomic, assign) BOOL gnuDateSelected;
 @end
 
 #pragma mark -
@@ -90,10 +90,14 @@
     [self.gnuDateButton setBackgroundImage:[UIImage imageNamed:@"btn_newDateSelected"] forState:UIControlStateSelected];
     [self.gnuDateButton setBackgroundImage:[UIImage imageNamed:@"btn_newDateSelected"] forState:UIControlStateSelected | UIControlStateHighlighted]; //disables highlight if selected
     
+    
+    //set our buttons up to subscribe to our booleans to set selection states
+    RAC(self.timePeriodButton, selected) = RACObserve(self, timePeriodSelected);
+    RAC(self.gnuDateButton, selected) = RACObserve(self, gnuDateSelected);
+    
     //on load, set our time period button active
-    timePeriodSelected = TRUE;
-    gnuDateSelected = FALSE;
-    [self toggleButtonSelections];
+    self.timePeriodSelected = TRUE;
+    self.gnuDateSelected = FALSE;
     
     //listen for change events broadcast by swipe interactions so we can correctly toggle to other selected button
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleButtonSelections) name:@"interactiveSwipeTransitionDidComplete" object:nil];
@@ -126,12 +130,9 @@
 }
 
 - (void) toggleButtonSelections {
-    [self.timePeriodButton setSelected:timePeriodSelected];
-    [self.gnuDateButton setSelected:gnuDateSelected];
-    
     //toggle our selected values
-    timePeriodSelected = !timePeriodSelected;
-    gnuDateSelected = !gnuDateSelected;
+    self.timePeriodSelected = !self.timePeriodSelected;
+    self.gnuDateSelected = !self.gnuDateSelected;
 }
 
 #pragma mark -

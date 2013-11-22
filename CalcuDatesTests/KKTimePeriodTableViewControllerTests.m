@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "KKTimePeriodTableViewController.h"
+#import "KKTimePeriodTableViewController+TestingExtensions.h"
 #import <objc/runtime.h>
 #import "KKDateCell.h"
 #import "KKButtonBarCell.h"
@@ -26,6 +27,10 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     NSIndexPath *dateEndRow;
     NSIndexPath *buttonRow;
     NSIndexPath *dateDifferencesRow;
+    
+    NSDate *startDate;
+    NSDate *endDate;
+    NSDateFormatter *dateFormat;
 }
 @property (nonatomic, strong) KKTimePeriodTableViewController *sut;
 @end
@@ -50,6 +55,15 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     dateEndRow  = [NSIndexPath indexPathForRow:1 inSection:0];
     buttonRow  = [NSIndexPath indexPathForRow:2 inSection:0];
     dateDifferencesRow  = [NSIndexPath indexPathForRow:3 inSection:0];
+    
+    NSString *startDateStr = @"24-Oct-1999";
+    NSString *endDateStr = @"24-Oct-2009";
+    
+    // Convert string to date object
+    dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MMM-yyyy"];
+    startDate = [dateFormat dateFromString:startDateStr];
+    endDate = [dateFormat dateFromString:endDateStr];
 }
 
 - (void)tearDown
@@ -147,6 +161,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 }
 
 #pragma mark - Custom Table Cells
+#pragma mark - test cells exist
 - (void)test_startDateRowCellShouldBeACustomDateCell {
     XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateStartRow] isKindOfClass:[KKDateCell class]], @"Cell at date start row should be a KKDateCell");
 }
@@ -163,6 +178,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateDifferencesRow] isKindOfClass:[KKDateDifferencesCell class]], @"Cell at button row should be a KKDateDifferencesCell");
 }
 
+#pragma mark - date cells
 - (void)test_rowAfterStartDateCellAfterClickingStartDateCellShouldBeACustomDatePickerCell {
     [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
     NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:(dateStartRow.row + 1) inSection:0];
@@ -225,6 +241,47 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertEqualObjects(cell.date.text, @"Fake Date", @"End date cell should observe endDateString via RAC");
 }
 
+- (void)test_startDateCellTextFieldUpdatesWhenDateActionCalled {
+    [self.sut hideAnyInlineDatePicker];
+    //select the start date row
+    [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
+    NSIndexPath *cellIndex = [NSIndexPath indexPathForRow:(dateStartRow.row) inSection:0];
+    KKDateCell *cell = (KKDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:cellIndex];
+    
+    //create a date picker and set its date
+    UIDatePicker *dp = [[UIDatePicker alloc] init];
+    [dp setDate:(NSDate*)startDate];
+    [self.sut dateAction:dp];
+    
+    NSDate *cellDate = [dateFormat dateFromString: cell.date.text];//cell date should be listening for the date picker's date
+    
+    XCTAssertEqualObjects(cellDate, startDate, @"Selecting a start date should update the start date text field");
+}
+
+- (void)test_endDateCellTextFieldUpdatesWhenDateActionCalled {
+    [self.sut hideAnyInlineDatePicker];
+    //select the start date row
+    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
+    
+    NSIndexPath *cellIndex = [NSIndexPath indexPathForRow:(dateEndRow.row) inSection:0];
+    KKDateCell *cell = (KKDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:cellIndex];
+    
+    //create a date picker and set its date
+    UIDatePicker *dp = [[UIDatePicker alloc] init];
+    [dp setDate:(NSDate*)endDate];
+    
+    //fake the date picker index path
+    NSIndexPath *fakeIndex = [NSIndexPath indexPathForRow:3 inSection:0];
+    self.sut.datePickerIndexPath = fakeIndex;
+    //call our testing extension category's fake date action workaround
+    [self.sut fakeDateAction:dp isEndDate:YES];
+
+    NSDate *cellDate = [dateFormat dateFromString: cell.date.text];//cell date should be listening for the date picker's date
+    
+    XCTAssertEqualObjects(cellDate, endDate, @"Selecting an end date should update the end date text field");
+}
+
+#pragma mark - button cell
 - (void)test_buttonCellShouldHaveTwoConnectedButtons {
     KKButtonBarCell *cell = (KKButtonBarCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:buttonRow];
     XCTAssertTrue(cell.calculateButton != nil, @"Button cell calculate button should be connected.");
@@ -241,6 +298,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertEqual(YES, [[cell.clearButton actionsForTarget:self.sut forControlEvent:UIControlEventTouchUpInside] containsObject:@"clearAllAction:"], @"Clear Button should be connected to correct action");
 }
 
+#pragma mark - date differences cell
 - (void)test_dateDifferencesCellShouldHaveOneConnectedButtons {
     KKDateDifferencesCell *cell = (KKDateDifferencesCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateDifferencesRow];
     XCTAssertTrue(cell.addEventButton != nil, @"Date differences cell add event button should be connected.");
@@ -251,6 +309,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertEqual(YES, [[cell.addEventButton actionsForTarget:self.sut forControlEvent:UIControlEventTouchUpInside] containsObject:@"addEventAction:"], @"Add Event Button should be connected to correct action");
 }
 
+#pragma mark - date picker cell
 - (void)test_datePickerCellShouldHaveAConnectedDatePicker {
     [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
     NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:(dateStartRow.row + 1) inSection:0];

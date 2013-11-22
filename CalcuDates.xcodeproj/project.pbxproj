@@ -65,6 +65,10 @@
 		C7F0FC0818286F5E00CEA23A /* KKDateDifferencesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F0FBFF18286F5E00CEA23A /* KKDateDifferencesCell.xib */; };
 		C7F0FC0918286F5E00CEA23A /* KKEndDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FC0118286F5E00CEA23A /* KKEndDateCell.m */; };
 		C7F0FC0A18286F5E00CEA23A /* KKEndDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F0FC0218286F5E00CEA23A /* KKEndDateCell.xib */; };
+		C7F4A150183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A14F183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m */; };
+		C7F4A157183ED1E100C23AE3 /* RXPromise.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A153183ED1E100C23AE3 /* RXPromise.mm */; };
+		C7F4A158183ED1E100C23AE3 /* RXPromise+RXExtension.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */; };
+		C7F4A15E183FEAE700C23AE3 /* KKDateDifferencesCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +176,15 @@
 		C7F0FC0018286F5E00CEA23A /* KKEndDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKEndDateCell.h; path = "Custom Table Cells/KKEndDateCell.h"; sourceTree = "<group>"; };
 		C7F0FC0118286F5E00CEA23A /* KKEndDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKEndDateCell.m; path = "Custom Table Cells/KKEndDateCell.m"; sourceTree = "<group>"; };
 		C7F0FC0218286F5E00CEA23A /* KKEndDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKEndDateCell.xib; path = "Custom Table Cells/KKEndDateCell.xib"; sourceTree = "<group>"; };
+		C7F4A14E183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKTimePeriodTableViewController+TestingExtensions.h"; sourceTree = "<group>"; };
+		C7F4A14F183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KKTimePeriodTableViewController+TestingExtensions.m"; sourceTree = "<group>"; };
+		C7F4A152183ED1E100C23AE3 /* RXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RXPromise.h; path = RXPromise/RXPromise.h; sourceTree = "<group>"; };
+		C7F4A153183ED1E100C23AE3 /* RXPromise.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RXPromise.mm; path = RXPromise/RXPromise.mm; sourceTree = "<group>"; };
+		C7F4A154183ED1E100C23AE3 /* RXPromise+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RXPromise+Private.h"; path = "RXPromise/RXPromise+Private.h"; sourceTree = "<group>"; };
+		C7F4A155183ED1E100C23AE3 /* RXPromise+RXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RXPromise+RXExtension.h"; path = "RXPromise/RXPromise+RXExtension.h"; sourceTree = "<group>"; };
+		C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "RXPromise+RXExtension.mm"; path = "RXPromise/RXPromise+RXExtension.mm"; sourceTree = "<group>"; };
+		C7F4A15C183FE10100C23AE3 /* RxDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxDLog.h; sourceTree = "<group>"; };
+		C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDateDifferencesCellTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +223,8 @@
 			children = (
 				C722F505183D470900770D8F /* KKMainViewController+TestingExtensions.h */,
 				C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */,
+				C7F4A14E183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.h */,
+				C7F4A14F183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m */,
 			);
 			name = "Testing Categories";
 			sourceTree = "<group>";
@@ -277,6 +292,7 @@
 		C7939ADB18315F2300BA49B9 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				C7F4A151183EC3B400C23AE3 /* RXPromise */,
 				C73D3857183169AC00AD9887 /* MHDismissModalView */,
 			);
 			path = "3rd Party";
@@ -364,6 +380,7 @@
 				C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */,
 				C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */,
 				C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */,
+				C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */,
 				C7DB1DA618218C6D009A2DCC /* Supporting Files */,
 			);
 			path = CalcuDatesTests;
@@ -441,6 +458,28 @@
 				C7F0FC0218286F5E00CEA23A /* KKEndDateCell.xib */,
 			);
 			name = "Custom Table Cells";
+			sourceTree = "<group>";
+		};
+		C7F4A151183EC3B400C23AE3 /* RXPromise */ = {
+			isa = PBXGroup;
+			children = (
+				C7F4A15B183FE10100C23AE3 /* utility */,
+				C7F4A152183ED1E100C23AE3 /* RXPromise.h */,
+				C7F4A153183ED1E100C23AE3 /* RXPromise.mm */,
+				C7F4A154183ED1E100C23AE3 /* RXPromise+Private.h */,
+				C7F4A155183ED1E100C23AE3 /* RXPromise+RXExtension.h */,
+				C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */,
+			);
+			name = RXPromise;
+			sourceTree = "<group>";
+		};
+		C7F4A15B183FE10100C23AE3 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				C7F4A15C183FE10100C23AE3 /* RxDLog.h */,
+			);
+			name = utility;
+			path = RXPromise/utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,6 +642,7 @@
 				C7935C5818281C150012E021 /* CECardsAnimationController.m in Sources */,
 				C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */,
 				C7935C5F18281C150012E021 /* CETurnAnimationController.m in Sources */,
+				C7F4A157183ED1E100C23AE3 /* RXPromise.mm in Sources */,
 				C74ED5A21823621A003D137C /* KKNewDateTableViewController.m in Sources */,
 				C7935C6018281C150012E021 /* CEBaseInteractionController.m in Sources */,
 				C7935C5E18281C150012E021 /* CEReversibleAnimationController.m in Sources */,
@@ -616,6 +656,7 @@
 				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
 				C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */,
 				C7F0FC0718286F5E00CEA23A /* KKDateDifferencesCell.m in Sources */,
+				C7F4A158183ED1E100C23AE3 /* RXPromise+RXExtension.mm in Sources */,
 				C7F0FBF418286B0200CEA23A /* KKSlightIndentTextField.m in Sources */,
 				C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */,
 				C7935C5A18281C150012E021 /* CEExplodeAnimationController.m in Sources */,
@@ -627,10 +668,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F4A15E183FEAE700C23AE3 /* KKDateDifferencesCellTests.m in Sources */,
 				C7DB1DAC18218C6D009A2DCC /* KKMainViewControllerTests.m in Sources */,
 				C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */,
 				C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */,
 				C7C94B41183C16A500C626D9 /* KKTabBarControllerTests.m in Sources */,
+				C7F4A150183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m in Sources */,
 				C7EC6C6F183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,8 +839,17 @@
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Wl,-no_compact_unwind",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MessageUI,
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -830,8 +882,17 @@
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Wl,-no_compact_unwind",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MessageUI,
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -872,6 +933,15 @@
 				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Wl,-no_compact_unwind",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MessageUI,
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";
@@ -909,6 +979,15 @@
 				);
 				INFOPLIST_FILE = "CalcuDatesTests/CalcuDatesTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Wl,-no_compact_unwind",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MessageUI,
+					"-lc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";

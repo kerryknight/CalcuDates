@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ES-9d-sDc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKa-Tx-ifU" customClass="UICountingLabel">
                                 <rect key="frame" x="0.0" y="2" width="160" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="textColor" red="0.062745101750000004" green="0.25098040700000002" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" red="0.019607843829999999" green="0.180392161" blue="0.37254902719999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Days Difference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qs1-aK-8ov">
                                 <rect key="frame" x="0.0" y="28" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
@@ -37,13 +37,13 @@
                         <rect key="frame" x="160" y="0.0" width="160" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fM-DU-C0U">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-Tz-fhn" customClass="UICountingLabel">
                                 <rect key="frame" x="0.0" y="2" width="160" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="textColor" red="0.062745101750000004" green="0.25098040700000002" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" red="0.019607843831181526" green="0.18039216101169586" blue="0.37254902720451355" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Weeks Difference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpZ-a3-MSa">
                                 <rect key="frame" x="0.0" y="28" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
@@ -57,13 +57,13 @@
                         <rect key="frame" x="0.0" y="48" width="160" height="64"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-nX-1uh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22e-v2-xOo" customClass="UICountingLabel">
                                 <rect key="frame" x="0.0" y="2" width="160" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="textColor" red="0.062745101750000004" green="0.25098040700000002" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" red="0.019607843829999999" green="0.180392161" blue="0.37254902719999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Months Difference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0O-Vh-INB">
                                 <rect key="frame" x="0.0" y="28" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
@@ -84,13 +84,13 @@
                         <rect key="frame" x="160" y="48" width="160" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7V-3S-hoi">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkX-E1-7yo" customClass="UICountingLabel">
                                 <rect key="frame" x="0.0" y="2" width="160" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="textColor" red="0.062745101750000004" green="0.25098040700000002" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" red="0.019607843829999999" green="0.180392161" blue="0.37254902719999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Years Difference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkF-tC-PyK">
                                 <rect key="frame" x="0.0" y="28" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
@@ -121,10 +121,10 @@
             <color key="backgroundColor" red="0.5568627451" green="0.72156862749999995" blue="0.90196078430000004" alpha="1" colorSpace="deviceRGB"/>
             <connections>
                 <outlet property="addEventButton" destination="Lhq-Sk-8hV" id="pCc-IC-dLY"/>
-                <outlet property="daysDifferenceField" destination="6ES-9d-sDc" id="zMf-WJ-CO8"/>
-                <outlet property="monthsDifferenceField" destination="fkU-nX-1uh" id="Bzv-o7-RQU"/>
-                <outlet property="weeksDifferenceField" destination="3fM-DU-C0U" id="aYT-e3-VTk"/>
-                <outlet property="yearsDifferenceField" destination="G7V-3S-hoi" id="m4S-gZ-u3S"/>
+                <outlet property="daysDifferenceField" destination="oKa-Tx-ifU" id="3YN-RI-w6p"/>
+                <outlet property="monthsDifferenceField" destination="22e-v2-xOo" id="arc-xT-oem"/>
+                <outlet property="weeksDifferenceField" destination="3ob-Tz-fhn" id="daO-HT-k0n"/>
+                <outlet property="yearsDifferenceField" destination="VkX-E1-7yo" id="QSP-MA-bqO"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -54,20 +54,14 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     [super viewDidLoad];
     
     // setup our data source
-    NSMutableDictionary *itemOne = [@{ kTitleKey : @"Select Start Date*:",
-                                       kDateKey : [NSDate date] } mutableCopy];
-    NSMutableDictionary *itemTwo = [@{ kTitleKey : @"Select End Date*:",
-                                         kDateKey : [NSDate date] } mutableCopy];
+    NSMutableDictionary *itemOne = [@{ kTitleKey : @"Select Start Date*:", kDateKey : [NSDate date] } mutableCopy];
+    NSMutableDictionary *itemTwo = [@{ kTitleKey : @"Select End Date*:", kDateKey : [NSDate date] } mutableCopy];
     NSMutableDictionary *itemThree = [@{ kTitleKey : @"Button row" } mutableCopy];
     NSMutableDictionary *itemFour = [@{ kTitleKey : @"Calculations row" } mutableCopy];
     self.dataArray = @[itemOne, itemTwo, itemThree, itemFour];
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"dd-MMM-yyyy"];//allow customization of this later
-    
-    // obtain the picker view cell's height, works because the cell was pre-defined in our storyboard
-//    UITableViewCell *pickerViewCellToCheck = [self.tableView dequeueReusableCellWithIdentifier:kDatePickerID];
-//    self.pickerCellRowHeight = pickerViewCellToCheck.frame.size.height;
     self.pickerCellRowHeight = kDATE_PICKER_CELL_HEIGHT;
     
     // knightka - this is from Apple example code; unused for now but could potentially be utilized later
@@ -316,11 +310,9 @@ NSUInteger DeviceSystemMajorVersion() {
         
         if (sell == nil) {
             sell = [[KKDatePickerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDatePickerCellID];
-            
-            //configure cell at alloc as we only want to add our signal subscribers once so we don't end up with multiple
-            //subscriptions each time a cell get's reused/cached
-            [self configureDatePickerCell:sell];
         }
+        
+        [self configureDatePickerCell:sell];
         
         cell = (UITableViewCell*)sell;//cast back to regular table cell so we can disable selection style
     }
@@ -678,6 +670,7 @@ NSUInteger DeviceSystemMajorVersion() {
     }
     
     KKDateCell *cell = (KKDateCell*)[self.tableView cellForRowAtIndexPath:targetedCellIndexPath];
+   
     UIDatePicker *targetedDatePicker = sender;
     
     if ([self isEndDateRow:cell]) {
@@ -692,7 +685,6 @@ NSUInteger DeviceSystemMajorVersion() {
  @param sender The sender for this action: The "Done" UIBarButtonItem
  */
 - (IBAction)doneAction:(id)sender {
-    NSLog(@"%s", __FUNCTION__);
     CGRect pickerFrame = self.pickerView.frame;
     pickerFrame.origin.y = self.view.frame.size.height;
     
@@ -715,6 +707,13 @@ NSUInteger DeviceSystemMajorVersion() {
  */
 - (IBAction)calculateAction:(id)sender {
     [self hideAnyInlineDatePicker];
+    
+    NSDictionary *calculations = @{@"days": @123.93,
+                                   @"weeks": @23.03,
+                                   @"months": @12.3,
+                                   @"years": @2.45};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"calculateDateDifferences" object:nil userInfo:calculations];
 }
 
 /*! User is trying to clear the date input fields by clicking the "Clear All" button.
@@ -722,6 +721,8 @@ NSUInteger DeviceSystemMajorVersion() {
  */
 - (IBAction)clearAllAction:(id)sender {
     [self hideAnyInlineDatePicker];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"zeroDateDifferences" object:nil];
 }
 
 /*! User wants to add a calendar event at the End Date value displayed
