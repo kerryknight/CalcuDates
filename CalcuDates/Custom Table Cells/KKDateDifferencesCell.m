@@ -7,6 +7,7 @@
 //
 
 #import "KKDateDifferencesCell.h"
+#import "UICountingLabel.h"
 
 typedef void (^KKDateDifferencesCellCompletionBlock)();
 
