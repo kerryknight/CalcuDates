@@ -12,8 +12,8 @@
 typedef void (^KKDateDifferencesCellCompletionBlock)();
 
 @interface KKDateDifferencesCell (){
-    BOOL isZeroed;
 }
+@property (nonatomic, assign) BOOL isZeroed;
 - (void)resetAllCounterLabels;
 @end
 
@@ -31,7 +31,7 @@ typedef void (^KKDateDifferencesCellCompletionBlock)();
                 self = (KKDateDifferencesCell *)oneObject;
     }
     
-    isZeroed = YES;
+    self.isZeroed = YES;
     [self configureCountingLabels];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -63,16 +63,16 @@ typedef void (^KKDateDifferencesCellCompletionBlock)();
 }
 
 - (void)numberShouldZero:(NSNotification*)notification {
-    if (isZeroed) return;
+    if (self.isZeroed) return;
     [self resetAllCounterLabels];
-    isZeroed = YES;
+    self.isZeroed = YES;
 }
 
 - (void)numbersShouldCalculate:(NSNotification*)notification {
     self.calculationsDictionary = [NSDictionary dictionaryWithDictionary:[notification userInfo]];
     [self configureCountingLabels];
     [self calculateNumbers:self.calculationsDictionary];
-    isZeroed = NO;
+    self.isZeroed = NO;
 }
 
 - (void)calculateNumbers:(NSDictionary*)calculations {
