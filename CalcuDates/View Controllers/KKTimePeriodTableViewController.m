@@ -12,25 +12,7 @@
 #import "KKDateDifferencesCell.h"
 #import "KKDatePickerCell.h"
 #import "KKSlightIndentTextField.h"
-#import "YLMoment.h"
-
-#define kPickerAnimationDuration    0.25   // duration for the animation to slide the date picker into view
-#define kDatePickerTag              99     // view tag identifiying the date picker view
-
-#define kTitleKey       @"title"   // key for obtaining the data source item's title
-#define kDateKey        @"date"    // key for obtaining the data source item's date value
-
-// keep track of which rows have date cells
-#define kDateStartRow    0
-#define kDateEndRow      1
-#define kButtonRow       2
-#define kDateDifferencesRow 3
-
-#define kDATE_PICKER_CELL_HEIGHT 162.0f
-#define kHEADER_INSTRUCTION_WHITE_LABEL_HEIGHT 43.0f
-#define kCALCULATE_BUTTONS_ROW_HEIGHT 55.0f
-#define kDATE_DIFFERENCES_ROW_HEIGHT 165.0f
-
+#import "KKDateManager.h"
 
 static NSString *kDateCellID = @"KKDateCell";     // the cells with the start or end date
 static NSString *kDatePickerCellID = @"KKDatePickerCell"; // the cell containing the date picker
@@ -91,21 +73,6 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 
 
 #pragma mark - Miscellaneous Methods
-/*! Returns the major version of iOS, (i.e. for iOS 6.1.3 it returns 6)
- */
-NSUInteger DeviceSystemMajorVersion() {
-    static NSUInteger _deviceSystemMajorVersion = -1;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        _deviceSystemMajorVersion = [[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue];
-    });
-    
-    return _deviceSystemMajorVersion;
-}
-
-#define EMBEDDED_DATE_PICKER (DeviceSystemMajorVersion() >= 7)
-
 /*! Determines if the given indexPath has a cell below it with a UIDatePicker.
  @param indexPath The indexPath to check if its cell has a UIDatePicker below it.
  */
@@ -126,14 +93,28 @@ NSUInteger DeviceSystemMajorVersion() {
  */
 - (void)updateDatePicker {
     if (self.datePickerIndexPath != nil) {
-        KKDateCell *associatedDatePickerCell = (KKDateCell*)[self.tableView cellForRowAtIndexPath:self.datePickerIndexPath];
+        KKDatePickerCell *associatedDatePickerCell = (KKDatePickerCell*)[self.tableView cellForRowAtIndexPath:self.datePickerIndexPath];
         UIDatePicker *targetedDatePicker = (UIDatePicker *)[associatedDatePickerCell viewWithTag:kDatePickerTag];
    
         if (targetedDatePicker != nil) {
             // we found a UIDatePicker in this cell, so update it's date value
-            //
-            NSDictionary *itemData = self.dataArray[self.datePickerIndexPath.row - 1];
-            [targetedDatePicker setDate:[itemData valueForKey:kDateKey] animated:NO];
+            
+            //get the cell above the date picker
+            NSIndexPath *dateCellIdx = [NSIndexPath indexPathForRow:self.datePickerIndexPath.row-1 inSection:0];
+            KKDateCell *cell = (KKDateCell *)[self.tableView cellForRowAtIndexPath:dateCellIdx];
+            
+            //create the NSDate from our cell's date text field
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"dd-MMM-yyyy"];
+            NSDate *date = [dateFormat dateFromString:cell.date.text];
+            
+            if (date) {
+                targetedDatePicker.date = date;
+                return;
+            }
+            
+            NSDate *now = [NSDate date];
+            targetedDatePicker.date = now; //set the date picker to today's date initially
         }
     }
 }
@@ -159,7 +140,7 @@ NSUInteger DeviceSystemMajorVersion() {
 - (BOOL)indexPathHasDate:(NSIndexPath *)indexPath {
     BOOL hasDate = NO;
     
-    if ((indexPath.row == kDateStartRow) || (indexPath.row == kDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kDateEndRow + 1)))) {
+    if ((indexPath.row == kTimePeriodViewDateStartRow) || (indexPath.row == kTimePeriodViewDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kTimePeriodViewDateEndRow + 1)))) {
         hasDate = YES;
     }
     
@@ -169,7 +150,7 @@ NSUInteger DeviceSystemMajorVersion() {
 - (CGFloat)determineDateRowHeight:(NSIndexPath*) indexPath {
     CGFloat h = self.tableView.rowHeight;
     
-    if ((indexPath.row == kDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kDateEndRow + 1)))) {
+    if ((indexPath.row == kTimePeriodViewDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kTimePeriodViewDateEndRow + 1)))) {
         h += 5;
     }
     
@@ -182,12 +163,12 @@ NSUInteger DeviceSystemMajorVersion() {
 - (BOOL)indexPathHasButtons:(NSIndexPath *)indexPath {
     BOOL hasButtons = NO;
     
-    if (self.datePickerIndexPath != nil && ((indexPath.row == kButtonRow + 1) || (indexPath.row == kDateEndRow + 1))) {
+    if (self.datePickerIndexPath != nil && ((indexPath.row == kTimePeriodViewButtonRow + 1) || (indexPath.row == kTimePeriodViewDateEndRow + 1))) {
         //we're showing a date picker so add 1 to each row
         hasButtons = YES;
     }
     
-    if (self.datePickerIndexPath == nil && ((indexPath.row == kButtonRow) || (indexPath.row == kDateEndRow))) {
+    if (self.datePickerIndexPath == nil && ((indexPath.row == kTimePeriodViewButtonRow) || (indexPath.row == kTimePeriodViewDateEndRow))) {
         hasButtons = YES;
     }
     
@@ -244,7 +225,7 @@ NSUInteger DeviceSystemMajorVersion() {
     CGFloat rowStartPoint = kCALCULATE_BUTTONS_ROW_HEIGHT + (self.tableView.rowHeight * 2); //rowHeight * 2 for 2 date fields
     
     //make our row at least as large as our nib file has it
-    return MAX(kDATE_DIFFERENCES_ROW_HEIGHT, containerViewHeight - rowStartPoint - kHEADER_INSTRUCTION_WHITE_LABEL_HEIGHT);
+    return MAX(kDURATIONS_CALCULATIONS_ROW_HEIGHT, containerViewHeight - rowStartPoint - kHEADER_INSTRUCTION_WHITE_LABEL_HEIGHT);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -258,15 +239,10 @@ NSUInteger DeviceSystemMajorVersion() {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    KKDateCell *cell = (KKDateCell *) [tableView cellForRowAtIndexPath:indexPath];
-    if ([cell.reuseIdentifier isEqualToString:kDateCellID]) {
-        if (EMBEDDED_DATE_PICKER)
-            [self displayInlineDatePickerForRowAtIndexPath:indexPath];
-        else
-            [self displayExternalDatePickerForRowAtIndexPath:indexPath];
-        
-        return;
-    }
+	KKDateCell *cell = (KKDateCell *)[tableView cellForRowAtIndexPath:indexPath];
+	if ([cell.reuseIdentifier isEqualToString:kDateCellID]) {
+		[self displayInlineDatePickerForRowAtIndexPath:indexPath];
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -368,7 +344,7 @@ NSUInteger DeviceSystemMajorVersion() {
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //if it's the end date row, add ability to swipe down to reveal start date row's date picker and swipe up to hide it
-    if ((indexPath.row == kDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kDateEndRow + 1)))) {
+    if ((indexPath.row == kTimePeriodViewDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kTimePeriodViewDateEndRow + 1)))) {
         [self addSwipeGesturesToCell:cell];
     }
     
@@ -378,7 +354,7 @@ NSUInteger DeviceSystemMajorVersion() {
 
 - (void)subscribeRACTextFieldsForDateCell:(KKDateCell*)cell forIndexPath:(NSIndexPath*)indexPath {
     //subscribe our cell value to the instance variable signals
-    if ((indexPath.row == kDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kDateEndRow + 1)))) {
+    if ((indexPath.row == kTimePeriodViewDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kTimePeriodViewDateEndRow + 1)))) {
         //end date cell row
         [[RACObserve(self, endDateString) distinctUntilChanged] subscribeNext:^(NSString *string) {
             //update a date text
@@ -464,7 +440,7 @@ NSUInteger DeviceSystemMajorVersion() {
     NSIndexPath *idx = [self.tableView indexPathForCell:cell];
     
     if ([viewForRow isKindOfClass:[KKDateCell class]]) {
-        if ((idx.row == kDateEndRow || ([self hasInlineDatePicker] && (idx.row == kDateEndRow + 1)))) {
+        if ((idx.row == kTimePeriodViewDateEndRow || ([self hasInlineDatePicker] && (idx.row == kTimePeriodViewDateEndRow + 1)))) {
             isEndDateRow = TRUE;
         }
     }
@@ -516,6 +492,9 @@ NSUInteger DeviceSystemMajorVersion() {
         
         [self toggleDatePickerForSelectedIndexPath:indexPathToReveal];
         self.datePickerIndexPath = [NSIndexPath indexPathForRow:indexPathToReveal.row + 1 inSection:0];
+        
+        //also, highlight our date field
+        [self highlightDateCellAtIndexPath:indexPath];
     }
     
     // always deselect the row containing the start or end date
@@ -525,6 +504,12 @@ NSUInteger DeviceSystemMajorVersion() {
     
     // inform our date picker of the current date to match the current cell
     [self updateDatePicker];
+}
+
+- (void)highlightDateCellAtIndexPath:(NSIndexPath*)indexPath {
+    //highlight the corresponding date field
+    KKDateCell *cell = (KKDateCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    [cell addTextFieldOutline];
 }
 
 /*! Reveals the date picker inline for the given indexPath, called by "didSelectRowAtIndexPath".
@@ -573,6 +558,9 @@ NSUInteger DeviceSystemMajorVersion() {
         self.datePickerIndexPath = nil;
         
         [self.tableView endUpdates];
+        
+        //also, unhighlight any date fields
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"unhighlightDateField" object:nil];
     }
 }
 
@@ -706,12 +694,12 @@ NSUInteger DeviceSystemMajorVersion() {
  @param sender The sender for this action: The "Calculate" button.
  */
 - (IBAction)calculateAction:(id)sender {
+    //don't do anything if we don't have 2 dates set
+    if (self.startDateString.length <= 0 || self.endDateString.length <= 0) return;
+    
     [self hideAnyInlineDatePicker];
     
-    NSDictionary *calculations = @{@"days": @123.93,
-                                   @"weeks": @23.03,
-                                   @"months": @12.3,
-                                   @"years": @2.45};
+    NSDictionary *calculations = [NSDictionary dictionaryWithDictionary:[KKDateManager doDateCalculationsForStartDate:self.startDateString andEndDate:self.endDateString]];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"calculateDateDifferences" object:nil userInfo:calculations];
 }
@@ -722,7 +710,13 @@ NSUInteger DeviceSystemMajorVersion() {
 - (IBAction)clearAllAction:(id)sender {
     [self hideAnyInlineDatePicker];
     
+    //tell our KKDateCells to reset themselves via notifications
     [[NSNotificationCenter defaultCenter] postNotificationName:@"zeroDateDifferences" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"clearDateFields" object:nil];
+    
+    //clear our local date string properties
+    self.startDateString = @"";
+    self.endDateString = @"";
 }
 
 /*! User wants to add a calendar event at the End Date value displayed

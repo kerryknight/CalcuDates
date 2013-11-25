@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		15CF9F9EB7E345DEB53B1D0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A21E9239314E86AEB33567 /* libPods.a */; };
+		C70F57A51843E76100C22F0A /* KKDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C70F57A41843E76100C22F0A /* KKDateManager.m */; };
+		C70F57A71843EBF200C22F0A /* KKDateManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C70F57A61843EBF200C22F0A /* KKDateManagerTests.m */; };
+		C70F57AD1844025500C22F0A /* KKNewDateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C70F57AC1844025500C22F0A /* KKNewDateTableViewController.m */; };
+		C70F57B61844075800C22F0A /* KKCalculatedEndDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C70F57B41844075800C22F0A /* KKCalculatedEndDateCell.m */; };
+		C70F57B71844075800C22F0A /* KKCalculatedEndDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70F57B51844075800C22F0A /* KKCalculatedEndDateCell.xib */; };
+		C70F57BB184415FA00C22F0A /* KKDurationEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C70F57B9184415FA00C22F0A /* KKDurationEntryCell.m */; };
+		C70F57BC184415FA00C22F0A /* KKDurationEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70F57BA184415FA00C22F0A /* KKDurationEntryCell.xib */; };
 		C72002E2183ACF1200B39261 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */; };
 		C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */; };
 		C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */; };
 		C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */; };
 		C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385F18316A6800AD9887 /* KKSettingsViewController.m */; };
 		C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59E182361F2003D137C /* KKMainViewController.m */; };
-		C74ED5A21823621A003D137C /* KKNewDateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */; };
 		C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */; };
 		C76ECE0F1829A386005E5591 /* KKDatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76ECE0D1829A386005E5591 /* KKDatePickerCell.xib */; };
 		C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C3C1828080C0012E021 /* KKTabBarController.m */; };
@@ -85,6 +91,17 @@
 /* Begin PBXFileReference section */
 		610CF16D12BF4A8EB588F390 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		93A21E9239314E86AEB33567 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70F57A31843E76100C22F0A /* KKDateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKDateManager.h; path = Classes/KKDateManager.h; sourceTree = "<group>"; };
+		C70F57A41843E76100C22F0A /* KKDateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKDateManager.m; path = Classes/KKDateManager.m; sourceTree = "<group>"; };
+		C70F57A61843EBF200C22F0A /* KKDateManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKDateManagerTests.m; path = CalcuDatesTests/KKDateManagerTests.m; sourceTree = SOURCE_ROOT; };
+		C70F57AB1844025500C22F0A /* KKNewDateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKNewDateTableViewController.h; path = "View Controllers/KKNewDateTableViewController.h"; sourceTree = "<group>"; };
+		C70F57AC1844025500C22F0A /* KKNewDateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKNewDateTableViewController.m; path = "View Controllers/KKNewDateTableViewController.m"; sourceTree = "<group>"; };
+		C70F57B31844075800C22F0A /* KKCalculatedEndDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKCalculatedEndDateCell.h; path = "Custom Table Cells/KKCalculatedEndDateCell.h"; sourceTree = "<group>"; };
+		C70F57B41844075800C22F0A /* KKCalculatedEndDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKCalculatedEndDateCell.m; path = "Custom Table Cells/KKCalculatedEndDateCell.m"; sourceTree = "<group>"; };
+		C70F57B51844075800C22F0A /* KKCalculatedEndDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKCalculatedEndDateCell.xib; path = "Custom Table Cells/KKCalculatedEndDateCell.xib"; sourceTree = "<group>"; };
+		C70F57B8184415FA00C22F0A /* KKDurationEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKDurationEntryCell.h; path = "Custom Table Cells/KKDurationEntryCell.h"; sourceTree = "<group>"; };
+		C70F57B9184415FA00C22F0A /* KKDurationEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKDurationEntryCell.m; path = "Custom Table Cells/KKDurationEntryCell.m"; sourceTree = "<group>"; };
+		C70F57BA184415FA00C22F0A /* KKDurationEntryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKDurationEntryCell.xib; path = "Custom Table Cells/KKDurationEntryCell.xib"; sourceTree = "<group>"; };
 		C722F505183D470900770D8F /* KKMainViewController+TestingExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKMainViewController+TestingExtensions.h"; sourceTree = "<group>"; };
 		C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KKMainViewController+TestingExtensions.m"; sourceTree = "<group>"; };
 		C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -96,8 +113,6 @@
 		C74ED59718234E0C003D137C /* KKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKConstants.h; path = Classes/KKConstants.h; sourceTree = "<group>"; };
 		C74ED59D182361F2003D137C /* KKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMainViewController.h; path = "View Controllers/KKMainViewController.h"; sourceTree = "<group>"; };
 		C74ED59E182361F2003D137C /* KKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKMainViewController.m; path = "View Controllers/KKMainViewController.m"; sourceTree = "<group>"; };
-		C74ED5A01823621A003D137C /* KKNewDateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKNewDateTableViewController.h; path = "View Controllers/KKNewDateTableViewController.h"; sourceTree = "<group>"; };
-		C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKNewDateTableViewController.m; path = "View Controllers/KKNewDateTableViewController.m"; sourceTree = "<group>"; };
 		C76ECE0618293CF7005E5591 /* KKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMacros.h; path = Classes/KKMacros.h; sourceTree = "<group>"; };
 		C76ECE0B1829A386005E5591 /* KKDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKDatePickerCell.h; path = "Custom Table Cells/KKDatePickerCell.h"; sourceTree = "<group>"; };
 		C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKDatePickerCell.m; path = "Custom Table Cells/KKDatePickerCell.m"; sourceTree = "<group>"; };
@@ -385,6 +400,7 @@
 				C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */,
 				C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */,
 				C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */,
+				C70F57A61843EBF200C22F0A /* KKDateManagerTests.m */,
 				C7DB1DA618218C6D009A2DCC /* Supporting Files */,
 			);
 			path = CalcuDatesTests;
@@ -406,10 +422,10 @@
 				C74ED59E182361F2003D137C /* KKMainViewController.m */,
 				C7935C3B1828080C0012E021 /* KKTabBarController.h */,
 				C7935C3C1828080C0012E021 /* KKTabBarController.m */,
-				C74ED5A01823621A003D137C /* KKNewDateTableViewController.h */,
-				C74ED5A11823621A003D137C /* KKNewDateTableViewController.m */,
 				C7F0FBE618283FF400CEA23A /* KKTimePeriodTableViewController.h */,
 				C7F0FBE718283FF400CEA23A /* KKTimePeriodTableViewController.m */,
+				C70F57AB1844025500C22F0A /* KKNewDateTableViewController.h */,
+				C70F57AC1844025500C22F0A /* KKNewDateTableViewController.m */,
 				C73D385E18316A6800AD9887 /* KKSettingsViewController.h */,
 				C73D385F18316A6800AD9887 /* KKSettingsViewController.m */,
 			);
@@ -429,6 +445,8 @@
 				C7F0FBDA1828296200CEA23A /* MyManager.m */,
 				C74ED59718234E0C003D137C /* KKConstants.h */,
 				C76ECE0618293CF7005E5591 /* KKMacros.h */,
+				C70F57A31843E76100C22F0A /* KKDateManager.h */,
+				C70F57A41843E76100C22F0A /* KKDateManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -445,6 +463,12 @@
 		C7F0FBEC182844B000CEA23A /* Custom Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C70F57B8184415FA00C22F0A /* KKDurationEntryCell.h */,
+				C70F57B9184415FA00C22F0A /* KKDurationEntryCell.m */,
+				C70F57BA184415FA00C22F0A /* KKDurationEntryCell.xib */,
+				C70F57B31844075800C22F0A /* KKCalculatedEndDateCell.h */,
+				C70F57B41844075800C22F0A /* KKCalculatedEndDateCell.m */,
+				C70F57B51844075800C22F0A /* KKCalculatedEndDateCell.xib */,
 				C76ECE0B1829A386005E5591 /* KKDatePickerCell.h */,
 				C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */,
 				C76ECE0D1829A386005E5591 /* KKDatePickerCell.xib */,
@@ -586,6 +610,8 @@
 				C7DB1D8E18218C6C009A2DCC /* Main_iPhone.storyboard in Resources */,
 				C7F0FC0818286F5E00CEA23A /* KKDateDifferencesCell.xib in Resources */,
 				C7F0FC0A18286F5E00CEA23A /* KKEndDateCell.xib in Resources */,
+				C70F57BC184415FA00C22F0A /* KKDurationEntryCell.xib in Resources */,
+				C70F57B71844075800C22F0A /* KKCalculatedEndDateCell.xib in Resources */,
 				C7DB1D8518218C6C009A2DCC /* InfoPlist.strings in Resources */,
 				C7F0FC0418286F5E00CEA23A /* KKButtonBarCell.xib in Resources */,
 				C7F0FC0618286F5E00CEA23A /* KKDateCell.xib in Resources */,
@@ -647,6 +673,7 @@
 				C7DB1D8B18218C6C009A2DCC /* KKAppDelegate.m in Sources */,
 				C7935C6118281C150012E021 /* CEHorizontalSwipeInteractionController.m in Sources */,
 				C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */,
+				C70F57B61844075800C22F0A /* KKCalculatedEndDateCell.m in Sources */,
 				C7F0FC0918286F5E00CEA23A /* KKEndDateCell.m in Sources */,
 				C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */,
 				C7F0FBE818283FF400CEA23A /* KKTimePeriodTableViewController.m in Sources */,
@@ -656,16 +683,18 @@
 				C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */,
 				C7935C5F18281C150012E021 /* CETurnAnimationController.m in Sources */,
 				C7F4A157183ED1E100C23AE3 /* RXPromise.mm in Sources */,
-				C74ED5A21823621A003D137C /* KKNewDateTableViewController.m in Sources */,
+				C70F57A51843E76100C22F0A /* KKDateManager.m in Sources */,
 				C7935C6018281C150012E021 /* CEBaseInteractionController.m in Sources */,
 				C7935C5E18281C150012E021 /* CEReversibleAnimationController.m in Sources */,
 				C7F0FBDF1828296200CEA23A /* AppCalendar.m in Sources */,
 				C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */,
 				C7F0FC0518286F5E00CEA23A /* KKDateCell.m in Sources */,
 				C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */,
+				C70F57BB184415FA00C22F0A /* KKDurationEntryCell.m in Sources */,
 				C7935C5D18281C150012E021 /* CENatGeoAnimationController.m in Sources */,
 				C7F0FBE31828296200CEA23A /* MyManager.m in Sources */,
 				C7F9929A18401DDC0060B266 /* UICountingLabel.m in Sources */,
+				C70F57AD1844025500C22F0A /* KKNewDateTableViewController.m in Sources */,
 				C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */,
 				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
 				C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */,
@@ -683,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F4A15E183FEAE700C23AE3 /* KKDateDifferencesCellTests.m in Sources */,
+				C70F57A71843EBF200C22F0A /* KKDateManagerTests.m in Sources */,
 				C7DB1DAC18218C6D009A2DCC /* KKMainViewControllerTests.m in Sources */,
 				C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */,
 				C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */,

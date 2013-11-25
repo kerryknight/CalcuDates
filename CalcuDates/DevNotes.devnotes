@@ -28,6 +28,8 @@ To Do:
 - add tooltips to calendar icons on first view
 - only show fullscreen ads for iphone 4/4S
 - show both banner and fullscreen ads for iphone 5+
+- make sure selected date repopulates datepicker each time datepicker is loaded
+- add ability to include only weekdays/workdays
 
 2. Read all new design stuff and NSText stuff for iOS 7
 3. Get UI designed for iPhone with asset catalog

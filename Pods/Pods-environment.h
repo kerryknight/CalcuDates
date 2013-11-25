@@ -36,12 +36,6 @@
 #define COCOAPODS_VERSION_MINOR_ReactiveCocoa_no_arc 1
 #define COCOAPODS_VERSION_PATCH_ReactiveCocoa_no_arc 7
 
-// YLMoment
-#define COCOAPODS_POD_AVAILABLE_YLMoment
-#define COCOAPODS_VERSION_MAJOR_YLMoment 0
-#define COCOAPODS_VERSION_MINOR_YLMoment 2
-#define COCOAPODS_VERSION_PATCH_YLMoment 0
-
 // libffi
 #define COCOAPODS_POD_AVAILABLE_libffi
 #define COCOAPODS_VERSION_MAJOR_libffi 3

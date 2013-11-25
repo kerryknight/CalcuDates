@@ -1,15 +1,15 @@
 //
-//  KKDateCell.m
+//  KKDurationEntryCell.m
 //  CalcuDates
 //
 //  Created by Kerry Knight on 11/4/13.
 //  Copyright (c) 2013 Kerry Knight. All rights reserved.
 //
 
-#import "KKDateCell.h"
+#import "KKDurationEntryCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation KKDateCell
+@implementation KKDurationEntryCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -18,10 +18,10 @@
         // Initialization code
         
         //get our custom cell's nib file from app bundle
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KKDateCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KKDurationEntryCell" owner:self options:nil];
         for (id oneObject in nib)
-            if ([oneObject isKindOfClass:[KKDateCell class]])
-                self = (KKDateCell *)oneObject;
+            if ([oneObject isKindOfClass:[KKDurationEntryCell class]])
+                self = (KKDurationEntryCell *)oneObject;
         
         
         [self.date addObserver:self forKeyPath:@"value" options:0 context:nil];

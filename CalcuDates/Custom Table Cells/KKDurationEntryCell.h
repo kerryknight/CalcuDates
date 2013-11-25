@@ -1,5 +1,5 @@
 //
-//  KKDateCell.h
+//  KKDurationEntryCell.h
 //  CalcuDates
 //
 //  Created by Kerry Knight on 11/4/13.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KKSlightIndentTextField.h"
 
-@interface KKDateCell : UITableViewCell
+@interface KKDurationEntryCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *title;
 @property (nonatomic, weak) IBOutlet KKSlightIndentTextField *date;

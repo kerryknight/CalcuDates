@@ -15,6 +15,7 @@
 #import "KKDateDifferencesCell.h"
 #import "KKDatePickerCell.h"
 #import "KKSlightIndentTextField.h"
+#import "KKDateManager.h"
 
 
 static NSString *kDateCellID = @"KKDateCell";     // the cells with the start or end date
@@ -31,6 +32,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     NSDate *startDate;
     NSDate *endDate;
     NSDateFormatter *dateFormat;
+    NSDictionary *dateCalculations;
 }
 @property (nonatomic, strong) KKTimePeriodTableViewController *sut;
 @end
@@ -64,6 +66,8 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     [dateFormat setDateFormat:@"dd-MMM-yyyy"];
     startDate = [dateFormat dateFromString:startDateStr];
     endDate = [dateFormat dateFromString:endDateStr];
+    
+    dateCalculations = [NSDictionary dictionaryWithDictionary:[KKDateManager doDateCalculationsForStartDate:startDateStr andEndDate:endDateStr]];
 }
 
 - (void)tearDown
@@ -280,6 +284,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     
     XCTAssertEqualObjects(cellDate, endDate, @"Selecting an end date should update the end date text field");
 }
+
 
 #pragma mark - button cell
 - (void)test_buttonCellShouldHaveTwoConnectedButtons {

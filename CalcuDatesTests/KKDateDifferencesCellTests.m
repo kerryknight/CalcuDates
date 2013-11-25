@@ -22,9 +22,9 @@
 	[super setUp];
 	// Put setup code here; it will be run once, before the first test case.
     
-	calculations = @{ @"days": @123.93,
-		              @"weeks": @23.03,
-		              @"months": @12.3,
+	calculations = @{ @"days": @124,
+		              @"weeks": @23.3,
+		              @"months": @12.37,
 		              @"years": @2.45 };
     
     self.sut = [[KKDateDifferencesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"foo"];
@@ -74,8 +74,8 @@
 
 - (void)test_postingClearNotificationShouldClearAllLabels {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"zeroDateDifferences" object:nil];
-    XCTAssertEqualObjects(self.sut.daysDifferenceField.text, @"0.00", @"Days field should be cleared");
-    XCTAssertEqualObjects(self.sut.weeksDifferenceField.text, @"0.00", @"Weeks field should be cleared");
+    XCTAssertEqualObjects(self.sut.daysDifferenceField.text, @"0", @"Days field should be cleared");
+    XCTAssertEqualObjects(self.sut.weeksDifferenceField.text, @"0.0", @"Weeks field should be cleared");
     XCTAssertEqualObjects(self.sut.monthsDifferenceField.text, @"0.00", @"Months field should be cleared");
     XCTAssertEqualObjects(self.sut.yearsDifferenceField.text, @"0.00", @"Years field should be cleared");
 }
