@@ -1,116 +1,0 @@
-TPods
-v6
-r1
-cCheck dependencies
-cCompileC /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLibtool /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a normal i386
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000005267F52A0000000000A92BC0
-t1382544682
-s11086784
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
-c000000005283091C0000000000000176
-t1384319260
-s374
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
-c000000005239E2F200000000000003B5
-t1379525362
-s949
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
-c000000005267F53400000000000001A0
-t1382544692
-s416
-
-N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/include/module.map
-c000000005239E30C0000000000000AC9
-t1379525388
-s2761
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o
-t1384961364
-s3376
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods.LinkFileList
-c00000000528CD554000000000000009A
-t1384961364
-s154
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-BlocksKit.a
-c00000000528CD55300000000001171F0
-t1384961363
-s1143280
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-MBProgressHUD.a
-c00000000528CD553000000000002FE10
-t1384961363
-s196112
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-ReactiveCocoa.a
-c00000000528CD55400000000002C79B8
-t1384961364
-s2914744
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-RevMob.a
-c00000000528CD5520000000000000E80
-t1384961362
-s3712
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-YLMoment.a
-c00000000528CD5520000000000014F48
-t1384961362
-s85832
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-libffi.a
-c00000000528CD5520000000000019788
-t1384961362
-s104328
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a
-t1384961364
-s4451048
-
-N/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m
-c00000000528CD4300000000000000070
-t1384961072
-s112
-
-CBuild AST from /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m
-r0
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies76dddf830d3db841^c006e0830d3db841^---0#1#1#--18"Check dependencies36"9978C877-F7B1-40D9-B65B-5FDF27FFA4C3-
-
-CCompileC /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s406654164.367581
-e406654164.399881
-r1
-xCompileC
-x/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o
-x/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m243"CompileC /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler09365ed40c3db841^ee5e66d40c3db841^---0#0#1#-19%DVTDocumentLocation2@81"file:///Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m0000000000000000^4372"CompileC /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o Pods-dummy.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fmodules -fmodules-cache-path=/Users/Kerry/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-generated-files.hmap -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-own-target-headers.hmap -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-all-target-headers.hmap -iquote /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Pods-project-headers.hmap -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/include -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers/BlocksKit -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers/MBProgressHUD -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers/ReactiveCocoa -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers/ReactiveCocoa/ReactiveCocoa -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers/RevMob -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers/YLMoment -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/Headers/libffi -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/DerivedSources/i386 -I/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/DerivedSources -F/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator -F/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods/RevMob -MMD -MT dependencies -MF /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.d --serialize-diagnostics /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.dia -c /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods/Pods-dummy.m -o /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods-dummy.o36"C5853AE1-EAA7-4BD8-8B1D-3E130C62ADA5-
-bB44DB0BD-899E-43F3-A986-816DFA16D1D0
-
-CLibtool /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a normal i386
-s406654164.400903
-e406654164.505491
-r1
-xLibtool
-x/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a
-xnormal
-xi386
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-libffi.a(ffi-D05CF9872B83965B.o) has no symbols
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-libffi.a(sysv.o) has no symbols
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-libffi.a(trampoline.o) has no symbols
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Libtool /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a normal i386123"Libtool /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a normal i386c7d766d40c3db841^a16981d40c3db841^-730"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-libffi.a(ffi-D05CF9872B83965B.o) has no symbols/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-libffi.a(sysv.o) has no symbols/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods-libffi.a(trampoline.o) has no symbols-0#0#1#--1178"Libtool /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a normal i386    cd /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Pods    setenv IPHONEOS_DEPLOYMENT_TARGET 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only i386 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator -filelist /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods.build/Objects-normal/i386/Pods.LinkFileList -framework Foundation -lPods-BlocksKit -lPods-MBProgressHUD -lPods-ReactiveCocoa -lPods-RevMob -lPods-YLMoment -lPods-libffi -o /Users/Kerry/Desktop/Kerry_Apps/CalcuDates/CalcuDates_v2/Build/Products/Debug-iphonesimulator/libPods.a36"B6E4F3DB-9088-434B-A536-0054604473BB-
-bB44DB0BD-899E-43F3-A986-816DFA16D1D0
-

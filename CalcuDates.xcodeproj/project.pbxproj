@@ -783,6 +783,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${PODS_ROOT}",
+					"${HEADER_SEARCH_PATHS}",
 					"${HEADERS_SEARCH_PATHS}",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -827,6 +828,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${PODS_ROOT}",
+					"${HEADER_SEARCH_PATHS}",
 					"${HEADERS_SEARCH_PATHS}",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -859,7 +861,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRC_ROOT}",
-					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers\"/**",
 					"\"${PODS_ROOT}/Headers/BlocksKit\"",
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
@@ -907,7 +909,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRC_ROOT}",
-					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers\"/**",
 					"\"${PODS_ROOT}/Headers/BlocksKit\"",
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
