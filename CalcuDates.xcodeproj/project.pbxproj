@@ -1562,7 +1562,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRC_ROOT}",
-					"\"${PODS_ROOT}/Headers\"/**",
+					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/BlocksKit\"",
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
@@ -1609,7 +1609,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRC_ROOT}",
-					"\"${PODS_ROOT}/Headers\"/**",
+					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/BlocksKit\"",
 					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
