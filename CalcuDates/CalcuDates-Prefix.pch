@@ -22,7 +22,6 @@
     #import "ReactiveCocoa.h"
     #import "RACEXTScope.h"
     #import "Appirater.h"
-    #import "SVProgressHUD.h"
     #import "DAKeyboardControl.h"
 
 

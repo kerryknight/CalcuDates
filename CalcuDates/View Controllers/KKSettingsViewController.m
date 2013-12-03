@@ -7,6 +7,7 @@
 //
 
 #import "KKSettingsViewController.h"
+#import "SVProgressHUD.h"
 #import <RevMobAds/RevMobAds.h>
 
 #define kReactiveCocoaTag           222
