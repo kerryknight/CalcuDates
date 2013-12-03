@@ -11,6 +11,10 @@ light blue color: R:172 G:210 B:252
 logo@2x: 540x126
 logo: 270x63
 
+Known Bugs:
+-----------------------
+- on New Date view, if a date duration cell is active and keyboard showing, clicking the Start Date field should dismiss keyboard and open up date picker; however, if click in one date duration field and then another and then another, then click the Start Date field, it only dismisses the keyboard and you have to click it again in order to get the date picker to show
+
 
 To Do:
 -----------------------
@@ -30,24 +34,32 @@ To Do:
 - show both banner and fullscreen ads for iphone 5+
 - make sure selected date repopulates datepicker each time datepicker is loaded
 - add ability to include only weekdays/workdays
+- squeeze rows on pull down like evernote
+- get swipe up to close date picker working for new date
 
 2. Read all new design stuff and NSText stuff for iOS 7
 3. Get UI designed for iPhone with asset catalog
 4. Get UI designed for iPad
-5. Hook up UI parts
-9. Hook methods up to parts
-10. Hook rev mob ads back up to UI
-11. Turn crash reporting back on
 12. Submit app through AppLauch? Top is $199?  https://applaunch.us/how-app-launch-works
+13. Redesigned website should be like xbox's: http://www.xbox.com/en-US/xbox-one/meet-xbox-one#fantasyfan
 
 
 3rd Party Code Used:
 --------------------------
-//- CocoaLumberjack: https://github.com/robbiehanson/CocoaLumberjack
-- MHDismissModalView: https://github.com/mariohahn/MHDismissModalView
 - ReactiveCocoa: https://github.com/ReactiveCocoa/ReactiveCocoa
 - UICountingLabel: https://github.com/dataxpress/UICountingLabel
 
+
+For App Store Description:
+--------------------------
+What's new in 2.0:
+- completely redesigned for iOS 7
+- touch or drag up/down to open date picker fields
+- touch the usual menu buttons or swipe left/right to switch calculation screens
+- calculations are more accurate
+- less finger touches to get to the calculations you've been feenin' for
+- no more banner ads at the bottom of the screen!
+- much more of the awesome you want without all the lame you don't
 
 
 Snippets:

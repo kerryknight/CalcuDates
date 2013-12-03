@@ -97,10 +97,10 @@
 }
 
 - (void)resetAllCounterLabels {
-    self.daysDifferenceField.text = @"0";
-    self.weeksDifferenceField.text = @"0.0";
-    self.monthsDifferenceField.text = @"0.00";
-    self.yearsDifferenceField.text = @"0.00";
+    self.daysDifferenceField.text = @"--";
+    self.weeksDifferenceField.text = @"--";
+    self.monthsDifferenceField.text = @"--";
+    self.yearsDifferenceField.text = @"--";
 }
 
 - (void)formatCellForCalculations {

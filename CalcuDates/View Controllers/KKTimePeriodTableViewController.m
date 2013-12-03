@@ -103,6 +103,11 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
             NSIndexPath *dateCellIdx = [NSIndexPath indexPathForRow:self.datePickerIndexPath.row-1 inSection:0];
             KKDateCell *cell = (KKDateCell *)[self.tableView cellForRowAtIndexPath:dateCellIdx];
             
+            //since the user can swipe down on either the button bar cell or the date differences cell, the button bar could be
+            //the targeted cell if the swipe is on the date differences cell; so, check if our cell responds to date, if not,
+            //just return to prevent a crash; kinda hackish but works
+            if (![cell respondsToSelector:@selector(date)]) return;
+            
             //create the NSDate from our cell's date text field
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
             [dateFormat setDateFormat:@"dd-MMM-yyyy"];
@@ -115,6 +120,13 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
             
             NSDate *now = [NSDate date];
             targetedDatePicker.date = now; //set the date picker to today's date initially
+            
+            //set our text field to what the date picker shows initially
+            if ([self isEndDateRow:cell]) {
+                self.endDateString = [self.dateFormatter stringFromDate:targetedDatePicker.date];
+            } else {
+                self.startDateString = [self.dateFormatter stringFromDate:targetedDatePicker.date];
+            }
         }
     }
 }
@@ -122,7 +134,6 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 /*! Determines if the UITableViewController has a UIDatePicker in any of its cells.
  */
 - (BOOL)hasInlineDatePicker {
-//    NSLog(@"%s", __FUNCTION__);
     return (self.datePickerIndexPath != nil);
 }
 
@@ -130,7 +141,6 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
  @param indexPath The indexPath to check if it represents a cell with the UIDatePicker.
  */
 - (BOOL)indexPathHasPicker:(NSIndexPath *)indexPath {
-//    NSLog(@"%s", __FUNCTION__);
     return ([self hasInlineDatePicker] && self.datePickerIndexPath.row == indexPath.row);
 }
 
@@ -278,7 +288,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
             sell = [[KKDateDifferencesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kDateDifferencesCellID];
         }
         
-        [self configureDateDifferencesCell:sell forTableView:tableView atIndexPath:indexPath];
+        [self configureDateDifferencesCell:sell atIndexPath:indexPath];
         
         cell = (UITableViewCell*)sell;//cast back to regular table cell so we can disable selection style
     } else {
@@ -354,28 +364,34 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 
 - (void)subscribeRACTextFieldsForDateCell:(KKDateCell*)cell forIndexPath:(NSIndexPath*)indexPath {
     //subscribe our cell value to the instance variable signals
+    @weakify(self)
     if ((indexPath.row == kTimePeriodViewDateEndRow || ([self hasInlineDatePicker] && (indexPath.row == kTimePeriodViewDateEndRow + 1)))) {
         //end date cell row
         [[RACObserve(self, endDateString) distinctUntilChanged] subscribeNext:^(NSString *string) {
             //update a date text
             cell.date.text = self.endDateString;
+            
+            //automatically recalculate
+            @strongify(self)
+            [self calculateAction];
         }];
     } else {
         //start date cell row
         [[RACObserve(self, startDateString) distinctUntilChanged] subscribeNext:^(NSString *string) {
             //update a date text
             cell.date.text = self.startDateString;
+            
+            //automatically recalculate
+            @strongify(self)
+            [self calculateAction];
         }];
     }
 }
 
 #pragma mark Table Button Bar Cell Methods
 - (void)configureButtonBarCell:(KKButtonBarCell*)cell atIndexPath:(NSIndexPath *)indexPath {
-    //format buttons
-    [cell.calculateButton setBackgroundImage:[UIImage imageNamed:@"btn_calculateHighlighted"] forState:UIControlStateHighlighted];
+    //format button
     [cell.clearButton setBackgroundImage:[UIImage imageNamed:@"btn_clearAllHighlighted"] forState:UIControlStateHighlighted];
-    
-    [cell.calculateButton addTarget:self action:@selector(calculateAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.clearButton addTarget:self action:@selector(clearAllAction:) forControlEvents:UIControlEventTouchUpInside];
     
     // we decide here that any cell in the table not a date cell is not selectable (it's just an indicator)
@@ -385,7 +401,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 }
 
 #pragma mark Table Date Differences Cell Methods
-- (void)configureDateDifferencesCell:(KKDateDifferencesCell*)cell forTableView:(UITableView* )tableView atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureDateDifferencesCell:(KKDateDifferencesCell*)cell atIndexPath:(NSIndexPath *)indexPath {
     //format the bottom button
     [cell.addEventButton setBackgroundImage:[UIImage imageNamed:@"btn_addEventHighlighted"] forState:UIControlStateHighlighted];
     [cell.addEventButton addTarget:self action:@selector(addEventAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -393,7 +409,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     cell.frame = CGRectMake(cell.frame.origin.x,
                                   cell.frame.origin.y,
                                   cell.frame.size.width,
-                                  [self determineDateDifferencesRowHeightForTableView:tableView forIndexPath:indexPath]);
+                                  [self determineDateDifferencesRowHeightForTableView:self.tableView forIndexPath:indexPath]);
     
     [self addSwipeGesturesToCell:cell];
 }
@@ -509,7 +525,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 - (void)highlightDateCellAtIndexPath:(NSIndexPath*)indexPath {
     //highlight the corresponding date field
     KKDateCell *cell = (KKDateCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    [cell addTextFieldOutline];
+    if ([cell respondsToSelector:@selector(addTextFieldOutline)])[cell addTextFieldOutline];
 }
 
 /*! Reveals the date picker inline for the given indexPath, called by "didSelectRowAtIndexPath".
@@ -540,12 +556,34 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     if (gesture.direction == UISwipeGestureRecognizerDirectionUp && [self isEndDateRow:[gesture view]]) {
         newRow = idx.row;
     }
+
+    //also, check if we made a legal downswipe gesture
+    if (![self isLegalDownSwipeGesture:gesture]) return;
     
     //since we want to display the date picker row above our swiped down row, create a new indexpath
     //and use the row above
     idxToDisplay = [NSIndexPath indexPathForRow:newRow inSection:0];
     //now that we have the indexpath the swipe was performed on, proceed with display of date picker
     [self displayInlineDatePickerForRowAtIndexPath:idxToDisplay];
+}
+
+- (BOOL)isLegalDownSwipeGesture:(UISwipeGestureRecognizer*)gesture {
+    //all swipes legal by default
+    BOOL isLegal = YES;
+    
+    //check for illegal down swipes to prevent date pickers inadvertently getting inserted in wrong rows and/or downswipes causing close animations
+    if (gesture.direction == UISwipeGestureRecognizerDirectionDown) {
+        //if swipe down and self.datePickerIndexPath.row is one, it means the start date's date picker is showing, so exit
+        if (self.datePickerIndexPath.row == 1) {
+            isLegal = NO;
+        }
+        
+        //if swipe down, the end date picker (row == 2) is showing and the gesture didn't start from the end date row, exit
+        if (self.datePickerIndexPath.row == 2 && ![self isEndDateRow:[gesture view]]) {
+            isLegal = NO;
+        }
+    }
+    return isLegal;
 }
 
 - (void)hideAnyInlineDatePicker {
@@ -566,49 +604,12 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 
 //this will hide any date picker first, then checks to see we're swiping the end date row up to reveal its date picker
 - (void)hideAnyInlineDatePickerForRowWithSwipeGesture:(UISwipeGestureRecognizer *)gesture {
-    
     //check if it's the end date row we swiped up on; if so, we should display the end date row's date picker
     if ([self isEndDateRow:[gesture view]] && [self hasInlineDatePicker]) {
         [self hideAnyInlineDatePicker];
         [self displayInlineDatePickerForRowWithSwipeGesture:gesture];
     } else {
         [self hideAnyInlineDatePicker];
-    }
-}
-
-- (void)hideCalculationsRow {
-    DLog(@"2");
-}
-
-/*! Reveals the UIDatePicker as an external slide-in view, iOS 6.1.x and earlier, called by "didSelectRowAtIndexPath".
- @param indexPath The indexPath used to display the UIDatePicker.
- */
-- (void)displayExternalDatePickerForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // first update the date picker's date value according to our model
-    NSDictionary *itemData = self.dataArray[indexPath.row];
-    [self.pickerView setDate:[itemData valueForKey:kDateKey] animated:YES];
-    
-    // the date picker might already be showing, so don't add it to our view
-    if (self.pickerView.superview == nil) {
-        CGRect startFrame = self.pickerView.frame;
-        CGRect endFrame = self.pickerView.frame;
-        
-        // the start position is below the bottom of the visible frame
-        startFrame.origin.y = self.view.frame.size.height;
-        
-        // the end position is slid up by the height of the view
-        endFrame.origin.y = startFrame.origin.y - endFrame.size.height;
-        
-        self.pickerView.frame = startFrame;
-        
-        [self.view addSubview:self.pickerView];
-        
-        // animate the date picker into view
-        [UIView animateWithDuration:kPickerAnimationDuration animations: ^{ self.pickerView.frame = endFrame; }
-                         completion:^(BOOL finished) {
-                             // add the "Done" button to the nav bar
-                             self.navigationItem.rightBarButtonItem = self.doneButton;
-                         }];
     }
 }
 
@@ -668,36 +669,12 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     }
 }
 
-
-/*! User chose to finish using the UIDatePicker by pressing the "Done" button, (used only for non-inline date picker), iOS 6.1.x or earlier
- @param sender The sender for this action: The "Done" UIBarButtonItem
- */
-- (IBAction)doneAction:(id)sender {
-    CGRect pickerFrame = self.pickerView.frame;
-    pickerFrame.origin.y = self.view.frame.size.height;
-    
-    // animate the date picker out of view
-    [UIView animateWithDuration:kPickerAnimationDuration animations: ^{ self.pickerView.frame = pickerFrame; }
-                     completion:^(BOOL finished) {
-                         [self.pickerView removeFromSuperview];
-                     }];
-    
-    // remove the "Done" button in the navigation bar
-	self.navigationItem.rightBarButtonItem = nil;
-    
-    // deselect the current table cell
-	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 /*! User is trying to calculate the time period differences by clicking the "Calculate" button.
  @param sender The sender for this action: The "Calculate" button.
  */
-- (IBAction)calculateAction:(id)sender {
+- (void)calculateAction {
     //don't do anything if we don't have 2 dates set
     if (self.startDateString.length <= 0 || self.endDateString.length <= 0) return;
-    
-    [self hideAnyInlineDatePicker];
     
     NSDictionary *calculations = [NSDictionary dictionaryWithDictionary:[KKDateManager doDateCalculationsForStartDate:self.startDateString andEndDate:self.endDateString]];
     
@@ -724,6 +701,8 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
  */
 - (IBAction)addEventAction:(id)sender {
     [self hideAnyInlineDatePicker];
+    NSDictionary *dateToAdd = @{@"date" : self.endDateString};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"addNewEvent" object:nil userInfo:dateToAdd];
 }
 
 @end

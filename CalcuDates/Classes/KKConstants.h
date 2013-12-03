@@ -26,6 +26,10 @@
 #define SECONDS_IN_A_MONTH  2620512 //using average month of 30.33 days
 #define SECONDS_IN_A_YEAR   31536000
 
+#define DAYS_IN_A_WEEK   7
+#define DAYS_IN_A_MONTH  30.33 
+#define DAYS_IN_A_YEAR   365.25
+
 //RevMob
 #define REV_MOB_APP_ID                      @"5063a9cfd1a7040800000026"
 #define REV_MOB_FULLSCREEN_PLACEMENT_ID     @"50f848fe7293dc0e00000001"
@@ -56,3 +60,4 @@
 #define kNewDateViewButtonRow              2
 #define kNewDateViewCalculatedEndDateRow   3
 #define kEND_DATE_CALCULATION_ROW_HEIGHT   55.0f
+#define kDURATION_ENTRY_ROW_HEIGHT         128.0f

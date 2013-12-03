@@ -62,7 +62,7 @@
 
 - (void)endDateShouldCalculate:(NSNotification*)notification {
     self.calculationsDictionary = [NSDictionary dictionaryWithDictionary:[notification userInfo]];
-    [self calculateNumbers:self.calculationsDictionary];
+    [self calculateEndDate:self.calculationsDictionary];
     self.isZeroed = NO;
     
     [self formatCellForCalculations];
@@ -70,12 +70,9 @@
     [self showAddEventButton];
 }
 
-- (void)calculateNumbers:(NSDictionary*)calculations {
+- (void)calculateEndDate:(NSDictionary*)calculations {
     NSParameterAssert(calculations != nil);
-//    [self.daysDifferenceField countFrom:0 to:[calculations[@"days"] floatValue]];
-//    [self.weeksDifferenceField countFrom:0 to:[calculations[@"weeks"] floatValue]];
-//    [self.monthsDifferenceField countFrom:0 to:[calculations[@"months"] floatValue]];
-//    [self.yearsDifferenceField countFrom:0 to:[calculations[@"years"] floatValue]];
+    self.calculatedEndDateField.text = calculations[@"endDate"];
 }
 
 - (void)resetAllCounterLabels {

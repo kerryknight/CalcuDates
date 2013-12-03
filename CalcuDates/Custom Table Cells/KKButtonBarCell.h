@@ -10,7 +10,6 @@
 
 @interface KKButtonBarCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIButton *calculateButton;
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 
 @end

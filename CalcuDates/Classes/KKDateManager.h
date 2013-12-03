@@ -11,6 +11,6 @@
 @interface KKDateManager : NSObject
 
 + (NSDictionary*) doDateCalculationsForStartDate:(NSString*)startDate andEndDate:(NSString*)endDate;
-+ (NSString*) calculateEndDateBasedOnTotalDurationFromStartDate:(NSString*)startDate forDurations:(NSDictionary*)durations;
++ (NSString*) doEndDateCalculationForStartDate:(NSString*)startDate andTotalDurations:(NSDictionary*)durations;
 
 @end

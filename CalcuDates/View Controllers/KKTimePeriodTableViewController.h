@@ -24,9 +24,6 @@
 
 @property (nonatomic, weak) IBOutlet UIDatePicker *pickerView;
 
-// this button appears only when the date picker is shown (iOS 6.1.x or earlier)
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
-
 - (void)hideAnyInlineDatePicker;
 - (void)displayInlineDatePickerForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (BOOL)indexPathHasDate:(NSIndexPath *)indexPath;

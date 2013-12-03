@@ -1,24 +1,27 @@
 PODS:
   - BlocksKit (1.8.3):
     - libffi
+  - DAKeyboardControl (2.2.0)
   - libffi (3.0.13)
-  - MBProgressHUD (0.8)
   - ReactiveCocoa (2.1.7):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/Core (2.1.7):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.7)
+  - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - BlocksKit (~> 1.8.3)
-  - MBProgressHUD (~> 0.8)
+  - DAKeyboardControl (~> 2.2.0)
   - ReactiveCocoa
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   BlocksKit: 27257f9cbbec0ea98c80ba83cc2ea7111ae62eb2
+  DAKeyboardControl: 3f58b2958b4d6785ee395211c6f175af7eb9de8d
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
-  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   ReactiveCocoa: 1117f7968c8667d2ca00b5aa47156fabcb56af75
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.28.0

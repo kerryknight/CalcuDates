@@ -7,66 +7,111 @@
 //
 
 #import "KKAppDelegate.h"
-#import "UINavigationController+MHDismissModalView.h"
+#import <Crashlytics/Crashlytics.h>
+#import <RevMobAds/RevMobAds.h>
+
+@interface KKAppDelegate () {
+    NSTimer *_myTimer;
+    int _closeAdCount;
+    BOOL _spinnerIsShowing;
+    BOOL _fullscreenAdIsShowing;
+}
+
+- (NSTimer*)createTimerWithInterval:(NSTimeInterval)interval;
+- (void)resetTimer;
+
+@end
+
+#define REV_MOB_FULLSCREEN_AD_TIMER_INTERVAL 60 * 5 //60 * 5 -> every 5 minutes
+#define REV_MOB_FULLSCREEN_AD_TIMER_RESET_DELAY 60 * 60 * 24 //1 full day
 
 @implementation KKAppDelegate
 
-//If you set the log level to LOG_LEVEL_ERROR, then you will only see DDLogError statements.
-//If you set the log level to LOG_LEVEL_WARN, then you will only see DDLogError and DDLogWarn statements.
-//If you set the log level to LOG_LEVEL_INFO, you'll see Error, Warn and Info statements.
-//If you set the log level to LOG_LEVEL_DEBUG, you'll see Error, Warn, Info and Debug statements.
-//If you set the log level to LOG_LEVEL_VERBOSE, you'll see all DDLog statements.
-//If you set the log level to LOG_LEVEL_OFF, you won't see any DDLog statements.
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //************************ MHDismiss Frosted Modal View ***********************************************************//
-    //Global Call to install MHDismiss
-    MHDismissIgnore *withoutScroll = [[MHDismissIgnore alloc] initWithViewControllerName:@"KKSettingsViewController"
-                                                                        ignoreBlurEffect:NO
-                                                                           ignoreGesture:NO];
     
-    [[MHDismissSharedManager sharedDismissManager] installWithTheme:MHModalThemeWhite
-                                                  withIgnoreObjects:@[withoutScroll]];
-    //************************ /MHDismiss Frosted Modal View **********************************************************//
+    UIColor *drkBlue = DRK_BLUE;
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:drkBlue, NSForegroundColorAttributeName, [UIFont fontWithName:@"Helvetica-Light" size:20], NSFontAttributeName, nil]];
     
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        DLog(@"Load resources for iOS 6.1 or earlier");
-    } else {
-        DLog(@"Load resources for iOS 7 or later");
-        UIColor *drkBlue = DRK_BLUE;
-        [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:drkBlue, NSForegroundColorAttributeName, [UIFont fontWithName:@"Helvetica-Light" size:20], NSFontAttributeName, nil]];
-        
-        [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
-    }
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    
+    // Override point for customization after application launch.
+    [RevMobAds startSessionWithAppID:REV_MOB_APP_ID];
+    [RevMobAds session].userAgeRangeMin = 18;
+    [RevMobAds session].connectionTimeout = 5; // 5 seconds
+    [RevMobAds session].parallaxMode = RevMobParallaxModeOff;
+    [RevMobAds session].testingMode = RevMobAdsTestingModeOff;
+    
+    //set the close ad count
+    _closeAdCount = 0;
+    
+    //reset our fullscreen banner ad timer
+    [self resetTimer];
+    
+    [Crashlytics startWithAPIKey:@"72614ec4b03fbf638deccdb46a34d1ef0b3a0a62"];
     
     return YES;
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+
+#pragma mark - Fullscreen Block-based methods
+- (void)loadFullScreenAd {
+    DLog(@"");
+    RevMobFullscreen *ad = [[RevMobAds session] fullscreen]; // you must retain this object
+    @weakify(self)
+    [ad loadWithSuccessHandler:^(RevMobFullscreen *fs) {
+        [fs showAd];
+//        NSLog(@"Ad loaded");
+        
+        //we invalidate it here because you can't pause/play timers; you have to recreate them which we do at ad close
+        if([_myTimer isValid]){
+            [_myTimer invalidate];
+            _myTimer = nil;
+        }
+        
+    } andLoadFailHandler:^(RevMobFullscreen *fs, NSError *error) {
+//        NSLog(@"Ad error: %@",error);
+    } onClickHandler:^{
+        @strongify(self)
+//        NSLog(@"Ad clicked");
+        _closeAdCount = 3;
+        //pretend we closed the ad so we don't show the daily ad to the user again until the next day
+        [self resetTimer];
+    } onCloseHandler:^{
+        @strongify(self)
+//        NSLog(@"Ad closed");
+        [self resetTimer];
+    }];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+#pragma mark - RevMob Timer custom methods
+- (void)resetTimer {
+    //invalidate first in case we got here prior to anything else running
+    if([_myTimer isValid]){
+        [_myTimer invalidate];
+        _myTimer = nil;
+    }
+    
+    _closeAdCount++;  //we start at 0 so this will give us 2 closes
+    
+    if (_closeAdCount < 3) {
+//        DLog(@"closed ad count < 3");
+        //there is no start/stop for a timer so set it up again
+        _myTimer = [self createTimerWithInterval:REV_MOB_FULLSCREEN_AD_TIMER_INTERVAL];
+        
+    } else {
+//        NSLog(@"closed ad count => 3 so timer reset tomorrow");
+        //wait a day before restarting the timer
+        _myTimer = [self createTimerWithInterval:REV_MOB_FULLSCREEN_AD_TIMER_RESET_DELAY];
+        //reset the counter
+        _closeAdCount = 0;
+        
+    }
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (NSTimer*)createTimerWithInterval:(NSTimeInterval)interval {
+//    DLog(@"timer = %0.0f", interval);
+    NSTimer *newTimer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(loadFullScreenAd) userInfo:nil repeats:YES];
+    return newTimer;
 }
 
 @end

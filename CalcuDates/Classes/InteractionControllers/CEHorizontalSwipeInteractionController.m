@@ -42,6 +42,8 @@
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStateBegan: {
             
+            if (translation.x == 0) break;//knightka fixes a bug where, if translation is 0, the following BOOL value could get set incorrectly
+            
             BOOL rightToLeftSwipe = translation.x < 0;
             
             // perform the required navigation operation ...

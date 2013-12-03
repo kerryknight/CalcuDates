@@ -20,15 +20,14 @@
 
 @property (assign) NSInteger pickerCellRowHeight;
 @property (nonatomic, weak) NSString *startDateString;
-@property (nonatomic, weak) NSString *daysString;
-@property (nonatomic, weak) NSString *weeksString;
-@property (nonatomic, weak) NSString *monthsString;
-@property (nonatomic, weak) NSString *yearsString;
+@property (nonatomic, strong) NSString *daysString;
+@property (nonatomic, strong) NSString *weeksString;
+@property (nonatomic, strong) NSString *monthsString;
+@property (nonatomic, strong) NSString *yearsString;
+@property (nonatomic, assign) BOOL keyboardIsShowing;
 
 @property (nonatomic, weak) IBOutlet UIDatePicker *pickerView;
-
-// this button appears only when the date picker is shown (iOS 6.1.x or earlier)
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 - (void)hideAnyInlineDatePicker;
 - (void)displayInlineDatePickerForRowAtIndexPath:(NSIndexPath *)indexPath;

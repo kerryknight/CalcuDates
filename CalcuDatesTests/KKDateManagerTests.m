@@ -20,6 +20,8 @@
     NSDate *endDate;
     NSDateFormatter *dateFormat;
     NSDictionary *dateCalculations;
+    NSDictionary *endDateCalculations;
+    NSString *calculatedEndDate;
 }
 @end
 
@@ -36,7 +38,7 @@
     dateDifferencesRow  = [NSIndexPath indexPathForRow:3 inSection:0];
     
     NSString *startDateStr = @"24-Oct-1999";
-    NSString *endDateStr = @"24-Oct-2009";
+    NSString *endDateStr = @"06-Oct-2009";
     
     // Convert string to date object
     dateFormat = [[NSDateFormatter alloc] init];
@@ -45,6 +47,13 @@
     endDate = [dateFormat dateFromString:endDateStr];
     
     dateCalculations = [NSDictionary dictionaryWithDictionary:[KKDateManager doDateCalculationsForStartDate:startDateStr andEndDate:endDateStr]];
+    
+    endDateCalculations = @{@"days"   : @1000,
+                            @"weeks"  : @1000,
+                            @"months" : @1000,
+                            @"years"  : @1000};
+    
+    calculatedEndDate = [NSString stringWithString:[KKDateManager doEndDateCalculationForStartDate:startDateStr andTotalDurations:endDateCalculations]];
 }
 
 - (void)tearDown
@@ -55,19 +64,23 @@
 }
 
 - (void)test_dateManagerReturnsCorrectDaysDifferenceAmount {
-    XCTAssertEqualObjects(@"3653", dateCalculations[@"days"], @"KKDateManager class should calculate correct number of days difference.");
+    XCTAssertEqualObjects(@"3635", dateCalculations[@"days"], @"KKDateManager class should calculate correct number of days difference.");
 }
 
 - (void)test_dateManagerReturnsCorrectWeeksDifferenceAmount {
-    XCTAssertEqualObjects(@"521.9", dateCalculations[@"weeks"], @"KKDateManager class should calculate correct number of weeks difference.");
+    XCTAssertEqualObjects(@"519.3", dateCalculations[@"weeks"], @"KKDateManager class should calculate correct number of weeks difference.");
 }
 
 - (void)test_dateManagerReturnsCorrectMonthsDifferenceAmount {
-    XCTAssertEqualObjects(@"120.44", dateCalculations[@"months"], @"KKDateManager class should calculate correct number of months difference.");
+    XCTAssertEqualObjects(@"119.85", dateCalculations[@"months"], @"KKDateManager class should calculate correct number of months difference.");
 }
 
 - (void)test_dateManagerReturnsCorrectYearsDifferenceAmount {
-    XCTAssertEqualObjects(@"10.01", dateCalculations[@"years"], @"KKDateManager class should calculate correct number of years difference.");
+    XCTAssertEqualObjects(@"9.95", dateCalculations[@"years"], @"KKDateManager class should calculate correct number of years difference.");
+}
+
+- (void)test_dateManagerReturnsCorrectEndDateForDurationEntries {
+    XCTAssertEqualObjects(@"20-Jan-3105", calculatedEndDate, @"KKDateManager class should calculate correct end date given durations.");
 }
 
 

@@ -17,12 +17,16 @@
 		C70F57BC184415FA00C22F0A /* KKDurationEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70F57BA184415FA00C22F0A /* KKDurationEntryCell.xib */; };
 		C72002E2183ACF1200B39261 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */; };
 		C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */; };
-		C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */; };
-		C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */; };
 		C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385F18316A6800AD9887 /* KKSettingsViewController.m */; };
+		C74CB6C21845310F00495304 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79A36B718452F57007013E7 /* Crashlytics.framework */; };
 		C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59E182361F2003D137C /* KKMainViewController.m */; };
+		C7554CE9184D48500047AED1 /* KKNewDateTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7554CE8184D48500047AED1 /* KKNewDateTableViewControllerTests.m */; };
 		C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */; };
 		C76ECE0F1829A386005E5591 /* KKDatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76ECE0D1829A386005E5591 /* KKDatePickerCell.xib */; };
+		C78DA0AA184B04C2002DD772 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */; };
+		C78DA0B6184BAA04002DD772 /* KKEventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78DA0B2184BA55E002DD772 /* KKEventKitController.m */; };
+		C78DA0B7184BAA07002DD772 /* EventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78DA0B0184BA55E002DD772 /* EventKitController.m */; };
+		C78DA0C2184BD3B8002DD772 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78DA0C1184BD3B7002DD772 /* RevMobAds.framework */; };
 		C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C3C1828080C0012E021 /* KKTabBarController.m */; };
 		C7935C5818281C150012E021 /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C4018281C150012E021 /* CECardsAnimationController.m */; };
 		C7935C5918281C150012E021 /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C4218281C150012E021 /* CECrossfadeAnimationController.m */; };
@@ -36,6 +40,7 @@
 		C7935C6118281C150012E021 /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5318281C150012E021 /* CEHorizontalSwipeInteractionController.m */; };
 		C7935C6218281C150012E021 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5518281C150012E021 /* CEPinchInteractionController.m */; };
 		C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */; };
+		C79A36B818452F57007013E7 /* Crashlytics.framework in Resources */ = {isa = PBXBuildFile; fileRef = C79A36B718452F57007013E7 /* Crashlytics.framework */; };
 		C7C94B41183C16A500C626D9 /* KKTabBarControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */; };
 		C7C94B43183C1D9A00C626D9 /* KKSettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */; };
 		C7DB1D7B18218C6C009A2DCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1D7A18218C6C009A2DCC /* Foundation.framework */; };
@@ -59,7 +64,6 @@
 		C7DB1DC218218F25009A2DCC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DB1DBB18218F25009A2DCC /* SystemConfiguration.framework */; };
 		C7EC6C6F183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */; };
 		C7F0FBDF1828296200CEA23A /* AppCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBD31828296200CEA23A /* AppCalendar.m */; };
-		C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBD81828296200CEA23A /* EventKitController.m */; };
 		C7F0FBE31828296200CEA23A /* MyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBDA1828296200CEA23A /* MyManager.m */; };
 		C7F0FBE818283FF400CEA23A /* KKTimePeriodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBE718283FF400CEA23A /* KKTimePeriodTableViewController.m */; };
 		C7F0FBF418286B0200CEA23A /* KKSlightIndentTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBF318286B0200CEA23A /* KKSlightIndentTextField.m */; };
@@ -69,11 +73,7 @@
 		C7F0FC0618286F5E00CEA23A /* KKDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F0FBFC18286F5E00CEA23A /* KKDateCell.xib */; };
 		C7F0FC0718286F5E00CEA23A /* KKDateDifferencesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FBFE18286F5E00CEA23A /* KKDateDifferencesCell.m */; };
 		C7F0FC0818286F5E00CEA23A /* KKDateDifferencesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F0FBFF18286F5E00CEA23A /* KKDateDifferencesCell.xib */; };
-		C7F0FC0918286F5E00CEA23A /* KKEndDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F0FC0118286F5E00CEA23A /* KKEndDateCell.m */; };
-		C7F0FC0A18286F5E00CEA23A /* KKEndDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F0FC0218286F5E00CEA23A /* KKEndDateCell.xib */; };
 		C7F4A150183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A14F183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m */; };
-		C7F4A157183ED1E100C23AE3 /* RXPromise.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A153183ED1E100C23AE3 /* RXPromise.mm */; };
-		C7F4A158183ED1E100C23AE3 /* RXPromise+RXExtension.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */; };
 		C7F4A15E183FEAE700C23AE3 /* KKDateDifferencesCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */; };
 		C7F9929A18401DDC0060B266 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9929918401DDC0060B266 /* UICountingLabel.m */; };
 /* End PBXBuildFile section */
@@ -104,19 +104,23 @@
 		C70F57BA184415FA00C22F0A /* KKDurationEntryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKDurationEntryCell.xib; path = "Custom Table Cells/KKDurationEntryCell.xib"; sourceTree = "<group>"; };
 		C722F505183D470900770D8F /* KKMainViewController+TestingExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKMainViewController+TestingExtensions.h"; sourceTree = "<group>"; };
 		C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KKMainViewController+TestingExtensions.m"; sourceTree = "<group>"; };
-		C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		C73D385A183169AC00AD9887 /* UINavigationController+MHDismissModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MHDismissModalView.h"; sourceTree = "<group>"; };
-		C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MHDismissModalView.m"; sourceTree = "<group>"; };
+		C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "3rd Party/MHDismissModalView/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "3rd Party/MHDismissModalView/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		C73D385E18316A6800AD9887 /* KKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKSettingsViewController.h; path = "View Controllers/KKSettingsViewController.h"; sourceTree = "<group>"; };
 		C73D385F18316A6800AD9887 /* KKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKSettingsViewController.m; path = "View Controllers/KKSettingsViewController.m"; sourceTree = "<group>"; };
 		C74ED59718234E0C003D137C /* KKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKConstants.h; path = Classes/KKConstants.h; sourceTree = "<group>"; };
 		C74ED59D182361F2003D137C /* KKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMainViewController.h; path = "View Controllers/KKMainViewController.h"; sourceTree = "<group>"; };
 		C74ED59E182361F2003D137C /* KKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKMainViewController.m; path = "View Controllers/KKMainViewController.m"; sourceTree = "<group>"; };
+		C7554CE8184D48500047AED1 /* KKNewDateTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewDateTableViewControllerTests.m; sourceTree = "<group>"; };
 		C76ECE0618293CF7005E5591 /* KKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKMacros.h; path = Classes/KKMacros.h; sourceTree = "<group>"; };
 		C76ECE0B1829A386005E5591 /* KKDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKDatePickerCell.h; path = "Custom Table Cells/KKDatePickerCell.h"; sourceTree = "<group>"; };
 		C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKDatePickerCell.m; path = "Custom Table Cells/KKDatePickerCell.m"; sourceTree = "<group>"; };
 		C76ECE0D1829A386005E5591 /* KKDatePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKDatePickerCell.xib; path = "Custom Table Cells/KKDatePickerCell.xib"; sourceTree = "<group>"; };
+		C78DA0AF184BA55E002DD772 /* EventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventKitController.h; sourceTree = "<group>"; };
+		C78DA0B0184BA55E002DD772 /* EventKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventKitController.m; sourceTree = "<group>"; };
+		C78DA0B1184BA55E002DD772 /* KKEventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKEventKitController.h; sourceTree = "<group>"; };
+		C78DA0B2184BA55E002DD772 /* KKEventKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKEventKitController.m; sourceTree = "<group>"; };
+		C78DA0C1184BD3B7002DD772 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		C7935C3B1828080C0012E021 /* KKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKTabBarController.h; path = "View Controllers/KKTabBarController.h"; sourceTree = "<group>"; };
 		C7935C3C1828080C0012E021 /* KKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKTabBarController.m; path = "View Controllers/KKTabBarController.m"; sourceTree = "<group>"; };
 		C7935C3F18281C150012E021 /* CECardsAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECardsAnimationController.h; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		C7935C5518281C150012E021 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
 		C7935C5618281C150012E021 /* CEVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
 		C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
+		C79A36B718452F57007013E7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTabBarControllerTests.m; sourceTree = "<group>"; };
 		C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKSettingsViewControllerTests.m; path = CalcuDatesTests/KKSettingsViewControllerTests.m; sourceTree = SOURCE_ROOT; };
 		C7DB1D7718218C6C009A2DCC /* CalcuDates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalcuDates.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,8 +177,6 @@
 		C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTimePeriodTableViewControllerTests.m; sourceTree = "<group>"; };
 		C7F0FBD21828296200CEA23A /* AppCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppCalendar.h; path = Classes/AppCalendar.h; sourceTree = "<group>"; };
 		C7F0FBD31828296200CEA23A /* AppCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppCalendar.m; path = Classes/AppCalendar.m; sourceTree = "<group>"; };
-		C7F0FBD71828296200CEA23A /* EventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventKitController.h; path = Classes/EventKitController.h; sourceTree = "<group>"; };
-		C7F0FBD81828296200CEA23A /* EventKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventKitController.m; path = Classes/EventKitController.m; sourceTree = "<group>"; };
 		C7F0FBD91828296200CEA23A /* MyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyManager.h; path = Classes/MyManager.h; sourceTree = "<group>"; };
 		C7F0FBDA1828296200CEA23A /* MyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyManager.m; path = Classes/MyManager.m; sourceTree = "<group>"; };
 		C7F0FBE618283FF400CEA23A /* KKTimePeriodTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKTimePeriodTableViewController.h; path = "View Controllers/KKTimePeriodTableViewController.h"; sourceTree = "<group>"; };
@@ -189,17 +192,8 @@
 		C7F0FBFD18286F5E00CEA23A /* KKDateDifferencesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKDateDifferencesCell.h; path = "Custom Table Cells/KKDateDifferencesCell.h"; sourceTree = "<group>"; };
 		C7F0FBFE18286F5E00CEA23A /* KKDateDifferencesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKDateDifferencesCell.m; path = "Custom Table Cells/KKDateDifferencesCell.m"; sourceTree = "<group>"; };
 		C7F0FBFF18286F5E00CEA23A /* KKDateDifferencesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKDateDifferencesCell.xib; path = "Custom Table Cells/KKDateDifferencesCell.xib"; sourceTree = "<group>"; };
-		C7F0FC0018286F5E00CEA23A /* KKEndDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKEndDateCell.h; path = "Custom Table Cells/KKEndDateCell.h"; sourceTree = "<group>"; };
-		C7F0FC0118286F5E00CEA23A /* KKEndDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKEndDateCell.m; path = "Custom Table Cells/KKEndDateCell.m"; sourceTree = "<group>"; };
-		C7F0FC0218286F5E00CEA23A /* KKEndDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KKEndDateCell.xib; path = "Custom Table Cells/KKEndDateCell.xib"; sourceTree = "<group>"; };
 		C7F4A14E183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKTimePeriodTableViewController+TestingExtensions.h"; sourceTree = "<group>"; };
 		C7F4A14F183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KKTimePeriodTableViewController+TestingExtensions.m"; sourceTree = "<group>"; };
-		C7F4A152183ED1E100C23AE3 /* RXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RXPromise.h; path = RXPromise/RXPromise.h; sourceTree = "<group>"; };
-		C7F4A153183ED1E100C23AE3 /* RXPromise.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RXPromise.mm; path = RXPromise/RXPromise.mm; sourceTree = "<group>"; };
-		C7F4A154183ED1E100C23AE3 /* RXPromise+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RXPromise+Private.h"; path = "RXPromise/RXPromise+Private.h"; sourceTree = "<group>"; };
-		C7F4A155183ED1E100C23AE3 /* RXPromise+RXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RXPromise+RXExtension.h"; path = "RXPromise/RXPromise+RXExtension.h"; sourceTree = "<group>"; };
-		C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "RXPromise+RXExtension.mm"; path = "RXPromise/RXPromise+RXExtension.mm"; sourceTree = "<group>"; };
-		C7F4A15C183FE10100C23AE3 /* RxDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxDLog.h; sourceTree = "<group>"; };
 		C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDateDifferencesCellTests.m; sourceTree = "<group>"; };
 		C7F9929818401DDC0060B266 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICountingLabel.h; path = UICountingLabel/UICountingLabel.h; sourceTree = "<group>"; };
 		C7F9929918401DDC0060B266 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICountingLabel.m; path = UICountingLabel/UICountingLabel.m; sourceTree = "<group>"; };
@@ -210,7 +204,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74CB6C21845310F00495304 /* Crashlytics.framework in Frameworks */,
 				C7DB1DC018218F25009A2DCC /* QuartzCore.framework in Frameworks */,
+				C78DA0C2184BD3B8002DD772 /* RevMobAds.framework in Frameworks */,
 				C7DB1DBC18218F25009A2DCC /* AdSupport.framework in Frameworks */,
 				C7DB1DBD18218F25009A2DCC /* CFNetwork.framework in Frameworks */,
 				C7DB1DBE18218F25009A2DCC /* EventKit.framework in Frameworks */,
@@ -247,15 +243,15 @@
 			name = "Testing Categories";
 			sourceTree = "<group>";
 		};
-		C73D3857183169AC00AD9887 /* MHDismissModalView */ = {
+		C78DA0BC184BAD92002DD772 /* Event Kit  */ = {
 			isa = PBXGroup;
 			children = (
-				C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */,
-				C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */,
-				C73D385A183169AC00AD9887 /* UINavigationController+MHDismissModalView.h */,
-				C73D385B183169AC00AD9887 /* UINavigationController+MHDismissModalView.m */,
+				C78DA0AF184BA55E002DD772 /* EventKitController.h */,
+				C78DA0B0184BA55E002DD772 /* EventKitController.m */,
+				C78DA0B1184BA55E002DD772 /* KKEventKitController.h */,
+				C78DA0B2184BA55E002DD772 /* KKEventKitController.m */,
 			);
-			path = MHDismissModalView;
+			name = "Event Kit ";
 			sourceTree = "<group>";
 		};
 		C7935C3318240BFA0012E021 /* Animations */ = {
@@ -311,8 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				C7F9929718401DAD0060B266 /* UICountingLabel */,
-				C7F4A151183EC3B400C23AE3 /* RXPromise */,
-				C73D3857183169AC00AD9887 /* MHDismissModalView */,
 			);
 			path = "3rd Party";
 			sourceTree = "<group>";
@@ -347,6 +341,8 @@
 		C7DB1D7918218C6C009A2DCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C78DA0C1184BD3B7002DD772 /* RevMobAds.framework */,
+				C79A36B718452F57007013E7 /* Crashlytics.framework */,
 				C7DB1DB518218F25009A2DCC /* AdSupport.framework */,
 				C7DB1DB618218F25009A2DCC /* CFNetwork.framework */,
 				C7DB1DB718218F25009A2DCC /* EventKit.framework */,
@@ -399,6 +395,7 @@
 				C7C94B40183C16A500C626D9 /* KKTabBarControllerTests.m */,
 				C7C94B42183C1D9A00C626D9 /* KKSettingsViewControllerTests.m */,
 				C7EC6C6E183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m */,
+				C7554CE8184D48500047AED1 /* KKNewDateTableViewControllerTests.m */,
 				C7F4A15D183FEAE700C23AE3 /* KKDateDifferencesCellTests.m */,
 				C70F57A61843EBF200C22F0A /* KKDateManagerTests.m */,
 				C7DB1DA618218C6D009A2DCC /* Supporting Files */,
@@ -418,6 +415,7 @@
 		C7DB1DC81821961E009A2DCC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C78DA0BC184BAD92002DD772 /* Event Kit  */,
 				C74ED59D182361F2003D137C /* KKMainViewController.h */,
 				C74ED59E182361F2003D137C /* KKMainViewController.m */,
 				C7935C3B1828080C0012E021 /* KKTabBarController.h */,
@@ -435,12 +433,12 @@
 		C7DB1DC918219636009A2DCC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C73D3858183169AC00AD9887 /* UIImage+ImageEffects.h */,
+				C73D3859183169AC00AD9887 /* UIImage+ImageEffects.m */,
 				C7F0FBF218286B0200CEA23A /* KKSlightIndentTextField.h */,
 				C7F0FBF318286B0200CEA23A /* KKSlightIndentTextField.m */,
 				C7F0FBD21828296200CEA23A /* AppCalendar.h */,
 				C7F0FBD31828296200CEA23A /* AppCalendar.m */,
-				C7F0FBD71828296200CEA23A /* EventKitController.h */,
-				C7F0FBD81828296200CEA23A /* EventKitController.m */,
 				C7F0FBD91828296200CEA23A /* MyManager.h */,
 				C7F0FBDA1828296200CEA23A /* MyManager.m */,
 				C74ED59718234E0C003D137C /* KKConstants.h */,
@@ -481,33 +479,8 @@
 				C7F0FBFD18286F5E00CEA23A /* KKDateDifferencesCell.h */,
 				C7F0FBFE18286F5E00CEA23A /* KKDateDifferencesCell.m */,
 				C7F0FBFF18286F5E00CEA23A /* KKDateDifferencesCell.xib */,
-				C7F0FC0018286F5E00CEA23A /* KKEndDateCell.h */,
-				C7F0FC0118286F5E00CEA23A /* KKEndDateCell.m */,
-				C7F0FC0218286F5E00CEA23A /* KKEndDateCell.xib */,
 			);
 			name = "Custom Table Cells";
-			sourceTree = "<group>";
-		};
-		C7F4A151183EC3B400C23AE3 /* RXPromise */ = {
-			isa = PBXGroup;
-			children = (
-				C7F4A15B183FE10100C23AE3 /* utility */,
-				C7F4A152183ED1E100C23AE3 /* RXPromise.h */,
-				C7F4A153183ED1E100C23AE3 /* RXPromise.mm */,
-				C7F4A154183ED1E100C23AE3 /* RXPromise+Private.h */,
-				C7F4A155183ED1E100C23AE3 /* RXPromise+RXExtension.h */,
-				C7F4A156183ED1E100C23AE3 /* RXPromise+RXExtension.mm */,
-			);
-			name = RXPromise;
-			sourceTree = "<group>";
-		};
-		C7F4A15B183FE10100C23AE3 /* utility */ = {
-			isa = PBXGroup;
-			children = (
-				C7F4A15C183FE10100C23AE3 /* RxDLog.h */,
-			);
-			name = utility;
-			path = RXPromise/utility;
 			sourceTree = "<group>";
 		};
 		C7F9929718401DAD0060B266 /* UICountingLabel */ = {
@@ -531,6 +504,7 @@
 				C7DB1D7418218C6C009A2DCC /* Frameworks */,
 				C7DB1D7518218C6C009A2DCC /* Resources */,
 				8339E507075B4EE693D5FADB /* Copy Pods Resources */,
+				C787BD5718452D640027ECC1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -609,13 +583,13 @@
 				C7DB1D9918218C6C009A2DCC /* Images.xcassets in Resources */,
 				C7DB1D8E18218C6C009A2DCC /* Main_iPhone.storyboard in Resources */,
 				C7F0FC0818286F5E00CEA23A /* KKDateDifferencesCell.xib in Resources */,
-				C7F0FC0A18286F5E00CEA23A /* KKEndDateCell.xib in Resources */,
 				C70F57BC184415FA00C22F0A /* KKDurationEntryCell.xib in Resources */,
 				C70F57B71844075800C22F0A /* KKCalculatedEndDateCell.xib in Resources */,
 				C7DB1D8518218C6C009A2DCC /* InfoPlist.strings in Resources */,
 				C7F0FC0418286F5E00CEA23A /* KKButtonBarCell.xib in Resources */,
 				C7F0FC0618286F5E00CEA23A /* KKDateCell.xib in Resources */,
 				C76ECE0F1829A386005E5591 /* KKDatePickerCell.xib in Resources */,
+				C79A36B818452F57007013E7 /* Crashlytics.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +635,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		C787BD5718452D640027ECC1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 72614ec4b03fbf638deccdb46a34d1ef0b3a0a62";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -672,9 +659,7 @@
 				C7935C6218281C150012E021 /* CEPinchInteractionController.m in Sources */,
 				C7DB1D8B18218C6C009A2DCC /* KKAppDelegate.m in Sources */,
 				C7935C6118281C150012E021 /* CEHorizontalSwipeInteractionController.m in Sources */,
-				C73D385D183169AC00AD9887 /* UINavigationController+MHDismissModalView.m in Sources */,
 				C70F57B61844075800C22F0A /* KKCalculatedEndDateCell.m in Sources */,
-				C7F0FC0918286F5E00CEA23A /* KKEndDateCell.m in Sources */,
 				C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */,
 				C7F0FBE818283FF400CEA23A /* KKTimePeriodTableViewController.m in Sources */,
 				C7935C5C18281C150012E021 /* CEFoldAnimationController.m in Sources */,
@@ -682,12 +667,12 @@
 				C7935C5818281C150012E021 /* CECardsAnimationController.m in Sources */,
 				C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */,
 				C7935C5F18281C150012E021 /* CETurnAnimationController.m in Sources */,
-				C7F4A157183ED1E100C23AE3 /* RXPromise.mm in Sources */,
 				C70F57A51843E76100C22F0A /* KKDateManager.m in Sources */,
 				C7935C6018281C150012E021 /* CEBaseInteractionController.m in Sources */,
 				C7935C5E18281C150012E021 /* CEReversibleAnimationController.m in Sources */,
+				C78DA0B6184BAA04002DD772 /* KKEventKitController.m in Sources */,
+				C78DA0AA184B04C2002DD772 /* UIImage+ImageEffects.m in Sources */,
 				C7F0FBDF1828296200CEA23A /* AppCalendar.m in Sources */,
-				C73D385C183169AC00AD9887 /* UIImage+ImageEffects.m in Sources */,
 				C7F0FC0518286F5E00CEA23A /* KKDateCell.m in Sources */,
 				C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */,
 				C70F57BB184415FA00C22F0A /* KKDurationEntryCell.m in Sources */,
@@ -695,13 +680,12 @@
 				C7F0FBE31828296200CEA23A /* MyManager.m in Sources */,
 				C7F9929A18401DDC0060B266 /* UICountingLabel.m in Sources */,
 				C70F57AD1844025500C22F0A /* KKNewDateTableViewController.m in Sources */,
-				C7F0FBE21828296200CEA23A /* EventKitController.m in Sources */,
 				C7DB1D8718218C6C009A2DCC /* main.m in Sources */,
 				C7935C3D1828080C0012E021 /* KKTabBarController.m in Sources */,
 				C7F0FC0718286F5E00CEA23A /* KKDateDifferencesCell.m in Sources */,
-				C7F4A158183ED1E100C23AE3 /* RXPromise+RXExtension.mm in Sources */,
 				C7F0FBF418286B0200CEA23A /* KKSlightIndentTextField.m in Sources */,
 				C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */,
+				C78DA0B7184BAA07002DD772 /* EventKitController.m in Sources */,
 				C7935C5A18281C150012E021 /* CEExplodeAnimationController.m in Sources */,
 				C7935C5B18281C150012E021 /* CEFlipAnimationController.m in Sources */,
 			);
@@ -719,6 +703,7 @@
 				C7C94B41183C16A500C626D9 /* KKTabBarControllerTests.m in Sources */,
 				C7F4A150183EA3AE00C23AE3 /* KKTimePeriodTableViewController+TestingExtensions.m in Sources */,
 				C7EC6C6F183D0D5100402410 /* KKTimePeriodTableViewControllerTests.m in Sources */,
+				C7554CE9184D48500047AED1 /* KKNewDateTableViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,7 +762,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -803,7 +788,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
+				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
@@ -827,7 +812,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
@@ -848,7 +833,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
+				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -864,8 +849,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates_V2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -893,7 +881,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
+				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -908,8 +896,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kerry Knight (98MP6F7M6L)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates_V2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalcuDates/CalcuDates-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -936,7 +927,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3018588A-9B16-461D-BA3D-01FFB3405D58";
+				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -950,6 +941,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -987,6 +979,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "CD9D71B5-826D-4D6A-9102-EFC1ACD39CE4";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
@@ -1000,6 +993,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalcuDates.app/CalcuDates";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1033,6 +1027,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "CD9D71B5-826D-4D6A-9102-EFC1ACD39CE4";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EventKitUI/EventKitUI.h>
+#import "EventKitController.h"
 
-@interface KKMainViewController : UIViewController {
+@interface KKMainViewController : UIViewController <EKEventEditViewDelegate, EKCalendarChooserDelegate>{
     
 }
 

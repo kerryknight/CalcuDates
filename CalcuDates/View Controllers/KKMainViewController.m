@@ -11,9 +11,10 @@
 #import "KKTimePeriodTableViewController.h"
 #import "KKNewDateTableViewController.h"
 #import "UIImage+ImageEffects.h"
-#import "UINavigationController+MHDismissModalView.h"
 #import "KKSettingsViewController.h"
+#import "KKEventKitController.h"
 #import "RACEXTScope.h"
+#import "CEVerticalSwipeInteractionController.h"
 
 #pragma mark -
 #pragma mark @categories
@@ -21,6 +22,22 @@
 @interface UIWindow (AutoLayoutDebug)
 + (UIWindow *) keyWindow;
 - (NSString *) _autolayoutTrace;
+@end
+
+@implementation UIView (MHScreenShot)
+
+- (UIImage *)screenshotMH{
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
+    if ([self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+        [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+    } else {
+        [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    }
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 @end
 
 #define kTIME_PERIOD_VIEW_INDEX 0
@@ -31,10 +48,12 @@
 
 @interface KKMainViewController () <UIViewControllerTransitioningDelegate, UITabBarControllerDelegate> {
     KKTabBarController *tabBarVC;
+    CEVerticalSwipeInteractionController *_vertInteractionController;
 }
 
 @property (nonatomic, assign) BOOL timePeriodSelected;
 @property (nonatomic, assign) BOOL gnuDateSelected;
+@property (nonatomic, strong) KKEventKitController *eventController;
 @end
 
 #pragma mark -
@@ -101,6 +120,7 @@
     
     //listen for change events broadcast by swipe interactions so we can correctly toggle to other selected button
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleButtonSelections) name:@"interactiveSwipeTransitionDidComplete" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNewEventHandler:) name:@"addNewEvent" object:nil];
 }
 
 - (IBAction) timePeriodButtonClickHandler:(id)sender {
@@ -125,8 +145,23 @@
 
 - (IBAction)settingsButtonClickHandler:(id)sender {
     KKSettingsViewController *modal = [self.storyboard instantiateViewControllerWithIdentifier:@"KKSettingsViewController"];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:modal];
+    [self setBackgroundForNonScrollView:modal.view];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:modal];
+    
+    _vertInteractionController = [CEVerticalSwipeInteractionController new];
+    
+    // wire the interaction controller to the view controller
+    [_vertInteractionController wireToViewController:nav forOperation:CEInteractionOperationDismiss];
+    
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)addNewEventHandler:(NSNotification*)notification {
+    NSDictionary *dict = [notification userInfo];
+    NSString *date = dict[@"date"];
+    self.eventController = [[KKEventKitController alloc] initWithDate:date];
+    self.eventController.editEvent.editViewDelegate = self;
+    [self presentViewController:self.eventController.editEvent animated:YES completion:nil];
 }
 
 - (void) toggleButtonSelections {
@@ -135,13 +170,61 @@
     self.gnuDateSelected = !self.gnuDateSelected;
 }
 
+#pragma mark - Blurry Background methods
+- (UIImageView*)createBlurryBackground {
+    UIImage *image = [self.view screenshotMH];
+    UIImageView *backGroundView =[[UIImageView alloc]initWithFrame:CGRectMake(0, -64, image.size.width, image.size.height)];
+    backGroundView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    backGroundView.image = [image applyLightEffect];
+    return backGroundView;
+}
+
+- (void)setBackgroundForNonScrollView:(UIView*)view {
+    UIImageView *backGroundView = [[UIImageView alloc] init];
+    backGroundView = [self createBlurryBackground];
+    [view addSubview:backGroundView];
+    [view sendSubviewToBack:backGroundView];
+}
+
+#pragma mark - EventKit Edit Event Delegate Methods
+- (EKCalendar *)eventEditViewControllerDefaultCalendarForNewEvents:(EKEventEditViewController *)controller
+{
+    return self.eventController.eventStore.defaultCalendarForNewEvents;;
+}
+
+- (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
+{
+    [controller dismissViewControllerAnimated:YES completion:^{
+        
+        self.eventController.isPerformingOperations = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"unhideAdBannerView" object:nil];
+        
+        switch (action) {
+            case EKEventEditViewActionDeleted:
+//                NSLog(@"deleted");
+                [self.eventController deleteEvent:controller.event];
+                break;
+            case EKEventEditViewActionSaved:
+//                NSLog(@"saved");
+                [self.eventController saveEvent:controller.event];
+                break;
+            case EKEventEditViewActionCanceled:
+//                NSLog(@"cancelled");
+                [self.eventController deleteEvent:controller.event];
+                break;
+            default:
+//                NSLog(@"default");
+                break;
+        }
+    }];
+}
+
 #pragma mark -
 #pragma mark Utility Methods
 - (void) wrapperForLoggingAutoLayoutConstraints {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", [[UIWindow keyWindow] _autolayoutTrace]);
 }
-
 
 @end
 

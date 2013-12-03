@@ -51,18 +51,16 @@
             BOOL topToBottomSwipe = translation.y > 0;
             
             // perform the required navigation operation ...
-            
-            if (_operation == CEInteractionOperationPop) {
-                // for pop operation, fire on top-to-bottom
-                if (topToBottomSwipe) {
+            if (topToBottomSwipe) {
+                if (_operation == CEInteractionOperationPop) {
                     self.interactionInProgress = YES;
                     [_viewController.navigationController popViewControllerAnimated:YES];
+                } else {
+                    self.interactionInProgress = YES;
+                    [_viewController dismissViewControllerAnimated:YES completion:nil];
                 }
-            } else {
-                // for dismiss, fire regardless of the translation direction
-                self.interactionInProgress = YES;
-                [_viewController dismissViewControllerAnimated:YES completion:nil];
             }
+            
             break;
         }
         case UIGestureRecognizerStateChanged: {

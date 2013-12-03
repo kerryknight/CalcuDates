@@ -22,13 +22,6 @@
         for (id oneObject in nib)
             if ([oneObject isKindOfClass:[KKDateCell class]])
                 self = (KKDateCell *)oneObject;
-        
-        
-        [self.date addObserver:self forKeyPath:@"value" options:0 context:nil];
-        
-        [RACObserve(self.date, text) subscribeNext:^(NSString *text) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"zeroDateDifferences" object:nil];
-        }];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeTextFieldOutline) name:@"unhighlightDateField" object:nil];
@@ -60,17 +53,7 @@
 }
 
 - (void)dealloc {
-    [self.date removeObserver:self forKeyPath:@"value"];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-//    DLog(@"3");
-//    if ([keyPath isEqualToString:@"value"]) {
-//        DLog(@"4");
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"KKDateFieldChanged" object:self];
-//    }
-//}
 
 @end

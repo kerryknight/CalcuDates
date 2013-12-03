@@ -11,13 +11,15 @@
 @interface EventKitController() {
     dispatch_queue_t _fetchQueue;
 }
+
+@property (strong, readwrite) EKEventStore *eventStore;
+@property (assign, readwrite) BOOL eventAccess;
+
 @end
 
 NSString *const EventsAccessGranted = @"EventsAccessGranted";
 
 @implementation EventKitController
-
-@synthesize eventStore = _eventStore;
 
 - (id) init {
 //    NSLog(@"%s", __FUNCTION__);
@@ -25,26 +27,18 @@ NSString *const EventsAccessGranted = @"EventsAccessGranted";
     self = [super init];
     if (self) {
         
-        _eventStore = [[EKEventStore alloc] init];
-        
-        [_eventStore
-            requestAccessToEntityType:EKEntityTypeEvent
-            completion:^(BOOL granted, NSError *error) {
-                
+        self.eventStore = [[EKEventStore alloc] init];
+        @weakify(self)
+        [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+            @strongify(self)
             if (granted) {
-                _eventAccess = YES;
-                [[NSNotificationCenter defaultCenter]
-                 postNotificationName:
-                 EventsAccessGranted
-                 object:self];
+                self.eventAccess = YES;
+                [[NSNotificationCenter defaultCenter] postNotificationName:EventsAccessGranted object:self];
             } else {
-                NSLog(@"Event access not granted: %@",
-                                            error);
+                NSLog(@"Event access not granted: %@", error);
             }
         }];
-        _fetchQueue =
-            dispatch_queue_create("com.conferencePlannerForGeeks.fetchQueue",
-                                  DISPATCH_QUEUE_SERIAL);
+        _fetchQueue = dispatch_queue_create("com.conferencePlannerForGeeks.fetchQueue", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
@@ -52,7 +46,7 @@ NSString *const EventsAccessGranted = @"EventsAccessGranted";
 - (void) deleteEvent:(EKEvent *)event {
 //    NSLog(@"%s", __FUNCTION__);
     
-    if (!_eventAccess) {
+    if (!self.eventAccess) {
         NSLog(@"No event acccess!");
         return;
     }
@@ -61,11 +55,7 @@ NSString *const EventsAccessGranted = @"EventsAccessGranted";
         
         //3. Delete the event
         NSError *err;
-        [self.eventStore
-         removeEvent:event
-         span:event.hasRecurrenceRules ?
-         EKSpanFutureEvents:EKSpanThisEvent
-         commit:YES error:&err];
+        [self.eventStore removeEvent:event span:event.hasRecurrenceRules ? EKSpanFutureEvents : EKSpanThisEvent commit:YES error:&err];
         
         BOOL success = [self.eventStore commit:&err];
         

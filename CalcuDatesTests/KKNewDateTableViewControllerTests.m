@@ -1,18 +1,18 @@
 //
-//  KKTimePeriodTableViewControllerTests.m
+//  KKNewDateTableViewControllerTests.m
 //  CalcuDates
 //
-//  Created by Kerry Knight on 11/19/13.
+//  Created by Kerry Knight on 12/2/13.
 //  Copyright (c) 2013 Kerry Knight. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "KKTimePeriodTableViewController.h"
-#import "KKTimePeriodTableViewController+TestingExtensions.h"
+#import "KKNewDateTableViewController.h"
 #import <objc/runtime.h>
 #import "KKDateCell.h"
 #import "KKButtonBarCell.h"
-#import "KKDateDifferencesCell.h"
+#import "KKDurationEntryCell.h"
+#import "KKCalculatedEndDateCell.h"
 #import "KKDatePickerCell.h"
 #import "KKSlightIndentTextField.h"
 #import "KKDateManager.h"
@@ -21,23 +21,25 @@
 static NSString *kDateCellID = @"KKDateCell";     // the cells with the start or end date
 static NSString *kDatePickerCellID = @"KKDatePickerCell"; // the cell containing the date picker
 static NSString *kButtonCellID = @"KKButtonCell";     // the cell containing calculate/clear buttons
-static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell containing all the calculations
+static NSString *KKDurationEntryCellID = @"KKDurationEntryCell"; // the cell containing the duration entry fields
+static NSString *KKCalculatedEndDateCellID = @"KKCalculatedEndDateCell"; // the cell containing the calculated end date
 
-@interface KKTimePeriodTableViewControllerTests : XCTestCase {
+@interface KKNewDateTableViewControllerTests : XCTestCase {
     NSIndexPath *dateStartRow;
-    NSIndexPath *dateEndRow;
+    NSIndexPath *durationEntryRow;
     NSIndexPath *buttonRow;
-    NSIndexPath *dateDifferencesRow;
+    NSIndexPath *calculatedEndDateRow;
     
     NSDate *startDate;
-    NSDate *endDate;
     NSDateFormatter *dateFormat;
-    NSDictionary *dateCalculations;
+    NSDictionary *endDateCalculations;
+    NSString *calculatedEndDate;
+    
 }
-@property (nonatomic, strong) KKTimePeriodTableViewController *sut;
+@property (nonatomic, strong) KKNewDateTableViewController *sut;
 @end
 
-@implementation KKTimePeriodTableViewControllerTests
+@implementation KKNewDateTableViewControllerTests
 
 - (void)setUp
 {
@@ -46,28 +48,31 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     
     //we need to load our nib from the storyboard to be able to access the view controller
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    self.sut = [[KKTimePeriodTableViewController alloc] init];
-    self.sut = [storyboard instantiateViewControllerWithIdentifier:@"TimePeriod"];
+    self.sut = [[KKNewDateTableViewController alloc] init];
+    self.sut = [storyboard instantiateViewControllerWithIdentifier:@"NewDate"];
     //this forces iOS to load the nib, even though we’re not displaying anything
     [self.sut performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
     [self.sut performSelectorOnMainThread:@selector(viewDidLoad) withObject:nil waitUntilDone:YES];
     [self.sut performSelectorOnMainThread:@selector(viewDidAppear:) withObject:nil waitUntilDone:YES];
     
     dateStartRow = [NSIndexPath indexPathForRow:0 inSection:0];
-    dateEndRow  = [NSIndexPath indexPathForRow:1 inSection:0];
+    durationEntryRow  = [NSIndexPath indexPathForRow:1 inSection:0];
     buttonRow  = [NSIndexPath indexPathForRow:2 inSection:0];
-    dateDifferencesRow  = [NSIndexPath indexPathForRow:3 inSection:0];
+    calculatedEndDateRow  = [NSIndexPath indexPathForRow:3 inSection:0];
     
     NSString *startDateStr = @"24-Oct-1999";
-    NSString *endDateStr = @"24-Oct-2009";
     
     // Convert string to date object
     dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd-MMM-yyyy"];
     startDate = [dateFormat dateFromString:startDateStr];
-    endDate = [dateFormat dateFromString:endDateStr];
     
-    dateCalculations = [NSDictionary dictionaryWithDictionary:[KKDateManager doDateCalculationsForStartDate:startDateStr andEndDate:endDateStr]];
+    endDateCalculations = @{@"days"   : @1,
+                            @"weeks"  : @1,
+                            @"months" : @1,
+                            @"years"  : @1};
+    
+    calculatedEndDate = [NSString stringWithString:[KKDateManager doEndDateCalculationForStartDate:startDateStr andTotalDurations:endDateCalculations]];
 }
 
 - (void)tearDown
@@ -81,16 +86,16 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 #pragma mark - iVars
 - (void)test_calculatedDateDifferencesRowHeight_iVarExists {
     Ivar ivar = class_getInstanceVariable([self.sut class], "calculatedDateDifferencesRowHeight");
-    XCTAssertTrue(ivar != NULL, @"Time period vc needs a calculate data differences row height ivar.");
+    XCTAssertTrue(ivar != NULL, @"New Date vc needs a calculate data differences row height ivar.");
 }
 
 #pragma mark - Properties
 - (void)test_dataArray_hasFourItems {
-    XCTAssertTrue([self.sut.dataArray count] == (NSUInteger)4, @"Time Period View Controller data array should have 4 items.");
+    XCTAssertTrue([self.sut.dataArray count] == (NSUInteger)4, @"New Date View Controller data array should have 4 items.");
 }
 
 - (void)test_dateFormatter_dateFormatIsInitiallyDDMMMYYYY {
-    XCTAssertEqualObjects(self.sut.dateFormatter.dateFormat, @"dd-MMM-yyyy", @"Time Period View Controller date formatter dateFormat should initially be dd-MMM-yyyy.");
+    XCTAssertEqualObjects(self.sut.dateFormatter.dateFormat, @"dd-MMM-yyyy", @"New Date View Controller date formatter dateFormat should initially be dd-MMM-yyyy.");
 }
 
 - (void)test_pickerCellRowHeight_valueIsSetToDatePickerCellHeightConstant {
@@ -99,45 +104,28 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 
 #pragma mark - TableView
 - (void)test_tableView_hasFourRows {
-    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)4, @"Time Period View Controller table view should have 4 rows.");
+    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)4, @"New Date View Controller table view should have 4 rows.");
 }
 
 - (void)test_tableView_hasFiveRowsAfterClickingOnStartDateRow {
     [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
-    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)5, @"Time Period View Controller table view should have 5 rows after start date click.");
-}
-
-- (void)test_tableView_hasFiveRowsAfterClickingOnEndDateRow {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)5, @"Time Period View Controller table view should have 5 rows after end date click.");
-}
-
-- (void)test_tableView_hasFiveRowsAfterClickingTwoDifferentDateRows {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)5, @"Time Period View Controller table view should have 5 rows after clicking 2 different date rows.");
+    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)5, @"New Date View Controller table view should have 5 rows after start date click.");
 }
 
 - (void)test_tableView_hasFourRowsAfterClickingStartDateRowTwice {
     [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
     [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
-    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)4, @"Time Period View Controller table view should have 4 rows after clicking start date row twice.");
-}
-
-- (void)test_tableView_hasFourRowsAfterClickingEndDateRowTwice {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)4, @"Time Period View Controller table view should have 4 rows after clicking end date row twice.");
+    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == (NSUInteger)4, @"New Date View Controller table view should have 4 rows after clicking start date row twice.");
 }
 
 - (void)test_tableView_rowCountEqualsDataArrayItemCount {
-    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == [self.sut.dataArray count], @"Time Period View Controller table view row count should equal dataArray count.");
+    XCTAssertTrue([self.sut.tableView numberOfRowsInSection:0] == [self.sut.dataArray count], @"New Date View Controller table view row count should equal dataArray count.");
 }
 
 #pragma mark - Methods
 - (void)test_datePickerIndexPathPropertyShouldBeNilIfDatePickerHidden {
     [self.sut hideAnyInlineDatePicker];
-    XCTAssertNil(self.sut.datePickerIndexPath, @"Time Period View Controller must have a datePickerIndexPath property.");
+    XCTAssertNil(self.sut.datePickerIndexPath, @"New Date View Controller must have a datePickerIndexPath property.");
 }
 
 - (void)test_datePickerIndexPathPropertyShouldNotBeNilStartDateRowClicked {
@@ -145,23 +133,18 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertNotNil(self.sut.datePickerIndexPath, @"datePickerIndexPath should not be nil if start date row is clicked.");
 }
 
-- (void)test_datePickerIndexPathPropertyShouldNotBeNilEndDateRowClicked {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    XCTAssertNotNil(self.sut.datePickerIndexPath, @"datePickerIndexPath should not be nil if end date row is clicked.");
-}
-
-- (void)test_dateFieldsShouldOnlyAppearForStartAndEndDateRows {
+- (void)test_dateFieldsShouldOnlyAppearForStartDateRow {
     XCTAssertTrue([self.sut indexPathHasDate:dateStartRow] == TRUE, @"Date start row should have date");
-    XCTAssertTrue([self.sut indexPathHasDate:dateEndRow] == TRUE, @"Date end row should have date");
+    XCTAssertTrue([self.sut indexPathHasDate:calculatedEndDateRow] == FALSE, @"Calculated end date row should have date");
     XCTAssertTrue([self.sut indexPathHasDate:buttonRow] == FALSE, @"Button row should not have date");
-    XCTAssertTrue([self.sut indexPathHasDate:dateDifferencesRow] == FALSE, @"Date differences row should not have date");
+    XCTAssertTrue([self.sut indexPathHasDate:durationEntryRow] == FALSE, @"Duration entry row should not have date");
 }
 
 - (void)test_shouldDetermineCorrectCellIDBaseOnIndexPath {
     XCTAssertEqualObjects([self.sut determineCellIdentifierForIndexPath:dateStartRow], kDateCellID, @"Index path for start date row should generate correct cell ID.");
-    XCTAssertEqualObjects([self.sut determineCellIdentifierForIndexPath:dateEndRow], kDateCellID, @"Index path for end date row should generate correct cell ID.");
+    XCTAssertEqualObjects([self.sut determineCellIdentifierForIndexPath:calculatedEndDateRow], KKCalculatedEndDateCellID, @"Index path for calculated end date row should generate correct cell ID.");
     XCTAssertEqualObjects([self.sut determineCellIdentifierForIndexPath:buttonRow], kButtonCellID, @"Index path for button row should generate correct cell ID.");
-    XCTAssertEqualObjects([self.sut determineCellIdentifierForIndexPath:dateDifferencesRow], kDateDifferencesCellID, @"Index path for date differences row should generate correct cell ID.");
+    XCTAssertEqualObjects([self.sut determineCellIdentifierForIndexPath:durationEntryRow], KKDurationEntryCellID, @"Index path for date duration entry row should generate correct cell ID.");
 }
 
 #pragma mark - Custom Table Cells
@@ -171,7 +154,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 }
 
 - (void)test_endDateRowCellShouldBeACustomDateCell {
-    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateEndRow] isKindOfClass:[KKDateCell class]], @"Cell at date end row should be a KKDateCell");
+    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:calculatedEndDateRow] isKindOfClass:[KKCalculatedEndDateCell class]], @"Cell at date end row should be a KKCalculatedEndDateCell");
 }
 
 - (void)test_buttonRowCellShouldBeACustomButtonCell {
@@ -179,7 +162,7 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 }
 
 - (void)test_dateDifferencesRowCellShouldBeACustomDateDifferencesCell {
-    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateDifferencesRow] isKindOfClass:[KKDateDifferencesCell class]], @"Cell at button row should be a KKDateDifferencesCell");
+    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:durationEntryRow] isKindOfClass:[KKDurationEntryCell class]], @"Cell at button row should be a KKDurationEntryCell");
 }
 
 #pragma mark - date cells
@@ -189,38 +172,11 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:pickerIndex] isKindOfClass:[KKDatePickerCell class]], @"Row below clicked start date row should be a custom KKDAtePickerCell");
 }
 
-- (void)test_rowAfterEndDateCellAfterClickingEndDateCellShouldBeACustomDatePickerCell {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:(dateEndRow.row + 1) inSection:0];
-    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:pickerIndex] isKindOfClass:[KKDatePickerCell class]], @"Row below clicked end date row should be a custom KKDAtePickerCell");
-}
-
-- (void)test_rowAfterStartDateCellAfterClickingStartDateCellTwiceShouldBeACustomDateCell {
+- (void)test_rowAfterStartDateCellAfterClickingStartDateCellTwiceShouldBeACustomDurationEntryCell {
     [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
     [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
     NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:(dateStartRow.row + 1) inSection:0];
-    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:pickerIndex] isKindOfClass:[KKDateCell class]], @"Row after start date row after clicking start date row twice should be custom KKDateCell");
-}
-
-- (void)test_rowAfterEndDateCellAfterClickingEndDateCellTwiceShouldBeACustomButtonBarCell {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:(dateEndRow.row + 1) inSection:0];
-    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:pickerIndex] isKindOfClass:[KKButtonBarCell class]], @"Row after end date row after clicking end date row twice should be custom KKButtonBarCell");
-}
-
-- (void)test_rowAfterStartDateCellAfterClickingEndDateCellThenStartDateCellShouldBeACustomDatePickerCell {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
-    NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:(dateStartRow.row + 1) inSection:0];
-    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:pickerIndex] isKindOfClass:[KKDatePickerCell class]], @"Row after start date row after clicking end date row then start date row should be custom KKDatePickerCell");
-}
-
-- (void)test_rowAfterEndDateCellAfterClickingStartDateCellThenEndDateCellShouldBeACustomDatePickerCell {
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateStartRow];
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    NSIndexPath *pickerIndex = [NSIndexPath indexPathForRow:(dateEndRow.row + 1) inSection:0];
-    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:pickerIndex] isKindOfClass:[KKDatePickerCell class]], @"Row after end date row after clicking start date row then end date row should be custom KKDatePickerCell");
+    XCTAssertTrue([[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:pickerIndex] isKindOfClass:[KKDurationEntryCell class]], @"Row after start date row after clicking start date row twice should be custom KKDurationEntryCell");
 }
 
 - (void)test_startDateCellShouldHaveCorrectTitle {
@@ -228,21 +184,10 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertEqualObjects(cell.title.text, @"Select Start Date*:", @"Start date cell should have correct title.");
 }
 
-- (void)test_endDateCellShouldHaveCorrectTitle {
-    KKDateCell *cell = (KKDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateEndRow];
-    XCTAssertEqualObjects(cell.title.text, @"Select End Date*:", @"End date cell should have correct title.");
-}
-
 - (void)test_startDateCellShouldObserveStartDateStringValueViaRAC {
     KKDateCell *cell = (KKDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateStartRow];
     self.sut.startDateString = @"Fake Date";
     XCTAssertEqualObjects(cell.date.text, @"Fake Date", @"Start date cell should observe startDateString via RAC");
-}
-
-- (void)test_endDateCellShouldObserveEndDateStringValueViaRAC {
-    KKDateCell *cell = (KKDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateEndRow];
-    self.sut.endDateString = @"Fake Date";
-    XCTAssertEqualObjects(cell.date.text, @"Fake Date", @"End date cell should observe endDateString via RAC");
 }
 
 - (void)test_startDateCellTextFieldUpdatesWhenDateActionCalled {
@@ -262,30 +207,6 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertEqualObjects(cellDate, startDate, @"Selecting a start date should update the start date text field");
 }
 
-- (void)test_endDateCellTextFieldUpdatesWhenDateActionCalled {
-    [self.sut hideAnyInlineDatePicker];
-    //select the start date row
-    [self.sut displayInlineDatePickerForRowAtIndexPath:dateEndRow];
-    
-    NSIndexPath *cellIndex = [NSIndexPath indexPathForRow:(dateEndRow.row) inSection:0];
-    KKDateCell *cell = (KKDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:cellIndex];
-    
-    //create a date picker and set its date
-    UIDatePicker *dp = [[UIDatePicker alloc] init];
-    [dp setDate:(NSDate*)endDate];
-    
-    //fake the date picker index path
-    NSIndexPath *fakeIndex = [NSIndexPath indexPathForRow:3 inSection:0];
-    self.sut.datePickerIndexPath = fakeIndex;
-    //call our testing extension category's fake date action workaround
-    [self.sut fakeDateAction:dp isEndDate:YES];
-
-    NSDate *cellDate = [dateFormat dateFromString: cell.date.text];//cell date should be listening for the date picker's date
-    
-    XCTAssertEqualObjects(cellDate, endDate, @"Selecting an end date should update the end date text field");
-}
-
-
 #pragma mark - button cell
 - (void)test_buttonCellShouldHaveOneConnectedButton {
     KKButtonBarCell *cell = (KKButtonBarCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:buttonRow];
@@ -297,14 +218,14 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertEqual(YES, [[cell.clearButton actionsForTarget:self.sut forControlEvent:UIControlEventTouchUpInside] containsObject:@"clearAllAction:"], @"Clear Button should be connected to correct action");
 }
 
-#pragma mark - date differences cell
-- (void)test_dateDifferencesCellShouldHaveOneConnectedButtons {
-    KKDateDifferencesCell *cell = (KKDateDifferencesCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateDifferencesRow];
-    XCTAssertTrue(cell.addEventButton != nil, @"Date differences cell add event button should be connected.");
+#pragma mark - calculated end date cell
+- (void)test_calculatedEndDateCellShouldHaveOneConnectedButtons {
+    KKCalculatedEndDateCell *cell = (KKCalculatedEndDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:calculatedEndDateRow];
+    XCTAssertTrue(cell.addEventButton != nil, @"Calculated end date cell add event button should be connected.");
 }
 
 - (void)test_dateDifferencesCellAddEventButtonShouldCallCorrectAction {
-    KKDateDifferencesCell *cell = (KKDateDifferencesCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateDifferencesRow];
+    KKCalculatedEndDateCell *cell = (KKCalculatedEndDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:calculatedEndDateRow];
     XCTAssertEqual(YES, [[cell.addEventButton actionsForTarget:self.sut forControlEvent:UIControlEventTouchUpInside] containsObject:@"addEventAction:"], @"Add Event Button should be connected to correct action");
 }
 
@@ -329,9 +250,9 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertTrue([[[cell.contentView superview] superview].gestureRecognizers count] == (NSUInteger)0, @"Start date cell super superview should have no gestures attached.");
 }
 
-- (void)test_endDateCellsSuperSuperviewShouldHaveTwoSwipeGestures {
-    KKDateCell *cell = (KKDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateEndRow];
-    XCTAssertTrue([[[cell.contentView superview] superview].gestureRecognizers count] == (NSUInteger)2, @"End date cell super superview should have 2 gestures attached.");
+- (void)test_DurationEntryCellsSuperSuperviewShouldHaveTwoSwipeGestures {
+    KKDurationEntryCell *cell = (KKDurationEntryCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:durationEntryRow];
+    XCTAssertTrue([[[cell.contentView superview] superview].gestureRecognizers count] == (NSUInteger)2, @"Duration Entry cell super superview should have 2 gestures attached.");
 }
 
 - (void)test_buttonCellsSuperSuperviewShouldHaveTwoSwipeGestures {
@@ -339,9 +260,9 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     XCTAssertTrue([[[cell.contentView superview] superview].gestureRecognizers count] == (NSUInteger)2, @"Button cell super superview should have 2 gestures attached.");
 }
 
-- (void)test_dateDifferencesCellsSuperSuperviewShouldHaveTwoSwipeGestures {
-    KKDateDifferencesCell *cell = (KKDateDifferencesCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:dateDifferencesRow];
-    XCTAssertTrue([[[cell.contentView superview] superview].gestureRecognizers count] == (NSUInteger)2, @"Date differences cell super superview should have 2 gestures attached.");
+- (void)test_calculatedEndDateCellsSuperSuperviewShouldHaveTwoSwipeGestures {
+    KKCalculatedEndDateCell *cell = (KKCalculatedEndDateCell *)[self.sut tableView:self.sut.tableView cellForRowAtIndexPath:calculatedEndDateRow];
+    XCTAssertTrue([[[cell.contentView superview] superview].gestureRecognizers count] == (NSUInteger)2, @"Calculated end date cell super superview should have 2 gestures attached.");
 }
 
 - (void)test_datePickerCellsSuperSuperviewShouldHaveZeroSwipeGestures {
@@ -353,4 +274,3 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
 
 
 @end
-    

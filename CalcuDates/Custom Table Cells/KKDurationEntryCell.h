@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KKSlightIndentTextField.h"
 
-@interface KKDurationEntryCell : UITableViewCell
+@interface KKDurationEntryCell : UITableViewCell <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *title;
-@property (nonatomic, weak) IBOutlet KKSlightIndentTextField *date;
+@property (nonatomic, weak) IBOutlet UITextField *daysToAdd;
+@property (nonatomic, weak) IBOutlet UITextField *weeksToAdd;
+@property (nonatomic, weak) IBOutlet UITextField *monthsToAdd;
+@property (nonatomic, weak) IBOutlet UITextField *yearsToAdd;
 
-- (void)addTextFieldOutline;
-- (void)removeTextFieldOutline;
+- (void)addOutlineToTextField:(UITextField*)textField;
+- (void)removeTextFieldOutlines;
 @end
