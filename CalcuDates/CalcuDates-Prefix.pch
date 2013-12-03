@@ -18,9 +18,13 @@
     #import "KKConstants.h"
     #import "KKMacros.h"
 
-    //RAC
+    //3rd Party added here to alleviate integration testing errors not finding files (stupid Xcode)
     #import "ReactiveCocoa.h"
     #import "RACEXTScope.h"
+    #import "Appirater.h"
+    #import "SVProgressHUD.h"
+    #import "DAKeyboardControl.h"
+
 
     //universal constants
     #define kCONTAINER_VIEW_TAG 100

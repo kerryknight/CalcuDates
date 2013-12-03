@@ -7,7 +7,6 @@
 //
 
 #import "KKAppDelegate.h"
-#import "Appirater.h"
 #import <Crashlytics/Crashlytics.h>
 #import <RevMobAds/RevMobAds.h>
 

@@ -13,7 +13,6 @@
 #import "KKDatePickerCell.h"
 #import "KKSlightIndentTextField.h"
 #import "KKDateManager.h"
-#import "Appirater.h"
 
 static NSString *kDateCellID = @"KKDateCell";     // the cells with the start or end date
 static NSString *kDatePickerCellID = @"KKDatePickerCell"; // the cell containing the date picker

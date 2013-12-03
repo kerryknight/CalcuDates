@@ -15,7 +15,6 @@
 #import "KKEventKitController.h"
 #import "RACEXTScope.h"
 #import "CEVerticalSwipeInteractionController.h"
-#import "Appirater.h"
 
 #pragma mark -
 #pragma mark @categories
