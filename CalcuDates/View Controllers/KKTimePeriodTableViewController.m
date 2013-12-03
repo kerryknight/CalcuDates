@@ -13,6 +13,7 @@
 #import "KKDatePickerCell.h"
 #import "KKSlightIndentTextField.h"
 #import "KKDateManager.h"
+#import "Appirater.h"
 
 static NSString *kDateCellID = @"KKDateCell";     // the cells with the start or end date
 static NSString *kDatePickerCellID = @"KKDatePickerCell"; // the cell containing the date picker
@@ -694,6 +695,9 @@ static NSString *kDateDifferencesCellID = @"KKDifferencesCell"; // the cell cont
     //clear our local date string properties
     self.startDateString = @"";
     self.endDateString = @"";
+    
+    //significant event
+    [Appirater userDidSignificantEvent:YES];
 }
 
 /*! User wants to add a calendar event at the End Date value displayed

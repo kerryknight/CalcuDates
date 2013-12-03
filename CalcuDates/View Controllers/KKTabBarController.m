@@ -9,6 +9,7 @@
 #import "KKTabBarController.h"
 #import "CEHorizontalSwipeInteractionController.h"
 #import "CETurnAnimationController.h"
+#import "Appirater.h"
 
 @interface KKTabBarController () <UIViewControllerTransitioningDelegate, UITabBarControllerDelegate>
 
@@ -45,6 +46,9 @@
 
 - (void)changeSelectedTab {
     [self setSelectedIndex:!self.selectedIndex];
+    
+    //significant event
+    [Appirater userDidSignificantEvent:YES];
 }
 
 #pragma mark -

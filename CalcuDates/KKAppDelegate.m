@@ -7,6 +7,7 @@
 //
 
 #import "KKAppDelegate.h"
+#import "Appirater.h"
 #import <Crashlytics/Crashlytics.h>
 #import <RevMobAds/RevMobAds.h>
 
@@ -29,6 +30,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [Appirater setAppId:@"548542832"];
+    [Appirater setDaysUntilPrompt:3];
+    [Appirater setUsesUntilPrompt:10];
+    [Appirater setSignificantEventsUntilPrompt:25];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:NO];
+    
     UIColor *drkBlue = DRK_BLUE;
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:drkBlue, NSForegroundColorAttributeName, [UIFont fontWithName:@"Helvetica-Light" size:20], NSFontAttributeName, nil]];
     
@@ -48,6 +56,9 @@
     [self resetTimer];
     
     [Crashlytics startWithAPIKey:@"72614ec4b03fbf638deccdb46a34d1ef0b3a0a62"];
+    
+    
+    [Appirater appLaunched:YES];
     
     return YES;
 }
@@ -112,6 +123,10 @@
 //    DLog(@"timer = %0.0f", interval);
     NSTimer *newTimer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(loadFullScreenAd) userInfo:nil repeats:YES];
     return newTimer;
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [Appirater appEnteredForeground:YES];
 }
 
 @end
