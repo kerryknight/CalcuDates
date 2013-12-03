@@ -861,12 +861,13 @@
 					"${SRC_ROOT}",
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/BlocksKit\"",
-					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
 					"\"${PODS_ROOT}/Headers/RevMob\"",
-					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
+					"\"${PODS_ROOT}/Headers/Appirater\"",
+					"\"${PODS_ROOT}/Headers/DAKeyboardControl\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
@@ -908,12 +909,13 @@
 					"${SRC_ROOT}",
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/BlocksKit\"",
-					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/SVProgressHUD\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
 					"\"${PODS_ROOT}/Headers/RevMob\"",
-					"\"${PODS_ROOT}/Headers/YLMoment\"",
 					"\"${PODS_ROOT}/Headers/libffi\"",
+					"\"${PODS_ROOT}/Headers/Appirater\"",
+					"\"${PODS_ROOT}/Headers/DAKeyboardControl\"",
 				);
 				INFOPLIST_FILE = "CalcuDates/CalcuDates-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";

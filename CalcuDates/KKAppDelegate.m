@@ -35,7 +35,7 @@
     [Appirater setUsesUntilPrompt:10];
     [Appirater setSignificantEventsUntilPrompt:25];
     [Appirater setTimeBeforeReminding:2];
-    [Appirater setDebug:NO];
+//    [Appirater setDebug:NO];
     
     UIColor *drkBlue = DRK_BLUE;
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:drkBlue, NSForegroundColorAttributeName, [UIFont fontWithName:@"Helvetica-Light" size:20], NSFontAttributeName, nil]];
