@@ -18,7 +18,6 @@
 		C72002E2183ACF1200B39261 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DB1D8C18218C6C009A2DCC /* Main_iPhone.storyboard */; };
 		C722F507183D470900770D8F /* KKMainViewController+TestingExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C722F506183D470900770D8F /* KKMainViewController+TestingExtensions.m */; };
 		C73D386018316A6800AD9887 /* KKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D385F18316A6800AD9887 /* KKSettingsViewController.m */; };
-		C74CB6C21845310F00495304 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79A36B718452F57007013E7 /* Crashlytics.framework */; };
 		C74ED59F182361F2003D137C /* KKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74ED59E182361F2003D137C /* KKMainViewController.m */; };
 		C7554CE9184D48500047AED1 /* KKNewDateTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7554CE8184D48500047AED1 /* KKNewDateTableViewControllerTests.m */; };
 		C76ECE0E1829A386005E5591 /* KKDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76ECE0C1829A386005E5591 /* KKDatePickerCell.m */; };
@@ -40,7 +39,7 @@
 		C7935C6118281C150012E021 /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5318281C150012E021 /* CEHorizontalSwipeInteractionController.m */; };
 		C7935C6218281C150012E021 /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5518281C150012E021 /* CEPinchInteractionController.m */; };
 		C7935C6318281C150012E021 /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */; };
-		C79A36B818452F57007013E7 /* Crashlytics.framework in Resources */ = {isa = PBXBuildFile; fileRef = C79A36B718452F57007013E7 /* Crashlytics.framework */; };
+		C79E9D52184DABAE007F82FC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79E9D51184DABAE007F82FC /* Crashlytics.framework */; };
 		C7C364C8184DA0E400F5C723 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36469184DA0E400F5C723 /* Appirater.m */; };
 		C7C364C9184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7C3646C184DA0E400F5C723 /* AppiraterLocalizable.strings */; };
 		C7C364CA184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7C3646F184DA0E400F5C723 /* AppiraterLocalizable.strings */; };
@@ -180,7 +179,7 @@
 		C7935C5518281C150012E021 /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
 		C7935C5618281C150012E021 /* CEVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
 		C7935C5718281C150012E021 /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
-		C79A36B718452F57007013E7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C79E9D51184DABAE007F82FC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C7C36468184DA0E400F5C723 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appirater.h; path = Appirater/Appirater.h; sourceTree = "<group>"; };
 		C7C36469184DA0E400F5C723 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appirater.m; path = Appirater/Appirater.m; sourceTree = "<group>"; };
 		C7C3646A184DA0E400F5C723 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppiraterDelegate.h; path = Appirater/AppiraterDelegate.h; sourceTree = "<group>"; };
@@ -272,8 +271,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79E9D52184DABAE007F82FC /* Crashlytics.framework in Frameworks */,
 				C7C364E9184DA14200F5C723 /* StoreKit.framework in Frameworks */,
-				C74CB6C21845310F00495304 /* Crashlytics.framework in Frameworks */,
 				C7DB1DC018218F25009A2DCC /* QuartzCore.framework in Frameworks */,
 				C78DA0C2184BD3B8002DD772 /* RevMobAds.framework in Frameworks */,
 				C7DB1DBC18218F25009A2DCC /* AdSupport.framework in Frameworks */,
@@ -731,9 +730,9 @@
 		C7DB1D7918218C6C009A2DCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C79E9D51184DABAE007F82FC /* Crashlytics.framework */,
 				C7C364E8184DA14200F5C723 /* StoreKit.framework */,
 				C78DA0C1184BD3B7002DD772 /* RevMobAds.framework */,
-				C79A36B718452F57007013E7 /* Crashlytics.framework */,
 				C7DB1DB518218F25009A2DCC /* AdSupport.framework */,
 				C7DB1DB618218F25009A2DCC /* CFNetwork.framework */,
 				C7DB1DB718218F25009A2DCC /* EventKit.framework */,
@@ -1038,7 +1037,6 @@
 				C7C364CE184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */,
 				C7C364D2184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */,
 				C7C364D4184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */,
-				C79A36B818452F57007013E7 /* Crashlytics.framework in Resources */,
 				C7C364DE184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */,
 				C7C364E6184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */,
 				C7C364D5184DA0E400F5C723 /* AppiraterLocalizable.strings in Resources */,
@@ -1463,7 +1461,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kerry Knight (2FXS3J8N9C)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1490,7 +1488,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
+				PROVISIONING_PROFILE = "30D0FC8A-F88E-472B-AE17-21689217CDF0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1514,7 +1512,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kerry Knight (2FXS3J8N9C)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
@@ -1536,7 +1534,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
+				PROVISIONING_PROFILE = "30D0FC8A-F88E-472B-AE17-21689217CDF0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -1552,7 +1550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kerry Knight (2FXS3J8N9C)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates_V2,
@@ -1584,7 +1582,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
+				PROVISIONING_PROFILE = "30D0FC8A-F88E-472B-AE17-21689217CDF0";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1599,7 +1597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kerry Knight (2FXS3J8N9C)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Kerry/Desktop/Kerry_Apps/CalcuDates_V2,
@@ -1630,7 +1628,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E4C78F6A-6FE2-42B3-A743-88671208ED66";
+				PROVISIONING_PROFILE = "30D0FC8A-F88E-472B-AE17-21689217CDF0";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1682,7 +1680,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CD9D71B5-826D-4D6A-9102-EFC1ACD39CE4";
+				PROVISIONING_PROFILE = "30D0FC8A-F88E-472B-AE17-21689217CDF0";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
@@ -1730,7 +1728,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CD9D71B5-826D-4D6A-9102-EFC1ACD39CE4";
+				PROVISIONING_PROFILE = "30D0FC8A-F88E-472B-AE17-21689217CDF0";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
