@@ -180,8 +180,7 @@
 }
 
 - (void)setBackgroundForNonScrollView:(UIView*)view {
-    UIImageView *backGroundView = [[UIImageView alloc] init];
-    backGroundView = [self createBlurryBackground];
+    UIImageView *backGroundView = [self createBlurryBackground];
     [view addSubview:backGroundView];
     [view sendSubviewToBack:backGroundView];
 }
